@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-
 const InterFont = Inter({
   subsets: ["latin"],
   variable: "--font-I",
@@ -21,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/images/logo.png" sizes="any" />
       <body className={`${InterFont.variable}  antialiased`}>{children}</body>
     </html>
   );
