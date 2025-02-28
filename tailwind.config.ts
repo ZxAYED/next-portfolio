@@ -9,6 +9,15 @@ export default {
     theme: {
         extend: {
 
+            colors: {
+                primary: "#3B82F6",
+                secondary: "#9333EA",
+                background: "#0F172A",
+                foreground: "#E2E8F0",
+                hover: "#1E40AF",
+                card: "#1E293B",
+                border: "#334155",
+            },
             fontFamily: {
                 sans: ["Inter", "sans-serif"],
                 serif: ["Merriweather", "serif"]

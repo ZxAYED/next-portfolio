@@ -1,12 +1,14 @@
 import Footer from "@/components/shared/Footer";
-import Home from "./home/page";
+import NavMenu from "@/components/shared/NavMenu";
+import Home from "../components/home/page";
 
 export default function Provider() {
   return (
     <div>
-      <div className=" mx-auto max-w-7xl">
-        <Home></Home>
-      </div>
+      <NavMenu></NavMenu>
+
+      <Home></Home>
+
       <Footer></Footer>
     </div>
   );

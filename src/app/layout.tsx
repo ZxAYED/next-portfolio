@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/images/logo.png" sizes="any" />
+      <link rel="icon" href="/images/favicon.png" sizes="any" />
       <body className={`${InterFont.variable}  antialiased`}>{children}</body>
     </html>
   );
