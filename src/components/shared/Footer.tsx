@@ -57,29 +57,29 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative w-full bg-gray-900 text-white py-16 px-6 ">
+    <div id="contact" className="relative w-full  text-white py-16 px-6 ">
       <Image
         src="https://i.ibb.co/QcbsFHy/footer.jpg"
         alt="Footer Background"
         layout="fill"
         objectFit="cover"
-        className="absolute inset-0 z-0 opacity-20"
+        className="absolute inset-0 z-0 opacity-30"
       />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto  ">
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-center z-10 ">
           <div>
-            <FaMapMarkerAlt className="text-5xl mx-auto" />
+            <FaMapMarkerAlt className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
             <p className="text-xl mt-2">Dhaka, Bangladesh</p>
           </div>
           <div>
-            <MdPhoneAndroid className="text-5xl mx-auto" />
+            <MdPhoneAndroid className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
             <p className="text-xl mt-2">01902320296</p>
           </div>
           <div>
             <a rel="noopener" href="mailto:zzayediqbalofficial@gmail.com">
-              <SiGmail className="text-5xl mx-auto" />
+              <SiGmail className="text-5xl mx-auto p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />
             </a>
-            <p className="text-xl mt-2">Email Me</p>
+            <p className="text-xl  mt-2">Email Me</p>
           </div>
           <div>
             <a
@@ -87,7 +87,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/zayed-iqbal"
               target="_blank"
             >
-              <FaLinkedin className="text-5xl mx-auto" />
+              <FaLinkedin className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
             </a>
             <p className="text-xl mt-2">LinkedIn</p>
           </div>
@@ -103,7 +103,8 @@ const Footer = () => {
                 className="flex items-center gap-2"
                 rel="noopener"
               >
-                <VscGithubInverted /> <p className="text-xl">GitHub</p>
+                <VscGithubInverted className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
+                <p className="text-xl">GitHub</p>
               </a>
               <a
                 rel="noopener"
@@ -111,7 +112,8 @@ const Footer = () => {
                 target="_blank"
                 className="flex items-center gap-2"
               >
-                <FaFacebookSquare /> <p className="text-xl">Facebook</p>
+                <FaFacebookSquare className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
+                <p className="text-xl">Facebook</p>
               </a>
               <a
                 rel="noopener"
@@ -119,13 +121,14 @@ const Footer = () => {
                 target="_blank"
                 className="flex items-center gap-2"
               >
-                <GrInstagram /> <p className="text-xl">Instagram</p>
+                <GrInstagram className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
+                <p className="text-xl ">Instagram</p>
               </a>
             </div>
           </div>
 
           <div
-            className="max-w-3xl w-full bg-gray-800 p-8 mt-12 rounded-xl"
+            className="max-w-3xl w-full border backdrop-blur-sm p-8 mt-12 rounded-md"
             data-aos="fade-up"
           >
             <h1 className="text-3xl font-bold mb-6 text-center">
@@ -147,10 +150,6 @@ const Footer = () => {
               <Input
                 {...register("email", {
                   required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z]{2,}$/i,
-                    message: "Invalid email address",
-                  },
                 })}
                 type="email"
                 placeholder="Your Email"

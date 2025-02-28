@@ -19,7 +19,7 @@ const About = () => {
       id="about"
       data-aos="fade-zoom-in"
       data-aos-easing="ease-in-back"
-      data-aos-delay="500"
+      data-aos-delay="200"
       data-aos-offset="0"
       className="relative my-48  mx-5  max-w-7xl xl:mx-auto"
     >

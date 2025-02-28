@@ -16,9 +16,10 @@ export const skills = [
 
   { name: "HTML", icon: html },
   { name: "CSS", icon: css },
-  { name: "Tailwind CSS", icon: tailwind },
   { name: "Bootstrap", icon: boot },
+  { name: "Tailwind CSS", icon: tailwind },
   { name: "Material UI", icon: mate },
+  { name: "Shadcn UI", icon: 'https://www.sortabase.com/_next/image?url=https%3A%2F%2Ftrayjaimagefiles.s3.us-east-2.amazonaws.com%2Fpost-imagerc-upload-1683074259389-6Screenshot%202023-05-02%20at%208.50.47%20PM.png&w=640&q=75' },
   { name: "JavaScript", icon: js },
   {
     name: "TypeScript",

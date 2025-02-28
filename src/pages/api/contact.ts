@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
 
     const { name, email, message } = req.body;

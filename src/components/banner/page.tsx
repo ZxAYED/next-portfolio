@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Link } from "react-scroll";
 import img from "../../../public/images/portfolio.png";
 import CustomSvg from "../shared/CustomSvg";
 import ZButton from "../shared/ZButton";
@@ -30,7 +31,7 @@ const Banner = () => {
           <div className="mt-6 space-y-4 ">
             {[
               "Clean , Modern UI & User-Friendly Designs",
-              "Writing High-Quality, Efficient Code Code",
+              "Writing High-Quality, Efficient Code ",
               "Building Flexible and Easy-to-Customize Solutions",
             ].map((item, index) => (
               <motion.div
@@ -68,7 +69,15 @@ const Banner = () => {
             >
               See Resume
             </motion.a>
-            <ZButton name="Contact me"></ZButton>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={1000}
+              to="contact"
+            >
+              <ZButton name="Contact me"></ZButton>
+            </Link>
           </div>
         </div>
 

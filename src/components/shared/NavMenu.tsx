@@ -16,8 +16,8 @@ const NavBar = () => {
   const navmenus = [
     { name: "Home", path: "home" },
     { name: "About", path: "about" },
-
     { name: "Projects", path: "projects" },
+    { name: "Why Me", path: "whyme" },
     { name: "Contact", path: "contact" },
   ];
 
@@ -40,8 +40,8 @@ const NavBar = () => {
   );
 
   return (
-    <div className=" sticky top-6 z-90 ">
-      <div className="max-w-7xl mx-auto px-4 py-4 md:mb-4  md:border md:border-[#fff] border-b-[1px] md:rounded-md rounded backdrop-blur-3xl">
+    <div className=" sticky top-0 md:top-6 z-90 ">
+      <div className="max-w-7xl mx-auto px-4 py-4 md:mb-4  md:border md:border-[#fff] border-b-[1px] md:rounded-md rounded backdrop-blur-xl">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <motion.div
@@ -60,11 +60,9 @@ const NavBar = () => {
               </p>
             </motion.div>
           </div>
-
           <div className="flex-grow  justify-center hidden lg:flex">
             {navLinks}
           </div>
-
           <div className="lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -91,6 +89,7 @@ const NavBar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
+          <div className="hidden lg:block">darkMode</div>{" "}
         </div>
       </div>
     </div>
