@@ -14,8 +14,8 @@ import { SiGmail } from "react-icons/si";
 import { VscGithubInverted } from "react-icons/vsc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import img from "../../../public/images/getInTouchpng.png";
 import ZButton from "./ZButton";
-
 const Footer = () => {
   const {
     register,
@@ -57,7 +57,7 @@ const Footer = () => {
   };
 
   return (
-    <div id="contact" className="relative w-full  text-white py-16 px-6 ">
+    <div id="contact" className="relative w-full   ">
       <Image
         src="https://i.ibb.co/QcbsFHy/footer.jpg"
         alt="Footer Background"
@@ -65,7 +65,10 @@ const Footer = () => {
         objectFit="cover"
         className="absolute inset-0 z-0 opacity-30"
       />
-      <div className="max-w-7xl mx-auto  ">
+      <div className="flex justify-center items-center ">
+        <Image src={img} alt="get in touch" className="w-40 h-40 " />
+      </div>
+      <div className="max-w-7xl mx-auto  py-16 px-6 ">
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-center z-10 ">
           <div>
             <FaMapMarkerAlt className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
@@ -139,7 +142,7 @@ const Footer = () => {
                 {...register("name", { required: "Name is required" })}
                 type="text"
                 placeholder="Your Name"
-                className="border-gray-500"
+                className="border-gray-600"
               />
               {errors.name && (
                 <p className="text-red-500 text-sm">
@@ -179,7 +182,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <div className="relative mt-16 text-center text-gray-400 z-10">
+        <div className="relative mt-16 text-center text-gray-500 z-10">
           <p>&copy; {currentYear} Zayed Iqbal | All Rights Reserved</p>
         </div>
 

@@ -27,7 +27,7 @@ const Projects = () => {
 
   return (
     <div id="projects" className="max-w-7xl mx-auto relative  mt-20 pb-10">
-      <h1 className="absolute -top-16 md:-top-32 left-[15%] right-[15%] mx-auto text-center opacity-20 text-6xl font-bold">
+      <h1 className="absolute -top-16 md:-top-32 left-[15%] right-[15%] mx-auto text-center opacity-30 text-6xl font-bold">
         Projects
       </h1>
       <motion.div>

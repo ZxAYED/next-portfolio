@@ -5,8 +5,11 @@ import { Link } from "react-scroll";
 import img from "../../../public/images/portfolio.png";
 import CustomSvg from "../shared/CustomSvg";
 import ZButton from "../shared/ZButton";
+import { useTheme } from "../theme/ThemeProvider";
 
 const Banner = () => {
+  const { theme } = useTheme();
+
   return (
     <div id="home" className="relative">
       <div className=" md:block absolute hidden right-20 ">
@@ -18,9 +21,9 @@ const Banner = () => {
       <section className="flex flex-col lg:flex-row items-center justify-between lg:py-16 max-w-7xl mx-5 pb-5 xl:mx-auto">
         <div className="text-center md:text-left max-w-2xl">
           <h1 className="text-5xl lg:text-6xl font-extrabold ">
-            Hi, I’m{" "}
+            Hi, I’m
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#3B82F6] ">
-              Zayed
+              {""} Zayed
             </span>
           </h1>
           <p className="mt-4 text-lg ">
@@ -39,7 +42,9 @@ const Banner = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="flex items-center text-gray-700 dark:text-gray-200"
+                className={`flex items-center ${
+                  theme === "dark" ? "text-gray-400" : "text-gray-600"
+                } `}
               >
                 <svg
                   className="w-6 h-6 text-primary mx-2"
@@ -64,7 +69,7 @@ const Banner = () => {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              className=" py-3 rounded z-20 px-5 bg-[#1E293B] hover:bg-[#18253a]"
+              className=" py-3 rounded z-20 px-5 text-white bg-[#1E293B] hover:bg-[#18253a]  cursor-pointer"
               href="https://drive.google.com/file/d/1IU_bm0-KhDiXea_3CwOL1nepP0dwFXKy/view?usp=sharing"
             >
               See Resume

@@ -8,8 +8,10 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { SiExpertsexchange } from "react-icons/si";
 import CustomSvg2 from "../shared/CustomSvg2";
+import { useTheme } from "../theme/ThemeProvider";
 
 const About = () => {
+  const { theme } = useTheme();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -30,13 +32,17 @@ const About = () => {
         <CustomSvg2></CustomSvg2>
       </div>
 
-      <h1 className="absolute -top-52 md:-top-32 md:left-[20%] md:right-[20%] mx-auto text-center opacity-20 text-6xl font-bold">
+      <h1 className="absolute -top-52 md:-top-32 md:left-[20%] md:right-[20%] mx-auto text-center opacity-30 text-6xl font-bold">
         Full Stack Developer
       </h1>
       <motion.div>
         <div className=" max-w-7xl mx-auto  ">
           <h1 className="text-5xl font-bold mb-4">About Me</h1>
-          <p className="py-4 text-lg text-gray-400">
+          <p
+            className={` text-lg py-4 ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            } `}
+          >
             I’m a passionate MERN stack developer dedicated to building modern,
             responsive, and high-performance web applications. My expertise
             spans both frontend and backend technologies, ensuring seamless user
@@ -73,10 +79,10 @@ const About = () => {
                     className="w-10 h-10 mb-2 rounded-xl"
                     src={skill.icon}
                     alt={skill.name}
-                    width={40}
-                    height={40}
+                    width={48}
+                    height={48}
                   />
-                  <span className="text-sm font-medium">{skill.name}</span>
+                  <span className="text-lg font-medium">{skill.name}</span>
                 </motion.div>
               ))}
             </div>

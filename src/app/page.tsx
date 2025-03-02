@@ -8,6 +8,7 @@ export default function Provider() {
       <NavMenu></NavMenu>
 
       <Home></Home>
+      
 
       <Footer></Footer>
     </div>

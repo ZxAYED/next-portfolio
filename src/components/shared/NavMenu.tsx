@@ -11,13 +11,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import ThemeToggle from "./ThemeToggleBtn";
 
 const NavBar = () => {
   const navmenus = [
     { name: "Home", path: "home" },
     { name: "About", path: "about" },
     { name: "Projects", path: "projects" },
-    { name: "Why Me", path: "whyme" },
+
     { name: "Contact", path: "contact" },
   ];
 
@@ -31,7 +32,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={500}
-          className="text-[#E2E8F0] font-semibold cursor-pointer hover:text-[#9333EA] hover:delay-200 hover:scale-[102%] uppercase tracking-[4px] underline-animation"
+          className=" font-semibold cursor-pointer hover:text-[#9333EA] hover:delay-200 hover:scale-[102%] uppercase tracking-[4px] underline-animation "
         >
           {item.name}
         </Link>
@@ -41,7 +42,7 @@ const NavBar = () => {
 
   return (
     <div className=" sticky top-0 md:top-6 z-90 ">
-      <div className="max-w-7xl mx-auto px-4 py-4 md:mb-4  md:border md:border-[#fff] border-b-[1px] md:rounded-md rounded backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto px-4 py-4 md:mb-4  md:border border-b-[1px] md:rounded-md rounded backdrop-blur-xl">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <motion.div
@@ -85,11 +86,16 @@ const NavBar = () => {
                       </Link>
                     </DropdownMenuItem>
                   ))}
+                  <DropdownMenuItem>
+                    <ThemeToggle />
+                  </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="hidden lg:block">darkMode</div>{" "}
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </div>

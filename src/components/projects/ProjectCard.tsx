@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import ZButton from "../shared/ZButton";
+import { useTheme } from "../theme/ThemeProvider";
 import { IProject } from "./page";
 
 export default function ProjectCard({
@@ -21,6 +22,7 @@ export default function ProjectCard({
   project: IProject;
   index: number;
 }) {
+  const { theme } = useTheme();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -49,14 +51,24 @@ export default function ProjectCard({
 
         <div className="w-full xl:w-1/2 flex flex-col justify-between">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold py-2">
+            <CardTitle className={`text-3xl font-bold py-2  `}>
               {project?.projectName}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-300 mb-4">{project?.description}</p>
+            <p
+              className={`text-md mb-4 py-2 ${
+                theme === "dark" ? "text-gray-400" : "text-gray-800"
+              } `}
+            >
+              {project?.description}
+            </p>
 
-            <ul className="list-disc list-inside text-gray-400 space-y-1">
+            <ul
+              className={`list-disc list-inside space-y-1 ${
+                theme === "dark" ? "text-gray-400" : "text-gray-700"
+              } `}
+            >
               {project?.features.map((feature, index) => (
                 <li key={index} className="text-sm">
                   {feature}

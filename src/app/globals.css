@@ -6,16 +6,22 @@
 :root {
   --primary: #3b82f6;
   --secondary: #9333ea;
+  --background: #e2e8f0;
+  --foreground: #0f172a;
+  --hover: #1e40af;
+  --card: #e2e8f0;
+  --border: #334155;
 }
 
 .dark {
-  --background: #f8fafc;
-  --foreground: #1e293b;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
 }
 
 body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: "Inter", sans-serif;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -84,7 +90,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #cfcfce;
+  background-color: var(--foreground);
   transition: width 0.2s ease-in-out;
 }
 
