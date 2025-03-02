@@ -63,10 +63,10 @@ const WhyMe = () => {
         />
       </div>
 
-      <div className="md:block absolute hidden -right-60 -top-20">
+      <div className="lg:block absolute hidden -right-60 -top-20">
         <CustomSvg2 />
       </div>
-      <div className="md:block absolute hidden -left-140 top-40">
+      <div className="lg:block absolute hidden -left-140 top-40">
         <CustomSvg />
       </div>
 
