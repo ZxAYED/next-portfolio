@@ -1,15 +1,22 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import docker from "../../public/images/dokcer.png";
 import xpress from "../../public/images/expressJs.png";
+import graph from "../../public/images/graph-ql.png";
 import boot from "../../public/images/icons8-bootstrap-240.png";
 import css from "../../public/images/icons8-css3-144.png";
 import html from "../../public/images/icons8-html-5-240.png";
 import js from "../../public/images/icons8-js-240.png";
 import tailwind from "../../public/images/icons8-tailwindcss-240.png";
+import jest from "../../public/images/jest.png";
 import mate from "../../public/images/material ui.png";
 import mongo from "../../public/images/mongodb.png";
+import next from "../../public/images/next.png";
 import node from "../../public/images/nodeJs.png";
+import post from "../../public/images/postgre.png";
 import react from "../../public/images/react.png";
+import redux from "../../public/images/redux.svg";
+import shadcn from "../../public/images/shadcn.png";
 
 
 export const skills = [
@@ -19,7 +26,7 @@ export const skills = [
   { name: "Bootstrap", icon: boot },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Material UI", icon: mate },
-  { name: "Shadcn UI", icon: 'https://www.sortabase.com/_next/image?url=https%3A%2F%2Ftrayjaimagefiles.s3.us-east-2.amazonaws.com%2Fpost-imagerc-upload-1683074259389-6Screenshot%202023-05-02%20at%208.50.47%20PM.png&w=640&q=75' },
+  { name: "Shadcn UI", icon: shadcn },
   { name: "JavaScript", icon: js },
   {
     name: "TypeScript",
@@ -28,18 +35,18 @@ export const skills = [
   { name: "React.js", icon: react },
   {
     name: "Next.js",
-    icon: "https://logowik.com/content/uploads/images/nextjs7685.logowik.com.webp",
+    icon: next,
   },
   {
     name: "Redux",
-    icon: "https://miro.medium.com/v2/resize:fit:1400/1*AJpFZrofvxMn3MHh9p3i_Q.jpeg",
+    icon: redux,
   },
   { name: "Node.js", icon: node },
   { name: "Express.js", icon: xpress },
   { name: "MongoDB", icon: mongo },
   {
     name: "Mongoose",
-    icon: "https://miro.medium.com/v2/resize:fit:1050/1*OYpEW3PMltGC2MVvJ-5QTw.png",
+    icon: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fl8rbs6hk39ei4m4emawr.png",
   },
   {
     name: "Prisma",
@@ -47,15 +54,15 @@ export const skills = [
   },
   {
     name: "PostgreSQL",
-    icon: "https://w7.pngwing.com/pngs/441/460/png-transparent-postgresql-plain-wordmark-logo-icon-thumbnail.png",
+    icon: post,
   },
   {
     name: "GraphQL",
-    icon: "https://w7.pngwing.com/pngs/47/318/png-transparent-graphql-playground-macos-bigsur-icon-thumbnail.png",
+    icon: graph,
   },
   {
     name: "Docker",
-    icon: "https://e7.pngegg.com/pngimages/219/411/png-clipart-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-thumbnail.png",
+    icon: docker,
   },
   {
     name: "AWS",
@@ -63,7 +70,7 @@ export const skills = [
   },
   {
     name: "Jest",
-    icon: "https://e7.pngegg.com/pngimages/755/519/png-clipart-jest-logo-tech-companies-thumbnail.png",
+    icon: jest,
   },
 ];
 

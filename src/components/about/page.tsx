@@ -76,11 +76,11 @@ const About = () => {
                   className="flex flex-col items-center justify-center p-3 border rounded-lg shadow-sm  transition duration-300"
                 >
                   <Image
-                    className="w-10 h-10 mb-2 rounded-xl"
+                    className="w-12 h-12 mb-2 rounded-xl"
                     src={skill.icon}
                     alt={skill.name}
-                    width={48}
-                    height={48}
+                    width={52}
+                    height={52}
                   />
                   <span className="text-lg font-medium">{skill.name}</span>
                 </motion.div>
