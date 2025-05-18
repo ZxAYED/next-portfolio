@@ -1,10 +1,11 @@
 import About from "../about/page";
-import Banner from "../banner/page";
+import Banner from "../banner/Banner";
+
 import Projects from "../projects/page";
 import WhyMe from "../whyMe/page";
 const Home = () => {
   return (
-    <div className="mt-16 mx-w-7xl mx-auto  overflow-hidden">
+    <div className="mx-auto overflow-hidden mx-w-7xl">
       <Banner></Banner>
       <About></About>
       <Projects></Projects>

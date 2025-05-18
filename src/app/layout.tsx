@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import "./globals.css";
+import { Bounce, ToastContainer } from "react-toastify";
+import "./globals.css";
+
 const InterFont = Inter({
   subsets: ["latin"],
   variable: "--font-I",
@@ -22,7 +25,7 @@ export default async function RootLayout({
   initialTheme: "light" | "dark";
 }) {
   const cookieStore = await cookies();
-  const themeFromCookie =
+  const theme =
     (cookieStore.get("theme")?.value as "light" | "dark") || "dark";
   return (
     <html lang="en">
@@ -32,7 +35,28 @@ export default async function RootLayout({
         <link rel="icon" href="/images/favicon.png" sizes="any" />
       </head>
       <body className={`${InterFont.variable}  antialiased`}>
-        <ThemeProvider initialTheme={themeFromCookie}>{children}</ThemeProvider>
+        <ThemeProvider initialTheme={theme}>
+         
+          {children}
+       <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+            toastStyle={{
+              backgroundColor: "var(--card)",
+              color: "var(--foreground)",
+              border: "1px solid var(--border)",
+            }}
+          />
+          </ThemeProvider>
       </body>
     </html>
   );

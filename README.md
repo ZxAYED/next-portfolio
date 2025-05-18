@@ -4,7 +4,7 @@
 
 I’m a passionate **MERN stack developer** dedicated to building modern, responsive, and high-performance web applications. My expertise spans both frontend and backend technologies, ensuring seamless user experiences.
 
-I thrive on solving complex problems, leveraging my skills in **HTML**, **CSS**, **JavaScript**, and **TypeScript**, as well as frameworks like **React.js** and **Next.js**. I am well-versed in **state management** with **Redux** and **backend development** using **Node.js**, **Express.js**, and databases like **MongoDB**, **PostgreSQL**, and **GraphQL**.
+I thrive on solving complex problems, leveraging my skills in **HTML**, **CSS**, **JavaScript**, and **TypeScript**, as well as frameworks like **React.js** and **Next.js**. I am well-versed in **state management** with **Redux** and **backend development** using **Node.js**, **Express.js**, and databases like **MongoDB** and **PostgreSQL**.
 
 My experience with tools like **Docker** and **Prisma** ensures that I can build scalable, maintainable, and production-ready applications. Currently, I blend my **analytical skills from physics** with my love for coding to approach challenges from different perspectives, which allows me to deliver robust solutions.
 

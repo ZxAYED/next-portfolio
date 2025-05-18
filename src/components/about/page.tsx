@@ -23,12 +23,12 @@ const About = () => {
       data-aos-easing="ease-in-back"
       data-aos-delay="200"
       data-aos-offset="0"
-      className="relative my-48  mx-5  max-w-7xl xl:mx-auto"
+      className="relative mx-5 my-48 max-w-7xl xl:mx-auto"
     >
-      <div className="md:block absolute hidden -right-8 xl:-right-40">
+      <div className="absolute hidden md:block -right-8 xl:-right-40">
         <CustomSvg2></CustomSvg2>
       </div>
-      <div className="md:block absolute hidden  xl:-left-60 -bottom-60 xl:-bottom-28">
+      <div className="absolute hidden md:block xl:-left-60 -bottom-60 xl:-bottom-28">
         <CustomSvg2></CustomSvg2>
       </div>
 
@@ -36,11 +36,11 @@ const About = () => {
         Full Stack Developer
       </h1>
       <motion.div>
-        <div className=" max-w-7xl mx-auto  ">
-          <h1 className="text-5xl font-bold mb-4">About Me</h1>
+        <div className="mx-auto max-w-7xl">
+          <h1 className="mb-4 text-5xl font-bold">About Me</h1>
           <p
             className={` text-lg py-4 ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
+              theme === "dark" ? "text-gray-300" : "text-gray-800"
             } `}
           >
             I’m a passionate MERN stack developer dedicated to building modern,
@@ -50,7 +50,7 @@ const About = () => {
             skills in HTML, CSS, JavaScript, and TypeScript, as well as
             frameworks like React.js and Next.js. I am well-versed in state
             management with Redux and backend development using Node.js,
-            Express.js, and databases like MongoDB, PostgreSQL, and GraphQL. My
+            Express.js, and databases like MongoDB and PostgreSQL. My
             experience with tools like Docker and Prisma ensures that I can
             build scalable, maintainable, and production-ready applications.
             Currently, I blend my analytical skills from physics with my love
@@ -62,18 +62,25 @@ const About = () => {
             exceeds user expectations, contributing to the success of the teams
             I collaborate with.
           </p>
-          <hr className="  my-8"></hr>
+          <hr className="my-8 "></hr>
           <div>
-            <p className="font-bold text-3xl pb-6 pt-2 flex items-center gap-2">
+            <p className="flex items-center gap-2 pt-2 pb-6 text-3xl font-bold">
               <SiExpertsexchange /> Skills
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
               {skills.map((skill, index) => (
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                
+                  whileHover={{ scale: 1.05}}
                   whileTap={{ scale: 0.5 }}
+                
+
+data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="200"
+      data-aos-offset="0"
                   key={index}
-                  className="flex flex-col items-center justify-center p-3 border rounded-lg shadow-sm  transition duration-300"
+                  className="flex flex-col items-center justify-center p-3 transition duration-300 border rounded-lg shadow-sm"
                 >
                   <Image
                     className="w-12 h-12 mb-2 rounded-xl"

@@ -7,8 +7,16 @@ import CustomSvg from "../shared/CustomSvg";
 import CustomSvg2 from "../shared/CustomSvg2";
 import { useTheme } from "../theme/ThemeProvider";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const WhyMe = () => {
+
   const { theme } = useTheme();
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const qualities = [
     {
       icon: <CheckCircle size={32} className="text-green-500" />,
@@ -51,7 +59,7 @@ const WhyMe = () => {
   return (
     <div
       id="whyme"
-      className="relative my-32 px-6 max-w-7xl border rounded-md py-16 mx-auto text-center"
+      className="relative mx-auto my-32 text-center rounded-md md:border max-w-7xl"
     >
       <div className="absolute inset-0 -z-10">
         <Image
@@ -59,20 +67,20 @@ const WhyMe = () => {
           alt="Why Me Background"
           layout="fill"
           objectFit="cover"
-          className="rounded-md opacity-20"
+          className="rounded-md opacity-5 dark:opacity-80"
         />
       </div>
 
-      <div className="lg:block absolute hidden -right-60 -top-20">
+      <div className="absolute hidden lg:block -right-60 -top-20">
         <CustomSvg2 />
       </div>
-      <div className="lg:block absolute hidden -left-140 top-40">
+      <div className="absolute hidden lg:block -left-140 top-40">
         <CustomSvg />
       </div>
 
-      <div className="relative z-10  backdrop-blur">
-        <h2 className="text-4xl font-bold mb-6">Why You Need Me</h2>
-        <p className="text-lg mb-12">
+      <div className="relative z-10 px-6 py-16 rounded-md backdrop-blur">
+        <h2 className="mb-6 text-4xl font-bold">Why You Need Me</h2>
+        <p className="mb-12 text-lg">
           I`m a determined professional who believes in hard work, teamwork, and
           delivering results. Here`s why I`m the right fit for your team.
         </p>
@@ -80,14 +88,20 @@ const WhyMe = () => {
           {qualities.map((quality, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-3xl transition-all"
+
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              className={`flex flex-col items-center p-6 text-center transition-all shadow-lg rounded-xl hover:shadow-3xl ${theme === "dark" ? "text-gray-300" : "text-gray-800"
+                }`}
+
+
             >
               <div className="mb-4">{quality.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{quality.title}</h3>
+              <h3 className="mb-2 text-xl font-semibold">{quality.title}</h3>
               <p
-                className={` ${
-                  theme === "dark" ? "text-gray-400" : "text-gray-800"
-                } `}
+                className={` ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  } `}
               >
                 {quality.description}
               </p>

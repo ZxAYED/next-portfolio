@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "tailwindcss";
 :root {
   --primary: #3b82f6;
   --secondary: #9333ea;
@@ -24,6 +23,9 @@ body {
   color: var(--foreground);
   font-family: "Inter", sans-serif;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+html {
+  scroll-behavior: smooth;
 }
 .Zbutton {
   position: relative;
