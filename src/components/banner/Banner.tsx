@@ -53,7 +53,7 @@ const Banner = () => {
       <section className="flex flex-col items-center justify-between px-0 pb-5 mx-4 bg-black-200/20 lg:flex-row lg:py-16 max-w-7xl lg:mx-auto">
         <div className="text-center md:text-left">
           <h1 className="text-5xl font-extrabold lg:text-6xl ">
-            Hi, I`m <span className="text-[#9333ea]"> Zayed</span>
+            Hi, I`m <span className="bg-gradient-to-r from-[#9333EA] to-[#3B82F6] text-transparent bg-clip-text "> Zayed</span>
           </h1>
           <p className="mt-4 text-lg ">
             I build modern, responsive, and high-performance web applications

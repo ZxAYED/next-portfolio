@@ -1,7 +1,7 @@
 import About from "../about/page";
 import Banner from "../banner/Banner";
 
-import Projects from "../projects/page";
+import Projects from "../projects/Projects";
 import WhyMe from "../whyMe/page";
 const Home = () => {
   return (

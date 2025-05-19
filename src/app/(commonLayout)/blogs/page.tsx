@@ -1,3 +1,4 @@
+import { getBlogs } from "@/app/Services/Blogs";
 import BlogCard from "@/components/blogs/BlogCard";
 
 
@@ -17,23 +18,13 @@ export interface IBlogCardProps {
 // }
 
 const BlogsPage = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_URL}/blogs`, {
-    cache: "no-store",
-  });
-  const blogsData = await res.json();
-
-  if (!blogsData)
-    return (
-      <div className="text-center text-2xl text-red-500 ">
-        No blog posts found.
-      </div>
-    );
+ const blogsData = await getBlogs();
 
   return (
-    <section className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Blog Posts</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogsData?.data?.map((blog: IBlogCardProps) => (
+    <section className="container px-4 py-8 mx-auto">
+      <h1 className="mb-8 text-4xl font-bold text-center">Blog Posts</h1>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {blogsData?.map((blog: IBlogCardProps) => (
           <BlogCard key={blog._id} blog={blog} />
         ))}
       </div>

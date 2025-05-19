@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import "./globals.css";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./globals.css";
+import AnimatedCursor from 'react-animated-cursor';
 
 const InterFont = Inter({
   subsets: ["latin"],
@@ -36,7 +37,14 @@ export default async function RootLayout({
       </head>
       <body className={`${InterFont.variable}  antialiased`}>
         <ThemeProvider initialTheme={theme}>
-         
+           <AnimatedCursor
+        innerSize={10}
+        outerSize={35}
+         color="147, 51, 234"  
+        outerAlpha={0.4}
+        innerScale={0.9}
+        outerScale={1.5}
+      />
           {children}
        <ToastContainer
             position="top-right"

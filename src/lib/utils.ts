@@ -17,17 +17,23 @@ import post from "../../public/images/postgre.png";
 import react from "../../public/images/react.png";
 import redux from "../../public/images/redux.svg";
 import shadcn from "../../public/images/shadcn.png";
+import github from "../../public/images/github.jpg";
+import cloudinary from "../../public/images/cloudinary.png";
+import render from "../../public/images/render.jpg";
+import postman from "../../public/images/postman.webp";
+import vercel from "../../public/images/Vercel.svg";
+import netlify from "../../public/images/netlify.png";
 
 
 export const skills = [
 
-  { name: "HTML", icon: html },
-  { name: "CSS", icon: css },
-  { name: "Bootstrap", icon: boot },
-  { name: "Tailwind CSS", icon: tailwind },
-  { name: "Material UI", icon: mate },
-  { name: "Shadcn UI", icon: shadcn },
-  { name: "JavaScript", icon: js },
+  { name: "HTML", icon: html, type: "frontend" },
+  { name: "CSS", icon: css, type: "frontend"  },
+  { name: "Bootstrap", icon: boot , type: "frontend" },
+  { name: "Tailwind CSS", icon: tailwind , type: "frontend" },
+  { name: "Material UI", icon: mate , type: "frontend" },
+  { name: "Shadcn UI", icon: shadcn, type: "frontend"  },
+  { name: "JavaScript", icon: js , type: "frontend" },
   {
     name: "TypeScript",
     icon: "https://cdn.iconscout.com/icon/free/png-256/free-typescript-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-7-pack-logos-icons-2945272.png?f=webp&w=256",
@@ -56,25 +62,48 @@ export const skills = [
     name: "PostgreSQL",
     icon: post,
   },
-  {
-    name: "GraphQL",
-    icon: graph,
-  },
+  // {
+  //   name: "GraphQL",
+  //   icon: graph,
+  // },
+  
+  // {
+  //   name: "AWS",
+  //   icon: "https://cdn.iconscout.com/icon/free/png-256/free-aws-logo-icon-download-in-svg-png-gif-file-formats--cloud-computing-network-server-database-brand-pack-logos-icons-1583149.png?f=webp&w=256",
+  // },
+  // {
+  //   name: "Jest",
+  //   icon: jest,
+  // },
+];
+
+export const tools =[
   {
     name: "Docker",
     icon: docker,
+  },{
+    name :"Cloudinary",
+    icon: cloudinary,
+  },
+ {
+    name: "GitHub",
+    icon: github,
+  },{
+    name :"Netlify",
+    icon: netlify,
   },
   {
-    name: "AWS",
-    icon: "https://cdn.iconscout.com/icon/free/png-256/free-aws-logo-icon-download-in-svg-png-gif-file-formats--cloud-computing-network-server-database-brand-pack-logos-icons-1583149.png?f=webp&w=256",
+    name :"Vercel",
+    icon: vercel,
   },
   {
-    name: "Jest",
-    icon: jest,
-  },
-];
-
-
+    name :"Postman",
+    icon: postman,
+  },{
+    name : "Render",
+    icon: render,
+  }
+]
 
 
 

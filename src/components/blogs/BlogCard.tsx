@@ -12,8 +12,7 @@ export interface IBlogCardProps {
 const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
   return (
     <div
-      className="p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 
-       "
+      className="p-6 transition-all duration-300 rounded-lg shadow-lg hover:shadow-2xl "
     >
       <div className="relative w-full h-48">
         <Image
@@ -28,7 +27,7 @@ const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
         <p className="mt-2 text-sm">{blog.content.substring(0, 150)}...</p>
         <p className="mt-2 text-xs text-gray-500 ">By {blog.author}</p>
         <Link href={`/blogs/${blog._id}`}>
-          <p className="mt-4 inline-block text-blue-600 dark:text-blue-400 hover:underline">
+          <p className="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">
             Read more
           </p>
         </Link>
