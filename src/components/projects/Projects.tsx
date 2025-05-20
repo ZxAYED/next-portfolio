@@ -1,7 +1,7 @@
-
+'use client'
 import ProjectCard from "./ProjectCard";
 import { getProjects } from "@/Services/Projects";
-
+import { useEffect, useState } from "react";
 
 export interface IProject {
   projectId: string;
@@ -15,9 +15,18 @@ export interface IProject {
   imageUrl: string;
 }
 
-const Projects =async () => {
+const Projects = () => {
 
-const data = await getProjects()
+const [data, setData] = useState<IProject[]>([]);
+
+useEffect(() => {
+  const fetchProjects = async () => {
+    const result = await getProjects();
+    setData(result || []);
+  };
+  fetchProjects();
+}, []);
+
 
 
   return (
@@ -33,7 +42,7 @@ const data = await getProjects()
             </h1>
           </div>
           <section className="grid grid-cols-1 gap-6 mt-10">
-            {data?.map((project:IProject, index:number) => (
+            {data?.map((project, index) => (
               <ProjectCard
                 key={project.projectId}
                 project={project}
