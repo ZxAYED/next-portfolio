@@ -101,6 +101,21 @@ export const techColors: Record<string, string> = {
   PostgreSQL: "from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800",
   Prisma: "from-slate-500 to-slate-700 hover:from-slate-600 hover:to-slate-800",
   Mongoose: "from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800",
+   "Redux Toolkit": "from-fuchsia-500 to-fuchsia-700 hover:from-fuchsia-600 hover:to-fuchsia-800",
+  "Firebase Hosting": "from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700",
+  "Firebase CloudStorage": "from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700",
+  "Firebase Authentication": "from-orange-500 to-yellow-600 hover:from-orange-600 hover:to-yellow-700",
+  "MailSlurp API": "from-cyan-600 to-cyan-800 hover:from-cyan-700 hover:to-cyan-900",
+  "JWT Authentication": "from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black",
+  "bcrypt.js": "from-zinc-500 to-zinc-700 hover:from-zinc-600 hover:to-zinc-800",
+  Cloudinary: "from-sky-500 to-sky-700 hover:from-sky-600 hover:to-sky-800",
+  NodeMailer: "from-lime-500 to-lime-700 hover:from-lime-600 hover:to-lime-800",
+  "react-image": "from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700",
+  ShurjoPay: "from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700",
+  SSLCommerz: "from-indigo-400 to-indigo-600 hover:from-indigo-500 hover:to-indigo-700",
+  "Framer Motion": "from-rose-400 to-rose-600 hover:from-rose-500 hover:to-rose-700",
+  "ShadCN UI": "from-neutral-500 to-neutral-700 hover:from-neutral-600 hover:to-neutral-800",
+  Chatbot: "from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800",
 }
 
 

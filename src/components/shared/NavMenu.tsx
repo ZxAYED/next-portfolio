@@ -75,12 +75,12 @@ const NavBar = () => {
           <div className="justify-center flex-grow hidden lg:flex">
             {navLinks}
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden z-100 z-50">
             <DropdownMenu >
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">Menu</Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-40 mr-10 mt-6 z-100 dark:bg-[#1E293B] backdrop-blur-sm  dark:text-white rounded-xl bg-gray-50/30">
+              <DropdownMenuContent className="w-40 mr-10 mt-6 z-100 z-50 dark:bg-[#1E293B] backdrop-blur-sm  dark:text-white rounded-xl bg-gray-50/30">
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup className="px-4 space-y-2">
                    <NextLink href="/">

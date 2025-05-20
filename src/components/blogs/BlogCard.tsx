@@ -13,7 +13,7 @@ export interface IBlogCardProps {
 const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
   return (
     <div
-      className="p-6  md:p-0 relative   h-[500px] "
+      className="p-6  md:p-0 relative  h-[550px]  md:h-[500px] "
     >
       <div className="relative w-full h-48">
         <Image
@@ -29,7 +29,7 @@ const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
         <p className="mt-8 text-xs ">By {blog.author}</p>
         
       </div>
-      <div className="absolute left-0 bottom-4">
+      <div className="absolute left-6 md:left-0 bottom-4">
           <Link href={`/blogs/${blog._id}`}>
            <ZButton name="Read More"></ZButton>
         </Link>

@@ -16,7 +16,7 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center h-screen overflow-hidden dark:text-white"
+      className="relative flex mt-32 md:mt-0 items-center justify-center h-screen overflow-hidden dark:text-white"
     >
      
       <motion.div

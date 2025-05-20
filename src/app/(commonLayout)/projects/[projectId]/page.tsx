@@ -61,7 +61,7 @@ export default function ProjectPage({
     if (!mounted || !projectData) return <div className="min-h-screen pt-20 text-center text-gray-500"><Loading /></div>
 
   return (
-    <div className="min-h-screen pt-32 pb-40 mx-auto text-white">
+    <div className="min-h-screen -z-10 pt-32 pb-40 mx-auto text-white">
       <div className="" />
 
       <div className="relative z-10">
@@ -72,8 +72,8 @@ export default function ProjectPage({
             height={1000}
             width={1000}
             quality={100}
-            className="object-fill w-full h-full rounded-md"
-            priority
+            className="object-fill p-4  w-full h-full rounded-md"
+           
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent" />
         </div>
