@@ -1,12 +1,12 @@
 'use client'
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { getProjects } from "@/app/Services/Projects";
+import { getProjects } from "@/Services/Projects";
 import { useEffect, useState } from "react";
 
 export interface IProject {
   projectId: string;
-  id: string;
+  _id: string;
   projectName: string;            
   description: string;
   features: string[];

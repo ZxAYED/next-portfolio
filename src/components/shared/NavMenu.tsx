@@ -20,8 +20,6 @@ const NavBar = () => {
   const navmenus = [
     { name: "About", path: "/#about" },
     { name: "Projects", path:   "/#projects" },
-
-    { name: "Contact", path: "/#contact" },
   ];
 
   const navLinks = (
@@ -40,6 +38,11 @@ const NavBar = () => {
           {item.name}
         </NextLink>
       ))}
+      <NextLink href="/login">
+        <p className="font-semibold cursor-pointer hover:text-[#9333EA] hover:delay-200 hover:scale-[102%] uppercase tracking-[4px] underline-animation">
+        Dashboard
+        </p>
+      </NextLink> 
       <NextLink href="/blogs">
         <p className="font-semibold cursor-pointer hover:text-[#9333EA] hover:delay-200 hover:scale-[102%] uppercase tracking-[4px] underline-animation">
          Blogs

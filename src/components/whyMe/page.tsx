@@ -59,7 +59,7 @@ const WhyMe = () => {
   return (
     <div
       id="whyme"
-      className="relative mx-auto my-32 text-center rounded-md md:border max-w-7xl"
+      className="relative mx-auto my-32  mt-60 text-center rounded-md md:border max-w-7xl"
     >
       <div className="absolute inset-0 -z-10">
         <Image

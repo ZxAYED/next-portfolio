@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import img from "../../../public/images/portfolio.png";
@@ -12,22 +12,6 @@ import { useTheme } from "../theme/ThemeProvider";
 const Banner = () => {
   const { theme } = useTheme();
 
- const ref = useRef(null);
-  const mouse = useMotionValue(0);
-
-
-  const parallaxY = useTransform(mouse, [0, window.innerHeight], [-20, 20]);
-
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      mouse.set(event.clientY);
-    
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouse]);
 
   return (
     <section
@@ -37,13 +21,13 @@ const Banner = () => {
      
       <motion.div
         className="absolute hidden md:block right-20 top-28"
-        style={{ y: parallaxY}}
+     
       >
         <CustomSvg />
       </motion.div>
       <motion.div
         className="absolute hidden md:block -left-64 bottom-40"
-        style={{ y: parallaxY }}
+      
       >
         <CustomSvg />
       </motion.div>
@@ -53,7 +37,7 @@ const Banner = () => {
       <section className="flex flex-col items-center justify-between px-0 pb-5 mx-4 bg-black-200/20 lg:flex-row lg:py-16 max-w-7xl lg:mx-auto">
         <div className="text-center md:text-left">
           <h1 className="text-5xl font-extrabold lg:text-6xl ">
-            Hi, I`m <span className="bg-gradient-to-r from-[#9333EA] to-[#3B82F6] text-transparent bg-clip-text "> Zayed</span>
+            Hi, I`m <span className=" bg-gradient-to-r from-[#9333EA] to-[#3B82F6] bg-clip-text text-transparent backdrop-blur "> Zayed</span>
           </h1>
           <p className="mt-4 text-lg ">
             I build modern, responsive, and high-performance web applications
@@ -127,7 +111,7 @@ const Banner = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#9333EA] to-[#3B82F6] rounded-[50%_30%_50%_70%]" />
+              <div className="absolute inset-0  bg-gradient-to-r from-[#9333EA] to-[#3B82F6]  backdrop-blur rounded-[50%_30%_50%_70%]" />
               <Image
                 src={img}
                 alt="Zayed"

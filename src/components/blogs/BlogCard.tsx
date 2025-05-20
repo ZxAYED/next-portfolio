@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ZButton from "../shared/ZButton";
 
 export interface IBlogCardProps {
   title: string;
@@ -12,7 +13,7 @@ export interface IBlogCardProps {
 const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
   return (
     <div
-      className="p-6 transition-all duration-300 rounded-lg shadow-lg hover:shadow-2xl "
+      className="p-6  md:p-0 relative   h-[500px] "
     >
       <div className="relative w-full h-48">
         <Image
@@ -25,13 +26,14 @@ const BlogCard = ({ blog }: { blog: IBlogCardProps }) => {
       <div className="mt-4">
         <h3 className="text-2xl font-semibold">{blog.title}</h3>
         <p className="mt-2 text-sm">{blog.content.substring(0, 150)}...</p>
-        <p className="mt-2 text-xs text-gray-500 ">By {blog.author}</p>
-        <Link href={`/blogs/${blog._id}`}>
-          <p className="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">
-            Read more
-          </p>
-        </Link>
+        <p className="mt-8 text-xs ">By {blog.author}</p>
+        
       </div>
+      <div className="absolute left-0 bottom-4">
+          <Link href={`/blogs/${blog._id}`}>
+           <ZButton name="Read More"></ZButton>
+        </Link>
+        </div>
     </div>
   );
 };

@@ -21,7 +21,7 @@ import github from "../../public/images/github.jpg";
 import cloudinary from "../../public/images/cloudinary.png";
 import render from "../../public/images/render.jpg";
 import postman from "../../public/images/postman.webp";
-import vercel from "../../public/images/Vercel.svg";
+import vercel from "../../public/images/Vercel.png";
 import netlify from "../../public/images/netlify.png";
 
 
@@ -104,7 +104,24 @@ export const tools =[
     icon: render,
   }
 ]
-
+export const techColors: Record<string, string> = {
+  MongoDB: "from-green-500 to-green-700 hover:from-green-600 hover:to-green-800",
+  Express: "from-lime-500 to-lime-700 hover:from-lime-600 hover:to-lime-800",
+  "Express.js": "from-lime-500 to-lime-700 hover:from-lime-600 hover:to-lime-800",
+  React: "from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800",
+  "React.js": "from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800",
+  TypeScript: "from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900",
+  Node: "from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900",
+  "Node.js": "from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900",
+  Next: "from-[#9333EA] to-[#3B82F6] hover:from-[#7e22ce] hover:to-[#2563eb]",
+  "Next.js": "from-[#9333EA] to-[#3B82F6] hover:from-[#7e22ce] hover:to-[#2563eb]",
+  Tailwind: "from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700",
+  "Tailwind CSS": "from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700",
+  Redux: "from-pink-500 to-pink-700 hover:from-pink-600 hover:to-pink-800",
+  PostgreSQL: "from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800",
+  Prisma: "from-slate-500 to-slate-700 hover:from-slate-600 hover:to-slate-800",
+  Mongoose: "from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800",
+}
 
 
 

@@ -91,7 +91,7 @@ const { theme } = useTheme();
             </Link>
           </CardFooter> */}
             </CardContent>
-             <CardFooter className="flex items-center gap-8 mt-8 jusctify-center lg:justify-start">  <Link href={`/projects/${project?.projectId}`}>
+             <CardFooter className="flex items-center gap-8 mt-8 jusctify-center lg:justify-start">  <Link href={`/projects/${project?._id}`}>
               <ZButton name="Details"></ZButton>
             </Link></CardFooter>
         </div>
