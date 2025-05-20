@@ -1,4 +1,5 @@
 'use client'
+import Loading from "@/app/loading";
 import ProjectCard from "./ProjectCard";
 import { getProjects } from "@/Services/Projects";
 import { useEffect, useState } from "react";
@@ -17,14 +18,17 @@ export interface IProject {
 
 const Projects = () => {
 
+  const [loading, setLoading] = useState(true);
 const [data, setData] = useState<IProject[]>([]);
 
 useEffect(() => {
+  setLoading(true);
   const fetchProjects = async () => {
     const result = await getProjects();
     setData(result || []);
   };
   fetchProjects();
+  setLoading(false);
 }, []);
 
 
@@ -35,7 +39,8 @@ useEffect(() => {
         Projects
       </h1>
       <div>
-        <div className="z-10 rounded-2xl ">
+        {
+          loading ? (<div className="flex jusctify-center items-center"><Loading/></div>) : <div className="z-10 rounded-2xl ">
           <div className="p-4 pt-8 rounded-xl">
             <h1 className="z-10 text-5xl font-bold text-center">
               Showcasing My Digital Ventures
@@ -51,6 +56,8 @@ useEffect(() => {
             ))}
           </section>
         </div>
+        }
+       
       </div>
     </div>
   );

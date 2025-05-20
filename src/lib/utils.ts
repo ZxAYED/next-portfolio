@@ -1,55 +1,35 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import docker from "../../public/images/dokcer.png";
-import xpress from "../../public/images/expressJs.png";
-import graph from "../../public/images/graph-ql.png";
-import boot from "../../public/images/icons8-bootstrap-240.png";
-import css from "../../public/images/icons8-css3-144.png";
-import html from "../../public/images/icons8-html-5-240.png";
-import js from "../../public/images/icons8-js-240.png";
-import tailwind from "../../public/images/icons8-tailwindcss-240.png";
-import jest from "../../public/images/jest.png";
-import mate from "../../public/images/material ui.png";
-import mongo from "../../public/images/mongodb.png";
-import next from "../../public/images/next.png";
-import node from "../../public/images/nodeJs.png";
-import post from "../../public/images/postgre.png";
-import react from "../../public/images/react.png";
-import redux from "../../public/images/redux.svg";
-import shadcn from "../../public/images/shadcn.png";
-import github from "../../public/images/github.jpg";
-import cloudinary from "../../public/images/cloudinary.png";
-import render from "../../public/images/render.jpg";
-import postman from "../../public/images/postman.webp";
-import vercel from "../../public/images/Vercel.png";
-import netlify from "../../public/images/netlify.png";
+
+
+
 
 
 export const skills = [
 
-  { name: "HTML", icon: html, type: "frontend" },
-  { name: "CSS", icon: css, type: "frontend"  },
-  { name: "Bootstrap", icon: boot , type: "frontend" },
-  { name: "Tailwind CSS", icon: tailwind , type: "frontend" },
-  { name: "Material UI", icon: mate , type: "frontend" },
-  { name: "Shadcn UI", icon: shadcn, type: "frontend"  },
-  { name: "JavaScript", icon: js , type: "frontend" },
+  { name: "HTML", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753787/next-portfolio/icons8-html-5-240.png.png' },
+  { name: "CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753770/next-portfolio/icons8-css3-144.png.png'  },
+  { name: "Bootstrap", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753732/next-portfolio/icons8-bootstrap-240.png.png'  },
+  { name: "Tailwind CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753885/next-portfolio/icons8-tailwindcss-240.png.png'  },
+  { name: "Material UI", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753936/next-portfolio/material%20ui.png.png'  },
+  { name: "Shadcn UI", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754440/next-portfolio/shadcn.png.png'  },
+  { name: "JavaScript", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753806/next-portfolio/icons8-js-240.png.png' },
   {
     name: "TypeScript",
     icon: "https://cdn.iconscout.com/icon/free/png-256/free-typescript-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-7-pack-logos-icons-2945272.png?f=webp&w=256",
   },
-  { name: "React.js", icon: react },
+  { name: "React.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754218/next-portfolio/react.png.png' },
   {
     name: "Next.js",
-    icon: next,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754039/next-portfolio/next.png.png',
   },
   {
     name: "Redux",
-    icon: redux,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754374/next-portfolio/redux.png.png',
   },
-  { name: "Node.js", icon: node },
-  { name: "Express.js", icon: xpress },
-  { name: "MongoDB", icon: mongo },
+  { name: "Node.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754089/next-portfolio/nodeJs.png.png' },
+  { name: "Express.js", icon: "https://res.cloudinary.com/dhl04adhz/image/upload/v1747753596/next-portfolio/expressJs.png.png" },
+  { name: "MongoDB", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753995/next-portfolio/mongodb.png.png' },
   {
     name: "Mongoose",
     icon: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fl8rbs6hk39ei4m4emawr.png",
@@ -60,7 +40,7 @@ export const skills = [
   },
   {
     name: "PostgreSQL",
-    icon: post,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754160/next-portfolio/postgre.png.png',
   },
   // {
   //   name: "GraphQL",
@@ -80,28 +60,28 @@ export const skills = [
 export const tools =[
   {
     name: "Docker",
-    icon: docker,
+    icon: "https://res.cloudinary.com/dhl04adhz/image/upload/v1747753304/dokcer.png.png",
   },{
     name :"Cloudinary",
-    icon: cloudinary,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754517/next-portfolio/cloudinary.png.png',
   },
  {
     name: "GitHub",
-    icon: github,
+    icon:'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753674/next-portfolio/github.jpg.jpg',
   },{
     name :"Netlify",
-    icon: netlify,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754015/next-portfolio/netlify.png.png',
   },
   {
     name :"Vercel",
-    icon: vercel,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754495/next-portfolio/Vercel.png.png',
   },
   {
     name :"Postman",
-    icon: postman,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754195/next-portfolio/postman.webp.webp',
   },{
     name : "Render",
-    icon: render,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754404/next-portfolio/render.jpg.jpg',
   }
 ]
 export const techColors: Record<string, string> = {

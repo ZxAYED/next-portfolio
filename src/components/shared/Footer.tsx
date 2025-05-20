@@ -14,7 +14,7 @@ import { SiGmail } from "react-icons/si";
 import { VscGithubInverted } from "react-icons/vsc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import img from "../../../public/images/getInTouchpng.png";
+
 import ZButton from "./ZButton";
 const Footer = () => {
   const {
@@ -66,7 +66,7 @@ const Footer = () => {
         className="absolute inset-0 z-0 opacity-30"
       />
       <div className="flex justify-center items-center ">
-        <Image src={img} alt="get in touch" className="w-40 h-40 " />
+        <Image src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753641/next-portfolio/getInTouchpng.png.png'} height={1000} width={1000} alt="get in touch" className="w-40 h-40 " />
       </div>
       <div className="max-w-7xl mx-auto  py-16 px-6 ">
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-center z-10 ">

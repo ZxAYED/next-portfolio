@@ -2,7 +2,7 @@
 import { Briefcase, CheckCircle, Lightbulb, Target } from "lucide-react";
 import Image from "next/image";
 import { FaHandshake, FaUserTie } from "react-icons/fa";
-import bg from "../../../public/images/whyme.webp";
+
 import CustomSvg from "../shared/CustomSvg";
 import CustomSvg2 from "../shared/CustomSvg2";
 import { useTheme } from "../theme/ThemeProvider";
@@ -63,11 +63,12 @@ const WhyMe = () => {
     >
       <div className="absolute inset-0 -z-10">
         <Image
-          src={bg}
+          src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754855/next-portfolio/whyme.webp.webp'}
           alt="Why Me Background"
           layout="fill"
           objectFit="cover"
-          className="rounded-md opacity-5 dark:opacity-80"
+          className={`${theme === "dark" ? "opacit-80" : "opacity-5"
+                }`}
         />
       </div>
 

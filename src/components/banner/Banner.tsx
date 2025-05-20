@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import img from "../../../public/images/portfolio.png";
+
 import CustomSvg from "../shared/CustomSvg";
 import ZButton from "../shared/ZButton";
 import { useTheme } from "../theme/ThemeProvider";
@@ -113,7 +113,7 @@ const Banner = () => {
             >
               <div className="absolute inset-0  bg-gradient-to-r from-[#9333EA] to-[#3B82F6]  backdrop-blur rounded-[50%_30%_50%_70%]" />
               <Image
-                src={img}
+                src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754112/next-portfolio/portfolio.png.png'}
                 alt="Zayed"
                 width={300}
                 height={300}
