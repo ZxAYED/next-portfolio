@@ -4,8 +4,7 @@ import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import "./globals.css";
 import { Bounce, ToastContainer } from "react-toastify";
-import "./globals.css";
-import AnimatedCursor from 'react-animated-cursor';
+import AnimatedCursor from "react-animated-cursor";
 
 const InterFont = Inter({
   subsets: ["latin"],
@@ -23,11 +22,10 @@ export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-  initialTheme: "light" | "dark";
 }) {
   const cookieStore = await cookies();
-  const theme =
-    (cookieStore.get("theme")?.value as "light" | "dark") || "dark";
+  const theme = (cookieStore.get("theme")?.value as "light" | "dark") || "dark";
+
   return (
     <html lang="en">
       <head>
@@ -35,18 +33,18 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.png" sizes="any" />
       </head>
-      <body className={`${InterFont.variable}  antialiased`}>
+      <body className={`${InterFont.variable} antialiased`}>
         <ThemeProvider initialTheme={theme}>
-           <AnimatedCursor
-        innerSize={10}
-        outerSize={35}
-         color="147, 51, 234"  
-        outerAlpha={0.4}
-        innerScale={0.9}
-        outerScale={1.5}
-      />
+          <AnimatedCursor
+            innerSize={10}
+            outerSize={35}
+            color="147, 51, 234"
+            outerAlpha={0.4}
+            innerScale={0.9}
+            outerScale={1.5}
+          />
           {children}
-       <ToastContainer
+          <ToastContainer
             position="top-right"
             autoClose={5000}
             hideProgressBar={false}
@@ -64,7 +62,7 @@ export default async function RootLayout({
               border: "1px solid var(--border)",
             }}
           />
-          </ThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

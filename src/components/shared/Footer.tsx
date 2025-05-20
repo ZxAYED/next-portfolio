@@ -61,9 +61,10 @@ const Footer = () => {
       <Image
         src="https://i.ibb.co/QcbsFHy/footer.jpg"
         alt="Footer Background"
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0 opacity-30"
+    height={1000}
+    width={1000}
+    quality={100}
+        className="absolute mix-blend-overlay w-full h-full object-cover inset-0 z-0 opacity-30"
       />
       <div className="flex justify-center items-center ">
         <Image src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753641/next-portfolio/getInTouchpng.png.png'} height={1000} width={1000} alt="get in touch" className="w-40 h-40 " />

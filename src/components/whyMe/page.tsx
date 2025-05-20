@@ -65,9 +65,10 @@ const WhyMe = () => {
         <Image
           src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754855/next-portfolio/whyme.webp.webp'}
           alt="Why Me Background"
-          layout="fill"
-          objectFit="cover"
-          className={`${theme === "dark" ? "opacit-80" : "opacity-5"
+          width={1000}
+          height={1000}
+         
+          className={`rounded-md object-cover w-full h-full ${theme === "dark" ? "opacit-80" : "opacity-5"
                 }`}
         />
       </div>
