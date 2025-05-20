@@ -29,10 +29,8 @@ export interface ProjectData {
 
 
 export default function ProjectPage({
-  params,
-}: {
-  params: { projectId: string }
-}) {
+  params
+}:any) {
   const { theme } = useTheme()
  const [mounted, setMounted] = useState(false)
 
