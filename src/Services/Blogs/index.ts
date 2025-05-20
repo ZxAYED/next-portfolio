@@ -36,7 +36,7 @@ export const getSingleblog = async (id:string) => {
     }
 
 ); 
-  const data =await res.json();0
+  const data =await res.json();
   
     return data.data
     

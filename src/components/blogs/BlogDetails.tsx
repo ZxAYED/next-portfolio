@@ -1,17 +1,19 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
+
 import { CalendarDays, User, Clock } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { getSingleblog } from "@/Services/Blogs"
 import { useTheme } from "@/components/theme/ThemeProvider"
 import Loading from "@/app/loading"
+import Image from "next/image"
 
 const BlogDetailPage = (
   id:any
 ) => {
+
   const [blog, setBlog] = useState<any>(null)
   const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -19,7 +21,8 @@ const BlogDetailPage = (
   useEffect(() => {
     setMounted(true)
     const fetchBlog = async () => {
-      const data = await getSingleblog(id)
+      const data = await getSingleblog(id.id)
+    
       setBlog(data)
     }
     fetchBlog()

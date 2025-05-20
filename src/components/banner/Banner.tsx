@@ -116,6 +116,7 @@ const Banner = () => {
                 src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754112/next-portfolio/portfolio.png.png'}
                 alt="Zayed"
                 width={300}
+                priority
                 height={300}
                 className="relative z-10 rounded-[50%_30%_50%_70%]"
               />

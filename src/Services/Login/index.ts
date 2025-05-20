@@ -21,10 +21,6 @@ export const login =async (payload:{email:string, password:string})=>{
       body:JSON.stringify( payload),
     });
 
-    if (!res.ok) {
-      const errorText = await res.text();
-      throw new Error(`Server Error: ${res.status} - ${errorText}`);
-    }
 
     const data = await res.json();
       console.log("🚀 ~ login ~ data:", data)

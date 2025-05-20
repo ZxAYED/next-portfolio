@@ -8,11 +8,11 @@ import { cookies } from "next/headers";
  const baseUrl =process.env.NEXT_PUBLIC_BACKEND_URL;
 export const CreateProject = async (payload: FormData) => {
   const cookieStore = await cookies();
-// const token = cookieStore.get('accessToken')?.value;
+const token = cookieStore.get('accessToken')?.value;
  
-//   if (!token) {
-//     throw new Error("You are not authorized to perform this action");
-//   }
+  if (!token) {
+    throw new Error("You are not authorized to perform this action");
+  }
 
   try {
     const res = await fetch(`${baseUrl}/projects`, {
@@ -25,7 +25,7 @@ export const CreateProject = async (payload: FormData) => {
 
 
     const data = await res.json();
-    console.log("🚀 ~ CreateProject ~ data:", data)
+  
     return data;
   } catch (error) {
     console.error("Error creating project:", error);

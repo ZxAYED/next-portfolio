@@ -22,10 +22,6 @@ export default function CreateProjectPage() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [imagePreview, setImagePreview] = useState<string | null>(null)
     const fileInputRef = useRef<HTMLInputElement>(null)
-   
-
-
-  
 
     const {
         register,
@@ -96,21 +92,16 @@ export default function CreateProjectPage() {
                 ...data
             }
            
-
-
             formData.append("data", JSON.stringify(projectData))
 
             const result = await CreateProject(formData)
-            console.log("🚀 ~ onSubmit ~ result:", result)
+      
             if (result.success) {
                 toast.success("Project created successfully!", {
                     className: "bg-black/80 backdrop-blur-md border border-[#9333EA]/30 text-white",
                     descriptionClassName: "text-gray-300",
                 })
             }
-            
-
-
 
               router.push(`/projects/${result.data.projectId}`)
         } catch (error) {
@@ -135,7 +126,6 @@ export default function CreateProjectPage() {
                 aria-hidden="true"
             />
             <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-0" aria-hidden="true" />
-
 
             <div className="relative z-10 container mx-auto px-4 py-8">
                 <div className="flex items-center mb-6">

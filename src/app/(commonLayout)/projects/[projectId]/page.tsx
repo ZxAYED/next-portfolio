@@ -40,7 +40,7 @@ export default function ProjectPage({
 
   const textColor = theme === "dark" ? "text-gray-300" : "text-gray-800"
   const subtitleColor = theme === "dark" ? "text-gray-400" : "text-gray-600"
-  const bgColor = theme === "dark" ? "bg-black" : "bg-white"
+ 
   const cardBorder = theme === "dark" ? "border-cyan-500/20" : "border-cyan-700/20"
   const cardShadow = theme === "dark" ? "shadow-cyan-500/10" : "shadow-cyan-700/10"
   const header = theme === "dark" ? "text-cyan-300" : "text-cyan-700"
@@ -51,9 +51,9 @@ export default function ProjectPage({
    setMounted(true)
     const fetchBlog = async () => {
       const id = await params.projectId
-          console.log("🚀 ~ fetchBlog ~ id:", id)
+         
       const data = await getSingleProject(id)
-      console.log("🚀 ~ fetchBlog ~ data:", data)
+ 
       setProjectData(data)
     }
     fetchBlog()
@@ -65,7 +65,7 @@ export default function ProjectPage({
       <div className="" />
 
       <div className="relative z-10">
-        <div className="w-full mx-auto max-w-7xl h-[40vh] md:h-[50vh] relative">
+        <div className="w-full mx-auto max-w-7xl h-[40vh] md:h-[60vh] relative">
           <Image
             src={projectData?.imageUrl!}
             alt={projectData?.projectName || "Project Image"}
@@ -78,8 +78,8 @@ export default function ProjectPage({
           <div className="absolute inset-0 bg-gradient-to-b from-transparent" />
         </div>
 
-        <div className="relative z-20 px-4 mx-auto max-w-7xl bg-black/5 sm:px-6 lg:px-0">
-        <Card className={`border shadow-xl backdrop-blur-md ${bgColor} ${cardBorder} ${cardShadow}`}>
+        <div className="relative z-20 px-4 mx-auto max-w-7xl  sm:px-6 lg:px-0">
+        <Card className={`border shadow-xl backdrop-blur-md } ${cardBorder} ${cardShadow}`}>
             <div className="p-6 md:p-8 lg:p-10">
               <div className="pb-6 mb-8 border-b border-cyan-800/30">
                <h1 className={`mb-4 text-3xl font-bold bg-clip-text bg-gradient-to-r from-[#9333EA] to-[#3B82F6] ${textColor}`}>
@@ -140,9 +140,10 @@ export default function ProjectPage({
               </div>
 
              
-              <div className="flex flex-wrap gap-2">
-                 <h2 className={`${header} mb-4 text-2xl font-bold  `}>Tech Stack</h2>
-                {projectData?.techStack?.map((tech) => {
+              <div className="">
+                 <h2 className={`${header} text-2xl font-bold  `}>Tech Stack</h2>
+               <div className="my-4  flex flex-wrap  gap-6"> 
+                 {projectData?.techStack?.map((tech) => {
                   const gradient = techColors[tech] || "from-gray-400 to-gray-600"
                   return (
                     <Badge
@@ -153,9 +154,14 @@ export default function ProjectPage({
                     </Badge>
                   )
                 })}
+               </div>
               </div> 
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="mt-12">
                  <h2 className={`${header} mb-4 text-2xl font-bold  `}>My Learnings</h2>
+              </div>
+              <div className="grid  grid-cols-1 gap-4 md:grid-cols-2">
+
+                
                   {projectData?.myLearnings?.map((feature: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 mt-1 mr-3 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
