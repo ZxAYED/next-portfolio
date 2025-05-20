@@ -83,7 +83,7 @@ html {
 .Zbutton:active::before {
   scale: 0.7;
 }
-/* .underline-animation {
+.underline-animation {
   position: relative;
 }
 
@@ -100,7 +100,7 @@ html {
 
 .underline-animation:hover::before {
   width: 100%;
-} */
+}
 
 .zayed,
 .zayed::after {
