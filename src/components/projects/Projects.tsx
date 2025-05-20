@@ -1,8 +1,7 @@
-'use client'
-import { motion } from "framer-motion";
+
 import ProjectCard from "./ProjectCard";
 import { getProjects } from "@/Services/Projects";
-import { useEffect, useState } from "react";
+
 
 export interface IProject {
   projectId: string;
@@ -16,18 +15,9 @@ export interface IProject {
   imageUrl: string;
 }
 
-const Projects = () => {
+const Projects =async () => {
 
-const [data, setData] = useState<IProject[]>([]);
-
-useEffect(() => {
-  const fetchProjects = async () => {
-    const result = await getProjects();
-    setData(result || []);
-  };
-  fetchProjects();
-}, []);
-
+const data = await getProjects()
 
 
   return (
@@ -35,7 +25,7 @@ useEffect(() => {
       <h1 className="absolute -top-16 md:-top-32 left-[15%] right-[15%] mx-auto text-center opacity-30 text-6xl font-bold">
         Projects
       </h1>
-      <motion.div>
+      <div>
         <div className="z-10 rounded-2xl ">
           <div className="p-4 pt-8 rounded-xl">
             <h1 className="z-10 text-5xl font-bold text-center">
@@ -43,7 +33,7 @@ useEffect(() => {
             </h1>
           </div>
           <section className="grid grid-cols-1 gap-6 mt-10">
-            {data?.map((project, index) => (
+            {data?.map((project:IProject, index:number) => (
               <ProjectCard
                 key={project.projectId}
                 project={project}
@@ -52,7 +42,7 @@ useEffect(() => {
             ))}
           </section>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
