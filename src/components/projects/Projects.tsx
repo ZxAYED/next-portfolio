@@ -3,6 +3,7 @@ import Loading from "@/app/loading";
 import ProjectCard from "./ProjectCard";
 import { getProjects } from "@/Services/Projects";
 import { useEffect, useState } from "react";
+import ProjectCardSkeleton from "../shared/Skeleton";
 
 export interface IProject {
   projectId: string;
@@ -39,24 +40,25 @@ useEffect(() => {
         Projects
       </h1>
       <div>
-        {
-          loading ? (<div className="flex jusctify-center items-center"><Loading/></div>) : <div className="z-10 rounded-2xl ">
+         <div className="z-10 rounded-2xl ">
           <div className="p-4 pt-8 rounded-xl">
             <h1 className="z-10 text-5xl font-bold text-center">
               Showcasing My Digital Ventures
             </h1>
           </div>
-          <section className="grid grid-cols-1 gap-6 mt-10">
-            {data?.map((project, index) => (
+         <section className="grid grid-cols-1 gap-6 mt-10">
+      {loading && data?.map((project, index) => (<ProjectCardSkeleton key={project.projectId} index={index} /> ))}
+
+            {!loading &&data?.map((project, index) => (
               <ProjectCard
                 key={project.projectId}
                 project={project}
                 index={index}
               ></ProjectCard>
             ))}
-          </section>
+          </section>   
         </div>
-        }
+     
        
       </div>
     </div>

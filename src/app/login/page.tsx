@@ -10,8 +10,10 @@ import { Input } from "@/components/ui/input"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Separator } from "@/components/ui/separator"
 import { Checkbox } from "@/components/ui/checkbox"
-import { login } from "@/Services/Login"
-import { toast } from "sonner"
+
+import { Login } from "@/Services/Login"
+import { toast } from "react-toastify"
+
 
 
 
@@ -24,7 +26,8 @@ export default function LoginPage() {
       email: "",
       password: "",
       rememberMe: false,
-    },
+    }, 
+  mode: "onSubmit",
   })
 
 
@@ -32,18 +35,23 @@ export default function LoginPage() {
     email: string
     password: string
   }) {
+   
     setIsLoading(true)
 
     try {
-    const result = await login(values)
+    const result = await Login(values)
+  
+   
    
       if(result.success){
         toast.success("Login Successfully")
         router.push("/dashboard/create-project")
       }
-        else {
-          toast.error(result.message ||"Log in failed")
-        }
+     else {
+      toast.error(result.message) 
+}
+      
+        
     } catch (error) {
        toast.error("Log in failed")
       console.error(error)
@@ -72,7 +80,7 @@ export default function LoginPage() {
         aria-hidden="true"
       />
       <div
-        className="fixed inset-0 -z-10 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-10"
+        className="fixed inset-0 -z-10 bg-cover bg-center opacity-10"
         aria-hidden="true"
       />
 
@@ -85,7 +93,7 @@ export default function LoginPage() {
             </div>
           </div>
           <CardTitle className="text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
-          Unauthorized Access
+          Unauthorized Accessa
           </CardTitle>
           <CardDescription className="text-center text-white/70">
           You are not authorized to log in or access the dashboard. Its only for the author to login to see the dashboard
@@ -107,6 +115,7 @@ export default function LoginPage() {
                           placeholder="name@example.com"
                           className="pl-10 bg-white/5 border-white/10 text-white focus-visible:ring-[#9333EA]"
                           {...field}
+                         required 
                         />
                       </div>
                     </FormControl>
@@ -132,6 +141,7 @@ export default function LoginPage() {
                       <div className="relative">
                         <LockKeyhole className="absolute left-3 top-2.5 h-5 w-5 text-white/50" />
                         <Input
+                         required 
                           type="password"
                           placeholder="••••••••"
                           className="pl-10 bg-white/5 border-white/10 text-white focus-visible:ring-[#9333EA]"

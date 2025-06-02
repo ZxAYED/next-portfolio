@@ -16,7 +16,7 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="relative flex mt-32 md:mt-0 items-center justify-center h-screen overflow-hidden dark:text-white"
+      className="relative flex mt-32 lg:mt-0 items-center justify-center h-screen overflow-hidden dark:text-white"
     >
      
       <motion.div
@@ -34,15 +34,16 @@ const Banner = () => {
 
    
    
-      <section className="flex flex-col items-center justify-between px-0 pb-5 mx-4 bg-black-200/20 lg:flex-row lg:py-16 max-w-7xl lg:mx-auto">
-        <div className="text-center md:text-left">
+      <section className="flex flex-col items-center justify-between  px-0 pb-5 bg-black-200/20 lg:flex-row lg:py-16 max-w-7xl w-full lg:mx-auto">
+        <div className="text-center  md:text-left">
           <h1 className="text-5xl font-extrabold lg:text-6xl ">
             Hi, I`m <span className=" bg-gradient-to-r from-[#9333EA] to-[#3B82F6] bg-clip-text text-transparent backdrop-blur "> Zayed</span>
           </h1>
           <p className="mt-4 text-lg ">
-            I build modern, responsive, and high-performance web applications
+            I build modern, responsive, and high-performance web applications <br className="hidden md:block"/>
             using cutting-edge technologies.
           </p>
+         
 
           <div className="mt-6 space-y-4">
             {[
@@ -55,7 +56,7 @@ const Banner = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className={`flex items-center ${
+                className={`flex gap-0  justify-start items-start text-start ${
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
@@ -72,7 +73,7 @@ const Banner = () => {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>{item}</span>
+                <span className="text-nowrap">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -103,7 +104,7 @@ const Banner = () => {
 
  
         <motion.div
-          className="relative w-full mt-12 lg:w-1/3 lg:mt-0"
+          className="relative  mt-12  lg:mt-0"
           
         >
           <div className="relative mx-auto w-72 h-76">

@@ -10,11 +10,13 @@ export interface IUser {
 }
 
  const baseUrl =process.env.NEXT_PUBLIC_BACKEND_URL;
-export const login =async (payload:{email:string, password:string})=>{
+export const Login =async (payload:{email:string, password:string})=>{
+
 
  try {
     const res = await fetch(`${baseUrl}/user/login`, {
       method: "POST",
+    
       headers: {
         "Content-Type": "application/json",
       },
@@ -23,7 +25,7 @@ export const login =async (payload:{email:string, password:string})=>{
 
 
     const data = await res.json();
-      console.log("🚀 ~ login ~ data:", data)
+     
     if (data.success) {
       (await cookies()).set("accessToken", data.data.accessToken);
     }

@@ -11,6 +11,7 @@ import { techColors } from "@/lib/utils"
 import { useTheme } from "@/components/theme/ThemeProvider"
 import { useEffect, useState } from "react"
 import Loading from "@/app/loading"
+import SinglePageSkeleton from "@/components/shared/SinglePageSkeleton"
 
 
 export interface ProjectData {
@@ -58,7 +59,7 @@ export default function ProjectPage({
     }
     fetchBlog()
   }, [ ])
-    if (!mounted || !projectData) return <div className="min-h-screen pt-20 text-center text-gray-500"><Loading /></div>
+    if (!mounted || !projectData) return <SinglePageSkeleton/>
 
   return (
     <div className="min-h-screen -z-10 pt-32 pb-40 mx-auto text-white">

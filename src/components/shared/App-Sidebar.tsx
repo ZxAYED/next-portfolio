@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { ChevronDown, SquareTerminal, ShoppingCart, User, Star, BookImage } from "lucide-react"
+import { ChevronDown, SquareTerminal, ShoppingCart, User, Star, BookImage, LogOut } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -189,12 +189,12 @@ export function AppSidebar() {
           </div>
         ))}
         </div>
-        <div className="w-full flex justify-center items-center pt-8 border-t border-white/10 mt-8">
-          <ZButton
-            name="Logout"
-            // onClick={handleLogout}
-            
-          />
+        <div className="w-full flex justify-center items-center pt-8 border-t border-white/10 mt-8"/>
+           <div className="px-4 mt-auto mb-6">
+          <button className="flex items-center w-full gap-2 px-4 py-3 text-red-300 transition rounded-lg bg-red-500/10 hover:bg-red-500/20">
+            <LogOut className="w-4 h-4" />
+            Logout
+          </button>
         </div>
       </SidebarContent>
 

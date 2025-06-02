@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { Loader2, Plus, Trash2, Upload, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { toast } from "sonner"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label"
 import { ProjectData } from "@/app/(commonLayout)/projects/[projectId]/page"
 import { IUser, UserInfo } from "@/Services/Login"
 import { CreateProject } from "@/Services/Projects"
+import { toast } from "react-toastify"
 
 
 export default function CreateProjectPage() {
@@ -97,22 +98,15 @@ export default function CreateProjectPage() {
             const result = await CreateProject(formData)
       
             if (result.success) {
-                toast.success("Project created successfully!", {
-                    className: "bg-black/80 backdrop-blur-md border border-[#9333EA]/30 text-white",
-                    descriptionClassName: "text-gray-300",
-                })
+                toast.success("Project created successfully!")
             }
 
-              router.push(`/projects/${result.data.projectId}`)
+              router.push(`/projects/${result.data._id}`)
         } catch (error) {
             console.error("Error creating project:", error)
 
 
-            toast.error("Failed to create project", {
-                description: "Please try again later",
-                className: "bg-black/80 backdrop-blur-md border border-red-500/30 text-white",
-                descriptionClassName: "text-gray-300",
-            })
+            toast.error("Failed to create project")
         } finally {
             setIsSubmitting(false)
         }
@@ -127,7 +121,7 @@ export default function CreateProjectPage() {
             />
             <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-0" aria-hidden="true" />
 
-            <div className="relative z-10 container mx-auto px-4 py-8">
+            <div className="relative z-10  mx-auto px-4 py-8">
                 <div className="flex items-center mb-6">
                     <Button
                         asChild
@@ -217,7 +211,7 @@ export default function CreateProjectPage() {
                                         </div>
                                         {imagePreview && (
                                             <div className="relative w-full h-40 rounded-md overflow-hidden border border-white/10 group">
-                                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                               
                                                 <img
                                                     src={imagePreview || "/placeholder.svg"}
                                                     alt="Preview"
@@ -246,7 +240,7 @@ export default function CreateProjectPage() {
                                 </div>
                             </div>
 
-                            {/* Description */}
+                        
                             <div className="space-y-2">
                                 <Label htmlFor="description" className="text-white">
                                     Description
@@ -260,7 +254,7 @@ export default function CreateProjectPage() {
                                 {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
                             </div>
 
-                            {/* Features */}
+                       
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">Features</Label>
@@ -297,7 +291,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                            {/* Tech Stack */}
+                         
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">Tech Stack</Label>
@@ -334,7 +328,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                            {/* My Learnings */}
+                          
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">My Learnings</Label>
@@ -371,7 +365,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                            {/* Links */}
+                           
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="githubClientCode" className="text-white">

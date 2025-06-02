@@ -54,12 +54,12 @@ export default async function RootLayout({
             pauseOnFocusLoss
             draggable
             pauseOnHover
-            theme="light"
+            theme="dark"
             transition={Bounce}
             toastStyle={{
-              backgroundColor: "var(--card)",
-              color: "var(--foreground)",
-              border: "1px solid var(--border)",
+              backgroundColor: "#0f172a",
+              color: "#e2e8f0",
+              border: "1px solid #334155",
             }}
           />
         </ThemeProvider>

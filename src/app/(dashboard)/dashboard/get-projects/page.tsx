@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Search, Plus, Pencil, Trash2, MoreHorizontal, Loader2, ArrowUpDown, Eye } from "lucide-react"
-import { toast } from "sonner"
+
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,6 +32,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { DeleteProject, getProjects } from "@/Services/Projects"
 import { ProjectData } from "@/app/(commonLayout)/projects/[projectId]/page"
+import { toast } from "react-toastify"
 
 
 
@@ -101,10 +102,7 @@ export default function AdminProjectsPage() {
             const result = await DeleteProject(id)
 
 
-            toast.success("Project deleted successfully", {
-                className: "bg-black/80 backdrop-blur-md border border-[#9333EA]/30 text-white",
-                descriptionClassName: "text-gray-300",
-            })
+            toast.success("Project deleted successfully")
             setProjects(projects.filter((project) => project._id !== id))
 
         } catch (error) {
@@ -125,7 +123,7 @@ export default function AdminProjectsPage() {
             <div className="fixed inset-0 backdrop-blur-sm z-0" aria-hidden="true" />
 
 
-            <div className="relative z-10 container mx-auto px-4 py-8">
+            <div className="relative z-10  mx-auto px-4 py-8">
                 <Card className=" backdrop-blur-md border border-white/10 shadow-xl">
                     <CardHeader className="pb-3">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
