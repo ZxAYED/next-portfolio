@@ -37,7 +37,7 @@ import { toast } from "react-toastify"
 
 
 
-export default function AdminProjectsPage() {
+export default function AllProjects() {
     const router = useRouter()
     const [projects, setProjects] = useState<ProjectData[]>([])
     const [isLoading, setIsLoading] = useState(true)
@@ -55,7 +55,7 @@ export default function AdminProjectsPage() {
                 const projects = await getProjects()
                 setProjects(projects)
             } catch (error) {
-                console.error("Error fetching projects:", error)
+               
                 toast.error("Failed to load projects")
             } finally {
                 setIsLoading(false)
@@ -107,7 +107,7 @@ export default function AdminProjectsPage() {
 
         } catch (error) {
             console.error("Error deleting project:", error)
-            toast.error("Failed to delete projectProject deleted successfully", {
+            toast.error("Failed to delete project deleted ", {
                 className: "bg-black/80 backdrop-blur-md border border-[#9333EA]/30 text-white",
             })
         } finally {

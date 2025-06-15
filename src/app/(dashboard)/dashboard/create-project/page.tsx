@@ -13,9 +13,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ProjectData } from "@/app/(commonLayout)/projects/[projectId]/page"
-import { IUser, UserInfo } from "@/Services/Login"
 import { CreateProject } from "@/Services/Projects"
 import { toast } from "react-toastify"
+import Image from "next/image"
 
 
 export default function CreateProjectPage() {
@@ -88,20 +88,18 @@ export default function CreateProjectPage() {
             
                 formData.append("file", fileInputRef.current.files[0])
             }
-   
-            const projectData = {
-                ...data
-            }
-           
-            formData.append("data", JSON.stringify(projectData))
+         
+          
+            formData.append("data", JSON.stringify(data))
 
             const result = await CreateProject(formData)
       
             if (result.success) {
                 toast.success("Project created successfully!")
+                router.push(`/projects/${result.data._id}`)
             }
 
-              router.push(`/projects/${result.data._id}`)
+              
         } catch (error) {
             console.error("Error creating project:", error)
 
@@ -212,8 +210,10 @@ export default function CreateProjectPage() {
                                         {imagePreview && (
                                             <div className="relative w-full h-40 rounded-md overflow-hidden border border-white/10 group">
                                                
-                                                <img
-                                                    src={imagePreview || "/placeholder.svg"}
+                                                <Image
+                                                height={1000}
+                                                width={1000}
+                                                    src={imagePreview }
                                                     alt="Preview"
                                                     className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                                                     onError={() => setImagePreview(null)}

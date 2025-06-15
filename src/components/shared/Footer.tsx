@@ -16,13 +16,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import ZButton from "./ZButton";
+import { SendMail } from "@/Services/SendMail/Index";
+
 const Footer = () => {
+  type FormData = {
+    name: string;
+    email: string;
+    message: string;
+  };
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
@@ -32,24 +40,15 @@ const Footer = () => {
     setCurrentYear(new Date().getFullYear());
   }, []);
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const sendMailResponse = await SendMail(data);
 
-      const result = await response.json();
-
-      if (response.ok) {
-        toast.success("Message sent successfully!");
+      if (sendMailResponse.success) {
+        toast.success(sendMailResponse.message);
         reset();
-      } else {
-        toast.error(result.message || "Failed to send message");
       }
+    
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
       console.error("Error sending email:", error);
