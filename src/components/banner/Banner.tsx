@@ -84,7 +84,7 @@ const Banner = () => {
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
               className="py-3 px-5 rounded z-20 text-white bg-[#1E293B] hover:bg-[#18253a] cursor-pointer"
-              href="https://drive.google.com/file/d/1IU_bm0-KhDiXea_3CwOL1nepP0dwFXKy/view?usp=sharing"
+              href="https://drive.google.com/file/d/116jss61XQ34AiP9YXHhTSNWsTE8gmCOq/view?usp=sharing"
             >
               See Resume
             </motion.a>

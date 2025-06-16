@@ -49,7 +49,7 @@ export const getProjects = async () => {
     return  Number(a.projectId) - Number(b.projectId)
   });
   
-    console.log("🚀 ~ getProjects ~ sorted:", sorted)
+   
     return sorted
     
  }
