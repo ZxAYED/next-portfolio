@@ -18,11 +18,11 @@ const About = () => {
 
   return (
     <div
-      id="about"
-      data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back"
-      data-aos-delay="200"
-      data-aos-offset="0"
+      // id="about"
+      // data-aos="fade-zoom-in"
+      // data-aos-easing="ease-in-back"
+      // data-aos-delay="200"
+      // data-aos-offset="0"
       className="relative mx-5 my-48 max-w-7xl xl:mx-auto"
     >
       <div className="absolute hidden md:block -right-8 xl:-right-40">

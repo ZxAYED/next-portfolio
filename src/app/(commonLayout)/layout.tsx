@@ -25,7 +25,6 @@ export default async function Provider({
       <NavMenu ></NavMenu>
       {children}
       </div>
-      <Footer></Footer>
     </div>
   );
 }

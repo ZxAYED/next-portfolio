@@ -2,9 +2,9 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
-import "./globals.css";
-import { Bounce, ToastContainer } from "react-toastify";
 import AnimatedCursor from "react-animated-cursor";
+import { Bounce, ToastContainer } from "react-toastify";
+import "./globals.css";
 
 const InterFont = Inter({
   subsets: ["latin"],

@@ -1,3 +1,9 @@
+html,
+body {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
