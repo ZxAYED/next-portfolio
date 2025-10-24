@@ -1,20 +1,18 @@
 "use client";
 
 import { skills, tools } from "@/lib/utils";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect } from "react";
 import { SiExpertsexchange } from "react-icons/si";
 import CustomSvg2 from "../shared/CustomSvg2";
-import { useTheme } from "../theme/ThemeProvider";
+// import { useTheme } from "../theme/ThemeProvider";
 
 const About = () => {
-  const { theme } = useTheme();
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  // const { theme } = useTheme();
+  // useEffect(() => {
+  //   AOS.init();
+  // }, []);
 
   return (
     <div
@@ -39,7 +37,7 @@ const About = () => {
         <div className="mx-auto max-w-7xl">
           <h1 className="mb-4 text-5xl font-bold">About Me</h1>
           <p
-            className={` text-lg py-4 ${theme === "dark" ? "text-gray-300" : "text-gray-800"
+            className={` text-lg py-4 $ text-gray-300
               } `}
           >
             I’m a passionate MERN stack developer dedicated to building modern,

@@ -1,16 +1,16 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useTheme } from "@/components/theme/ThemeProvider";
+import { Card } from "@/components/ui/card";
+// import { useTheme } from "@/components/theme/ThemeProvider";
 
 export default function SinglePageSkeleton() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
 
-  const cardBorder = theme === "dark" ? "border-cyan-500/20" : "border-cyan-700/20";
-  const cardShadow = theme === "dark" ? "shadow-cyan-500/10" : "shadow-cyan-700/10";
-  const bgPulse = theme === "dark" ? "bg-gray-700" : "bg-gray-300";
+  const cardBorder = "border-cyan-500/20"
+  const cardShadow = "shadow-cyan-500/10"
+  const bgPulse = "bg-gray-700"
 
   return (
     <div className="min-h-screen pt-32 pb-40 mx-auto animate-pulse">
@@ -21,7 +21,7 @@ export default function SinglePageSkeleton() {
         <Card className={`border backdrop-blur-md ${cardBorder} ${cardShadow}`}>
           <div className="p-6 md:p-8 lg:p-10 space-y-10">
 
-         
+
             <div className="space-y-4 pb-6 mb-8 border-b border-gray-400/30">
               <div className={`h-10 w-2/3 rounded ${bgPulse}`} />
               <div className={`h-5 w-full rounded ${bgPulse}`} />
@@ -33,7 +33,7 @@ export default function SinglePageSkeleton() {
               </div>
             </div>
 
-        
+
             <div className="space-y-4">
               <div className={`h-8 w-40 rounded ${bgPulse}`} />
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -46,7 +46,7 @@ export default function SinglePageSkeleton() {
               </div>
             </div>
 
-      
+
             <div>
               <div className={`h-8 w-40 rounded ${bgPulse} mb-4`} />
               <div className="flex flex-wrap gap-4">
@@ -61,7 +61,7 @@ export default function SinglePageSkeleton() {
               </div>
             </div>
 
-        
+
             <div className="mt-12 space-y-4">
               <div className={`h-8 w-40 rounded ${bgPulse}`} />
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

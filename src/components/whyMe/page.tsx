@@ -5,14 +5,14 @@ import { FaHandshake, FaUserTie } from "react-icons/fa";
 
 import CustomSvg from "../shared/CustomSvg";
 import CustomSvg2 from "../shared/CustomSvg2";
-import { useTheme } from "../theme/ThemeProvider";
+// import { useTheme } from "../theme/ThemeProvider";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 const WhyMe = () => {
 
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -67,8 +67,8 @@ const WhyMe = () => {
           alt="Why Me Background"
           width={1000}
           height={1000}
-         
-          className={`rounded-md object-cover w-full h-full ${theme === "dark" ? "opacit-80" : "opacity-5"
+
+          className={`rounded-md object-cover w-full h-full  opacit-80 
                 }`}
         />
       </div>
@@ -94,7 +94,7 @@ const WhyMe = () => {
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out"
-              className={`flex flex-col items-center p-6 text-center transition-all shadow-lg rounded-xl hover:shadow-3xl ${theme === "dark" ? "text-gray-300" : "text-gray-800"
+              className={`flex flex-col items-center p-6 text-center transition-all shadow-lg rounded-xl hover:shadow-3xl  text-gray-300
                 }`}
 
 
@@ -102,7 +102,7 @@ const WhyMe = () => {
               <div className="mb-4">{quality.icon}</div>
               <h3 className="mb-2 text-xl font-semibold">{quality.title}</h3>
               <p
-                className={` ${theme === "dark" ? "text-gray-300" : "text-gray-700"
+                className={` text-gray-300
                   } `}
               >
                 {quality.description}

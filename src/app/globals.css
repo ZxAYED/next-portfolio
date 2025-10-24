@@ -25,7 +25,11 @@ body {
    color: var(--foreground);
 
 }
+@theme  {
+ --color-primary-color :#9333EA
+ --color-secondary-color :#3B82F6
 
+}
 body {
   background-color: var(--background);
   color: var(--foreground);

@@ -1,12 +1,13 @@
 "use client"
 
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { motion } from "framer-motion"
+import { Facebook, Github, Linkedin, Mail } from "lucide-react"
 
 const socialLinks = [
-  { icon: Mail, href: "#", label: "Email", color: "text-lime-400 border border-lime-400" },
-  { icon: Linkedin, href: "#", label: "LinkedIn", color: "text-cyan-400 border border-cyan-400" },
-  { icon: Github, href: "#", label: "GitHub", color: "text-lime-400 border border-lime-400" },
-  { icon: Twitter, href: "#", label: "Twitter", color: "text-cyan-400 border border-cyan-400" },
+  { icon: Mail, href: "#", label: "Email", color: " text-white border-[#9333EA]  border ",link:"zzayediqbal@gmail.com" },
+  { icon: Linkedin, href: "#", label: "LinkedIn", color: " text-white border-[#9333EA]   border" },
+  { icon: Github, href: "#", label: "GitHub", color: " text-white border-[#9333EA]  border" },
+  { icon: Facebook, href: "#", label: "Twitter", color: " text-white border-[#9333EA]   border " },
 ]
 
 export default function SocialIcons() {
@@ -15,14 +16,16 @@ export default function SocialIcons() {
       {socialLinks.map((social) => {
         const Icon = social.icon
         return (
-          <a
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
             key={social.label}
             href={social.href}
             aria-label={social.label}
-            className={`p-3 rounded-full border border-gray-600/50 text-gray-400 transition-all duration-300 hover:border-current ${social.color} hover:shadow-lg hover:shadow-current/50 group`}
+            className={`p-3 rounded-full border hover:border-white ${social.color} `}
           >
-            <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </a>
+            <Icon className="w-5 h-5 t" />
+          </motion.a>
         )
       })}
     </div>

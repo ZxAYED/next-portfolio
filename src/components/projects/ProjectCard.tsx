@@ -6,13 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import ZButton from "../shared/ZButton";
-import { useTheme } from "../theme/ThemeProvider";
+// import { useTheme } from "../theme/ThemeProvider";
 import { IProject } from "./Projects";
 
 export default function ProjectCard({
@@ -22,22 +20,21 @@ export default function ProjectCard({
   project: IProject;
   index: number;
 }) {
-const { theme } = useTheme();
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  // const { theme } = useTheme();
+  //   useEffect(() => {
+  //     AOS.init();
+  //   }, []);
 
   return (
     <Card
-      data-aos={index % 2 === 1 ?   "fade-left" :"fade-right"}
+      data-aos={index % 2 === 1 ? "fade-left" : "fade-right"}
       data-aos-easing="ease-in-back"
       data-aos-duration="1000"
       className="mx-5 border shadow-lg lg:p-6 backdrop-blur-sm rounded-2xl xl:mx-auto"
     >
       <div
-        className={`flex flex-col justify-center lg:justify-start lg:flex-row  gap-6 ${
-          index % 2 === 1 ? "lg:flex-row-reverse" : ""
-        }`}
+        className={`flex flex-col justify-center lg:justify-start lg:flex-row  gap-6 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+          }`}
       >
         <div className="w-full p-4 mt-4 md:p-1 lg:p-0 xl:w-1/2">
           <Image
@@ -57,9 +54,8 @@ const { theme } = useTheme();
           </CardHeader>
           <CardContent>
             <p
-              className={`text-md mb-4 py-2 ${
-                theme === "dark" ? "text-gray-400" : "text-gray-800"
-              } `}
+              className={`text-md mb-4 py-2 "text-gray-400" 
+                } `}
             >
               {project?.description}
             </p>
@@ -90,10 +86,10 @@ const { theme } = useTheme();
               <ZButton name="Backend Code"></ZButton>
             </Link>
           </CardFooter> */}
-            </CardContent>
-             <CardFooter className="flex items-center gap-8 mt-8 jusctify-center lg:justify-start">  <Link href={`/projects/${project?._id}`}>
-              <ZButton name="Details"></ZButton>
-            </Link></CardFooter>
+          </CardContent>
+          <CardFooter className="flex items-center gap-8 mt-8 jusctify-center lg:justify-start">  <Link href={`/projects/${project?._id}`}>
+            <ZButton name="Details"></ZButton>
+          </Link></CardFooter>
         </div>
       </div>
     </Card>
