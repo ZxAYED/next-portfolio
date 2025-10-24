@@ -45,7 +45,7 @@ export default function HeroBanner() {
       <motion.div className="absolute hidden md:block -right-60 top-28">
         <CustomSvg />
       </motion.div>
-      <motion.div className="absolute hidden md:block -left-64 bottom-40">
+      <motion.div className="absolute hidden md:block -left-64 bottom-0">
         <CustomSvg2 />
       </motion.div>
       <div className="relative items-center z-10 min-h-[80dvh] w-full flex 
