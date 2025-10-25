@@ -1,125 +1,74 @@
 "use client";
 
 import { skills, tools } from "@/lib/utils";
-import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SiExpertsexchange } from "react-icons/si";
+import img from '../../../public/images/about.png';
 import CustomSvg2 from "../shared/CustomSvg2";
-// import { useTheme } from "../theme/ThemeProvider";
-
+import SkillCard from "./SkillCard";
 const About = () => {
-  // const { theme } = useTheme();
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
-
   return (
-    <div
-      // id="about"
-      // data-aos="fade-zoom-in"
-      // data-aos-easing="ease-in-back"
-      // data-aos-delay="200"
-      // data-aos-offset="0"
-      className="relative mx-5 my-48 max-w-7xl xl:mx-auto"
-    >
+    <div className="relative max-w-7xl xl:mx-auto mt-10  text-white">
+   
+
       <div className="absolute hidden md:block -right-8 xl:-right-40">
-        <CustomSvg2></CustomSvg2>
+        <CustomSvg2 />
       </div>
       <div className="absolute hidden md:block xl:-left-60 -bottom-60 xl:-bottom-28">
-        <CustomSvg2></CustomSvg2>
+        <CustomSvg2 />
       </div>
 
-      <h1 className="absolute -top-52 md:-top-32 md:left-[20%] md:right-[20%] mx-auto text-center opacity-30 text-6xl font-bold">
-        Full Stack Developer
-      </h1>
       <motion.div>
-        <div className="mx-auto max-w-7xl">
-          <h1 className="mb-4 text-5xl font-bold">About Me</h1>
-          <p
-            className={` text-lg py-4 $ text-gray-300
-              } `}
-          >
-            I’m a passionate MERN stack developer dedicated to building modern,
-            responsive, and high-performance web applications. My expertise
-            spans both frontend and backend technologies, ensuring seamless user
-            experiences. I thrive on solving complex problems, leveraging my
-            skills in HTML, CSS, JavaScript, and TypeScript, as well as
-            frameworks like React.js and Next.js. I am well-versed in state
-            management with Redux and backend development using Node.js,
-            Express.js, and databases like MongoDB and PostgreSQL. My
-            experience with tools like Docker and Prisma ensures that I can
-            build scalable, maintainable, and production-ready applications.
-            Currently, I blend my analytical skills from physics with my love
-            for coding to approach challenges from different perspectives, which
-            allows me to deliver robust solutions. I am always eager to learn
-            and adapt to new technologies, constantly seeking to improve my
-            skills and stay up-to-date with industry trends. With a keen eye for
-            detail, I ensure that every project I work on not only meets but
-            exceeds user expectations, contributing to the success of the teams
-            I collaborate with.
-          </p>
-          <hr className="my-8 "></hr>
+        <div className="mx-auto max-w-7xl  ">
+         <div className='flex justify-between  items-center mb-4'>
+           <div className="max-w-2xl" ><h1 className="text-5xl font-bold mb-4">
+           About Me
+ 
+  </h1>
+          <p className="text-lg py-4 ">
+            I`m a Full Stack Developer at Softvence Agency, working since June 2025. 
+            With over 7+ industry-standard projects , I specialize 
+            in creating scalable and responsive web applications using the MERN  & PERN stacks 
+           and modern frameworks like Next.js , 
+            Redux & Redis. Passionate about coding, I continually strive to learn, adapt, 
+            and contribute to projects that exceed user expectations.
+          </p></div>
+         <div className="h-40  w-80 rounded-xl ">
+           <Image src={img} alt="about"  className="w-full h-40 rounded-xl border-4 border-transparent hover:border-[#9333ea] shadow-lg shadow-[#9333ea] "  />
+         </div>
+         </div>
+          {/* <hr className="my-4  border-t-2 border-gray-500"></hr> */}
+       <div style={{
+  boxShadow: '8px 20px -10px #bbbbbb',
+  textShadow: '0px 0px 5px #fff',
+        backdropFilter:'blur(5px)',
+       }} className="w-full flex flex-col  lg:flex-row justify-between  border border-gray-500 rounded-xl px-4 py-2">
           <div>
-            <p className="flex items-center gap-2 pt-2 pb-6 text-3xl font-bold">
-              <SiExpertsexchange /> Skills
-            </p>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
-              {skills.map((skill, index) => (
-                <motion.div
+             <p className="flex items-center  gap-2 pt-12 pb-6 text-3xl font-bold">
+            <SiExpertsexchange /> My Skills
+          </p>
 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.5 }}
-
-
-                  data-aos="fade-zoom-in"
-                  data-aos-easing="ease-in-back"
-                  data-aos-delay="200"
-                  data-aos-offset="0"
-                  key={index}
-                  className="flex flex-col items-center justify-center p-3 transition duration-300 border rounded-lg shadow-sm backdrop-blur"
-                >
-                  <Image
-                    className="w-12 h-12 mb-2 rounded-xl"
-                    src={skill.icon}
-                    alt={skill.name}
-                    width={52}
-                    height={52}
-                  />
-                  <span className="text-lg font-medium">{skill.name}</span>
-                </motion.div>
-              ))}
-            </div>
-            <p className="flex items-center gap-2 pt-2 pb-6 mt-12 text-3xl font-bold">
-              <SiExpertsexchange /> Tools
-            </p>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
-              {tools.map((tool, index) => (
-                <motion.div
-
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.5 }}
-
-
-                  data-aos="fade-zoom-in"
-                  data-aos-easing="ease-in-back"
-                  data-aos-delay="200"
-                  data-aos-offset="0"
-                  key={index}
-                  className="flex flex-col items-center justify-center p-3 transition duration-300 border rounded-lg shadow-sm backdrop-blur"
-                >
-                  <Image
-                    className="w-12 h-12 mb-2 rounded-xl"
-                    src={tool.icon}
-                    alt={tool.name}
-                    width={52}
-                    height={52}
-                  />
-                  <span className="text-lg font-medium">{tool.name}</span>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-4  py-2  md:grid-cols-4 lg:grid-cols-6">
+            {skills.map((skill, index) => (
+             <SkillCard key={index} skill={skill}  />
+            ))}
           </div>
+          </div>
+
+         <div>
+           <p className="flex items-center gap-2 pt-2 pb-6 mt-12 text-3xl font-bold">
+            <SiExpertsexchange /> Tools I Use
+          </p>
+          <div className="grid grid-cols-2 gap-4   md:grid-cols-4 lg:grid-cols-4">
+            {tools.map((tool, index) => (
+              <SkillCard key={index} skill={tool}  />
+            ))}
+          </div>
+         </div>
+
+       </div>
+        
         </div>
       </motion.div>
     </div>

@@ -10,7 +10,6 @@ import img5 from "../../../public/images/skills/postgres.png"
 import img1 from "../../../public/images/skills/ts.png"
 import CustomSvg from "../shared/CustomSvg"
 import CustomSvg2 from "../shared/CustomSvg2"
-import DecryptedText from "../shared/DecryptedText"
 import TransparentButton from "../shared/TransparentButton"
 import SocialIcons from "./SocialIcon"
 
@@ -41,7 +40,9 @@ export default function HeroBanner() {
   ]
 
   return (
+
     <div ref={containerRef} id='home' className="relative w-full max-w-7xl  mx-auto ">
+
       <motion.div className="absolute hidden md:block -right-60 top-28">
         <CustomSvg />
       </motion.div>
@@ -82,6 +83,8 @@ export default function HeroBanner() {
                   Zayed
                 </span>
               </h1>
+   
+        
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
                 I try my best to build modern, responsive, and high-performance web applications using cutting-edge technologies.
               </p>
@@ -91,26 +94,24 @@ export default function HeroBanner() {
             {/* Features */}
             <div className="space-y-3 pt-4">
               {[
-                "Clean, Modern UI & User-Friendly Designs",
-                "Writing High-Quality, Efficient Code",
-                "Building Flexible and Easy-to-Customize Solutions",
+                "Full Stack Developer at Softvence Agency",
+                "Self-taught learner, passionate about backend optimization",
+                "Focused on building lightweight, performed , scaled & optimized applications",
+                "Direct client communication and handling clients end-to-end ",
+                "Team player who collaborates and ships"
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 text-gray-300 group ">
-                  <div className="w-6 h-6 rounded-full border border-[#9333EA]/50 flex items-center justify-center group-hover:bg-[#3B82F6]/20 gap-2  ">
-                    <svg className="w-3 h-3 text-[#9333EA]" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
+                  <div className="w-6 h-6 rounded-full border border-[#9333EA]/50 flex items-center justify-center group-hover:bg-[#3B82F6]/20 gap-2">
+                    <svg className="w-3 h-3 text-[#9333EA]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      {/* Futuristic sparkle star */}
+                      <path d="M10 2l2.5 5 5 2.5-5 2.5-2.5 5-2.5-5-5-2.5 5-2.5L10 2z" />
+                      {/* Neon accent dot */}
+                      <circle cx="15.5" cy="4.5" r="1.5" />
                     </svg>
                   </div>
                   <p className=" text-lg  duration-300 ">
-                    <DecryptedText
-                      text={feature}
-                      animateOn="view"
-                      revealDirection="center"
-                    /></p>
+                    {feature}
+                  </p>
                 </div>
               ))}
             </div>
@@ -122,9 +123,9 @@ export default function HeroBanner() {
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 href="https://drive.google.com/file/d/116jss61XQ34AiP9YXHhTSNWsTE8gmCOq/view?usp=sharing"
-                className="px-8 m-2 md:text-lg py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 transform hover:scale-105 relative group overflow-hidden"
+                className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 transform hover:scale-105 relative group overflow-hidden"
               >
-                <span className="relative text-white">See resume </span>
+                See resume
               </motion.a>
               <TransparentButton title="Contact Me" />
             </div>
@@ -200,7 +201,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Bottom Social Icons */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
         <SocialIcons />
       </div>
     </div>

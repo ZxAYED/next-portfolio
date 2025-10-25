@@ -1,5 +1,3 @@
-import Footer from "@/components/shared/Footer";
-import NavMenu from "@/components/shared/NavMenu";
 
 export default async function Provider({
   children,
@@ -22,7 +20,7 @@ export default async function Provider({
         />
       </div>
 
-      <NavMenu ></NavMenu>
+   
       {children}
       </div>
     </div>

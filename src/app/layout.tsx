@@ -1,18 +1,13 @@
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import AnimatedCursor from "react-animated-cursor";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./globals.css";
 
-const InterFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-I",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
+const MoskFont = {
+  fontFamily: "Mosk, sans-serif",
+};
 export const metadata: Metadata = {
   title: "Zayed's Portfolio",
   description: "Zayed's portfolio app",
@@ -33,7 +28,7 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.png" sizes="any" />
       </head>
-      <body className={`${InterFont.variable} antialiased`}>
+      <body className={`${MoskFont} antialiased`}>
         <ThemeProvider initialTheme={theme}>
           <AnimatedCursor
             innerSize={10}
