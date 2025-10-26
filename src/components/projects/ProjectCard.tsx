@@ -1,97 +1,137 @@
-"use client";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import "aos/dist/aos.css";
-import Image from "next/image";
-import Link from "next/link";
-import ZButton from "../shared/ZButton";
-// import { useTheme } from "../theme/ThemeProvider";
-import { IProject } from "./Projects";
+"use client"
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
+import type { Project } from "@/lib/projects"
+import { techColors } from "@/lib/utils"
+import { ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
-export default function ProjectCard({
-  project,
-  index,
-}: {
-  project: IProject;
-  index: number;
-}) {
-  // const { theme } = useTheme();
-  //   useEffect(() => {
-  //     AOS.init();
-  //   }, []);
+export default function ProjectCard({ project }: { project: Project }) {
+  const textColor = "text-gray-300"
+  const subtitleColor = "text-gray-500"
+
+  const header = "text-cyan-300"
 
   return (
-    <Card
-      data-aos={index % 2 === 1 ? "fade-left" : "fade-right"}
-      data-aos-easing="ease-in-back"
-      data-aos-duration="1000"
-      className="mx-5 border shadow-lg lg:p-6 backdrop-blur-sm rounded-2xl xl:mx-auto"
-    >
-      <div
-        className={`flex flex-col justify-center lg:justify-start lg:flex-row  gap-6 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-      >
-        <div className="w-full p-4 mt-4 md:p-1 lg:p-0 xl:w-1/2">
-          <Image
-            src={project?.imageUrl}
-            alt={project?.projectName}
-            width={800}
-            height={400}
-            className="object-cover w-full h-auto rounded-xl"
-          />
-        </div>
+    <div className="relative w-full  h-full min-h-screen">
+      <Image
+        src={project.imageUrl}
+        alt={project.projectName}
+        height={1000}
+        width={1000}
+        quality={100}
+        className="absolute inset-0 w-full h-full object-fill"
+      />
 
-        <div className="flex flex-col justify-between w-full xl:w-1/2">
-          <CardHeader>
-            <CardTitle className={`text-3xl font-bold py-2  `}>
-              {project?.projectName}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p
-              className={`text-md mb-4 py-2 "text-gray-400" 
-                } `}
-            >
-              {project?.description}
-            </p>
 
-            {/* <ul
-              className={`list-disc list-inside space-y-1 ${
-                theme === "dark" ? "text-gray-400" : "text-gray-700"
-              } `}
-            >
-              {project?.features.map((feature, index) => (
-                <li key={index} className="text-sm">
-                  {feature}
-                </li>
-              ))}
-              {project?.features.length > 5 && (
-                <li className="text-sm text-gray-500">+ more</li>
-              )}
-            </ul>
-          </CardContent>
-          <CardFooter className="flex flex-wrap gap-8 mt-8">
-            <Link href={project?.liveLink}>
-              <ZButton name="Live Link"></ZButton>
-            </Link>
-            <Link href={project?.githubClientCode}>
-              <ZButton name="Frontend Code"></ZButton>
-            </Link>
-            <Link href={project?.githubServerCode}>
-              <ZButton name="Backend Code"></ZButton>
-            </Link>
-          </CardFooter> */}
-          </CardContent>
-          <CardFooter className="flex items-center gap-8 mt-8 jusctify-center lg:justify-start">  <Link href={`/projects/${project?._id}`}>
-            <ZButton name="Details"></ZButton>
-          </Link></CardFooter>
-        </div>
+
+      <div className="relative  max-w-7xl mx-auto  text-white">
+        <Card className="border-none bg-black/60 backdrop-blur-sm">
+          <div className="p-6">
+            {/* Header */}
+            <div className="pb-6 mb-4 border-b border-cyan-800/30">
+              <h1 className={`mb-4 text-3xl font-bold`}>
+                {project.projectName}
+              </h1>
+              <p className={`mb-6 text-lg `}>{project.description}</p>
+
+              <div className="flex flex-wrap gap-4">
+                <button
+                  className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-cyan-500 hover:bg-cyan-950/50`}
+                >
+                  <Link
+                    className="flex gap-2 justify-center items-center"
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </Link>
+                </button>
+
+                {project.githubClientCode && (
+                  <button
+                    className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-purple-500 hover:bg-purple-950/50`}
+                  >
+                    <Link
+                      className="flex gap-2 justify-center items-center"
+                      href={project.githubClientCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Client Code
+                    </Link>
+                  </button>
+                )}
+
+                {project.githubServerCode && (
+                  <button
+                    className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-purple-500 hover:bg-purple-950/50`}
+                  >
+                    <Link
+                      className="flex gap-2 justify-center items-center"
+                      href={project.githubServerCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Server Code
+                    </Link>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="mb-8">
+              <h2 className={`${header} mb-4 text-2xl font-bold`}>Key Features</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.features.map((feature, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
+                      <span className="text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <p className={`${textColor}`}>{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="mb-12">
+              <h2 className={`${header} text-2xl font-bold`}>Tech Stack</h2>
+              <div className="my-4 flex flex-wrap gap-4">
+                {project.techStack.map((tech) => {
+                  const gradient = techColors[tech] || "from-gray-400 to-gray-600"
+                  return (
+                    <Badge key={tech} className={`bg-gradient-to-r px-6 py-2 ${gradient} capitalize text-lg`}>
+                      {tech}
+                    </Badge>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Learnings */}
+            <div>
+              <h2 className={`${header} mb-4 text-2xl font-bold`}>My Learnings</h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {project.myLearnings.map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 mt-1 mr-3 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
+                      <span className="text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <p className={`${textColor}`}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Card>
       </div>
-    </Card>
-  );
+    </div>
+  )
 }

@@ -18,7 +18,7 @@ const SkillCard = ({ skill, index = 0 }: SkillCardProps) => {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       whileHover={{ scale: 1.03, }}
       transition={{
-        duration: 0.4,
+
         delay: index * 0.05,
         type: "spring",
         stiffness: 100,

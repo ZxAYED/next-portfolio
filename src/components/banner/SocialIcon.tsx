@@ -3,11 +3,38 @@
 import { motion } from "framer-motion"
 import { Facebook, Github, Linkedin, Mail } from "lucide-react"
 
-const socialLinks = [
-  { icon: Mail, href: "#", label: "Email", color: " text-white border-[#9333EA]  border ",link:"zzayediqbal@gmail.com" },
-  { icon: Linkedin, href: "#", label: "LinkedIn", color: " text-white border-[#9333EA]   border" },
-  { icon: Github, href: "#", label: "GitHub", color: " text-white border-[#9333EA]  border" },
-  { icon: Facebook, href: "#", label: "Twitter", color: " text-white border-[#9333EA]   border " },
+interface SocialLink {
+  icon: React.ElementType
+  href: string
+  label: string
+  color: string
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    icon: Mail,
+    href: "mailto:zzayediqbalofficial@gmail.com",
+    label: "Email",
+    color: "text-white border-[#9333EA] border",
+  },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/zayed-iqbal",
+    label: "LinkedIn",
+    color: "text-white border-[#9333EA] border",
+  },
+  {
+    icon: Github,
+    href: "https://github.com/zxayed",
+    label: "GitHub",
+    color: "text-white border-[#9333EA] border",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/ZxAYED/",
+    label: "Facebook",
+    color: "text-white border-[#9333EA] border",
+  },
 ]
 
 export default function SocialIcons() {
@@ -18,13 +45,15 @@ export default function SocialIcons() {
         return (
           <motion.a
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 0.9 }}
             key={social.label}
             href={social.href}
             aria-label={social.label}
-            className={`p-3 rounded-full border hover:border-white ${social.color} `}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-3 rounded-full border hover:border-white transition-all duration-200 ${social.color}`}
           >
-            <Icon className="w-5 h-5 t" />
+            <Icon className="w-5 h-5" />
           </motion.a>
         )
       })}

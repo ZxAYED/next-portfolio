@@ -9,9 +9,26 @@ body {
 @tailwind utilities;
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/mosk-regular.woff2') format('woff2'),
-       url('/fonts/mosk-regular.woff') format('woff');
-  font-weight: normal;
+  src: url('/Mosk Extra-Bold 700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk-Normal-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk-Medium-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk-Semi-bold-600.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
 }
 :root {
@@ -22,6 +39,7 @@ body {
   --hover: #1e40af;
   --card: #e2e8f0;
   --border: #334155;
+  font-family: 'Mosk', sans-serif;
 }
 
 .dark {
@@ -39,7 +57,7 @@ body {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: "Inter", sans-serif;
+ font-family: 'Mosk', sans-serif;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 html {

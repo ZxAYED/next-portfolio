@@ -98,7 +98,7 @@ export default function HeroBanner() {
                 "Self-taught learner, passionate about backend optimization",
                 "Focused on building lightweight, performed , scaled & optimized applications",
                 "Direct client communication and handling clients end-to-end ",
-                "Team player who collaborates and ships"
+                "Team player who collaborates and Makes some jokes"
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-3 text-gray-300 group ">
                   <div className="w-6 h-6 rounded-full border border-[#9333EA]/50 flex items-center justify-center group-hover:bg-[#3B82F6]/20 gap-2">

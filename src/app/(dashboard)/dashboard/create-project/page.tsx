@@ -1,21 +1,21 @@
 "use client"
 
-import type React from "react"
-import { useState, useRef } from "react"
-import { useRouter } from "next/navigation"
-import { useForm } from "react-hook-form"
-import { Loader2, Plus, Trash2, Upload, ArrowLeft } from "lucide-react"
+import { ArrowLeft, Loader2, Plus, Trash2, Upload } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import type React from "react"
+import { useRef, useState } from "react"
+import { useForm } from "react-hook-form"
 
+import { ProjectData } from "@/app/(dashboard)/projects/[projectId]/page"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { ProjectData } from "@/app/(commonLayout)/projects/[projectId]/page"
+import { Textarea } from "@/components/ui/textarea"
 import { CreateProject } from "@/Services/Projects"
-import { toast } from "react-toastify"
 import Image from "next/image"
+import { toast } from "react-toastify"
 
 
 export default function CreateProjectPage() {
@@ -85,21 +85,21 @@ export default function CreateProjectPage() {
 
 
             if (fileInputRef.current?.files?.[0]) {
-            
+
                 formData.append("file", fileInputRef.current.files[0])
             }
-         
-          
+
+
             formData.append("data", JSON.stringify(data))
 
             const result = await CreateProject(formData)
-      
+
             if (result.success) {
                 toast.success("Project created successfully!")
                 router.push(`/projects/${result.data._id}`)
             }
 
-              
+
         } catch (error) {
             console.error("Error creating project:", error)
 
@@ -147,7 +147,7 @@ export default function CreateProjectPage() {
                     <CardContent>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                           
+
                                 <div className="space-y-2">
                                     <Label htmlFor="projectName" className="text-white">
                                         Project Name
@@ -162,7 +162,7 @@ export default function CreateProjectPage() {
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="projectId" className="text-white">
-                                        Project Id 
+                                        Project Id
                                     </Label>
                                     <Input
                                         id="projectId"
@@ -173,7 +173,7 @@ export default function CreateProjectPage() {
                                     {errors.projectId && <p className="text-red-500 text-sm">{errors.projectId.message}</p>}
                                 </div>
 
-                           
+
                                 <div className="space-y-2">
                                     <Label htmlFor="projectImage" className="text-white">
                                         Project Image
@@ -209,11 +209,11 @@ export default function CreateProjectPage() {
                                         </div>
                                         {imagePreview && (
                                             <div className="relative w-full h-40 rounded-md overflow-hidden border border-white/10 group">
-                                               
+
                                                 <Image
-                                                height={1000}
-                                                width={1000}
-                                                    src={imagePreview }
+                                                    height={1000}
+                                                    width={1000}
+                                                    src={imagePreview}
                                                     alt="Preview"
                                                     className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                                                     onError={() => setImagePreview(null)}
@@ -240,7 +240,7 @@ export default function CreateProjectPage() {
                                 </div>
                             </div>
 
-                        
+
                             <div className="space-y-2">
                                 <Label htmlFor="description" className="text-white">
                                     Description
@@ -254,7 +254,7 @@ export default function CreateProjectPage() {
                                 {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
                             </div>
 
-                       
+
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">Features</Label>
@@ -291,7 +291,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                         
+
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">Tech Stack</Label>
@@ -328,7 +328,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                          
+
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
                                     <Label className="text-white">My Learnings</Label>
@@ -365,7 +365,7 @@ export default function CreateProjectPage() {
                                 ))}
                             </div>
 
-                           
+
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="githubClientCode" className="text-white">
@@ -408,13 +408,13 @@ export default function CreateProjectPage() {
                             </div>
 
                             <CardFooter className="px-0 pt-6 flex justify-end gap-3">
-                              
+
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
                                     className="bg-gradient-to-r from-[#9333EA] to-[#3B82F6] hover:from-[#8323DA] hover:to-[#2A72E5] text-white"
                                 >
-                                    {isSubmitting  ? (
+                                    {isSubmitting ? (
                                         <>
                                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                                             Creating...

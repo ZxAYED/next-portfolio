@@ -181,7 +181,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* TOOLS - bottom right */}
+
           <motion.div
             variants={containerVariants}
             initial="hidden"

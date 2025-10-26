@@ -22,7 +22,7 @@ const NavBar = () => {
   ];
 
   const navLinks = (
-    <div className="flex flex-col items-center justify-center gap-5 w-fit lg:flex-row">
+    <div className="flex  flex-col items-center justify-center gap-5 w-fit lg:flex-row">
       <NextLink href="/">
         <p className="font-semibold  hover:text-[#9333EA] hover:delay-200 hover:scale-[102%] uppercase tracking-[4px] underline-animation">
           Home
@@ -51,7 +51,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className=" w-full bg-transparent md:pt-6 ">
+    <div className=" w-full  z-50 bg-transparent md:pt-6 ">
 
       <div className="max-w-7xl relative mx-auto px-4 py-4   md:border border-b-[1px] w-full md:rounded-md rounded backdrop-blur-xl">
         <div className="absolute top-0 w-full left-0 right-0 ">

@@ -1,23 +1,13 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
+import { ArrowUpDown, Eye, Loader2, MoreHorizontal, Plus, Search, Trash2 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Search, Plus, Pencil, Trash2, MoreHorizontal, Loader2, ArrowUpDown, Eye } from "lucide-react"
+import { useEffect, useState } from "react"
 
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import { ProjectData } from "@/app/(dashboard)/projects/[projectId]/page"
 import {
     AlertDialog,
     AlertDialogAction,
@@ -28,10 +18,19 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { DeleteProject, getProjects } from "@/Services/Projects"
-import { ProjectData } from "@/app/(commonLayout)/projects/[projectId]/page"
 import { toast } from "react-toastify"
 
 
@@ -55,7 +54,7 @@ export default function AllProjects() {
                 const projects = await getProjects()
                 setProjects(projects)
             } catch (error) {
-               
+
                 toast.error("Failed to load projects")
             } finally {
                 setIsLoading(false)
@@ -96,7 +95,7 @@ export default function AllProjects() {
 
 
     const handleDelete = async (id: string) => {
-       
+
         setIsDeleting(true)
         try {
             const result = await DeleteProject(id)
