@@ -83,8 +83,8 @@ export default function HeroBanner() {
                   Zayed
                 </span>
               </h1>
-   
-        
+
+
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
                 I try my best to build modern, responsive, and high-performance web applications using cutting-edge technologies.
               </p>
@@ -123,7 +123,7 @@ export default function HeroBanner() {
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 href="https://drive.google.com/file/d/116jss61XQ34AiP9YXHhTSNWsTE8gmCOq/view?usp=sharing"
-                className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 transform hover:scale-105 relative group overflow-hidden"
+                className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white md:text-lg rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 transform hover:scale-105 relative group overflow-hidden"
               >
                 See resume
               </motion.a>

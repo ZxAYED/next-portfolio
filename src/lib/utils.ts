@@ -29,116 +29,79 @@ import img2 from '../../public/images/skills/typescript.png';
 import img14 from '../../public/images/skills/Vercel.png';
 
 
-export const skills = [
+export const skills = {
+  frontend: [
+    // Core Frontend
+    // { name: "HTML", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753787/next-portfolio/icons8-html-5-240.png.png' },
+    // { name: "CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753770/next-portfolio/icons8-css3-144.png.png' },
+    // { name: "Bootstrap", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753732/next-portfolio/icons8-bootstrap-240.png.png' },
 
-  // { name: "HTML", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753787/next-portfolio/icons8-html-5-240.png.png' },
-  // { name: "CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753770/next-portfolio/icons8-css3-144.png.png'  },
-  // { name: "Bootstrap", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753732/next-portfolio/icons8-bootstrap-240.png.png'  },
-  { name: "Tailwind CSS", icon: img3  },
-  { name: "Material UI", icon: img5 },
-  { name: "Shadcn UI", icon: img4 },
-  { name: "LightsWind", icon: img27 },
-  { name: "JavaScript", icon: img1 },
-  {
-    name: "TypeScript",
-    icon:img2,
-  },
-  { name: "React.js", icon: img6 },
-  {
-    name: "Next.js",
-    icon: img7,
-  },
-  
- 
-  { name: "Node.js", icon: img10 },
-  { name: "Express.js", icon: img12 },
-  {
-    name: "Nest.js",
-    icon: img18,
-  },
-  // {
-  //   name: "Nest Js",
-  //   icon: 'https://cdn.dribbble.com/userupload/41930880/file/original-633d9b239c12bbb0788b9faf25058c54.png',
-  // },
-  { name: "MongoDB", icon: img8 },
-  {
-    name: "Mongoose",
-    icon: img23,
-  },
-  {
-    name: "Prisma",
-    icon: img11,
-  },
-  {
-    name: "PostgreSQL",
-    icon: img17 ,
-  },
-  {
-    name: "AWS S3",
-    icon: img24 ,
-  },
-  {
-    name: "Firebase",
-    icon: img25 ,
-  },
-  {
-    name: "Redis",
-    icon: img26 ,
-  },
- 
-  
-  // {
-  //   name: "GraphQL",
-  //   icon: graph,
-  // },
-  
-  // {
-  //   name: "AWS",
-  //   icon: "https://cdn.iconscout.com/icon/free/png-256/free-aws-logo-icon-download-in-svg-png-gif-file-formats--cloud-computing-network-server-database-brand-pack-logos-icons-1583149.png?f=webp&w=256",
-  // },
-  // {
-  //   name: "Jest",
-  //   icon: jest,
-  // },
-];
+    { name: "Tailwind CSS", icon: img3 },
+    { name: "Material UI", icon: img5 },
+    { name: "Shadcn UI", icon: img4 },
+    { name: "LightsWind", icon: img27 },
+    { name: "JavaScript", icon: img1 },
 
-export const tools =[
+    { name: "React.js", icon: img6 },
+    { name: "Next.js", icon: img7 },
+  ],
+
+  backend: [
+    { name: "Node.js", icon: img10 },
+    { name: "Express.js", icon: img12 },
+    { name: "Nest.js", icon: img18 },
+    { name: "TypeScript", icon: img2 },
+    { name: "Firebase", icon: img25 },
+  ],
+
+  database: [
+    { name: "MongoDB", icon: img8 },
+    { name: "Mongoose", icon: img23 },
+    { name: "Prisma", icon: img11 },
+    { name: "PostgreSQL", icon: img17 },
+    { name: "Redis", icon: img26 },
+    { name: "AWS S3", icon: img24 },
+
+  ],
+};
+
+export const tools = [
   // {
   //   name: "Docker",
   //   icon: "https://res.cloudinary.com/dhl04adhz/image/upload/v1747753304/dokcer.png.png",
   // },
   {
-    name :"Cloudinary",
+    name: "Cloudinary",
     icon: img19,
   },
   {
-    name :"Supabase",
+    name: "Supabase",
     icon: img20,
   },
- 
- {
+
+  {
     name: "GitHub",
-    icon:img21,
-  },{
-    name :"Netlify",
+    icon: img21,
+  }, {
+    name: "Netlify",
     icon: img22,
   },
   {
-    name :"Vercel",
+    name: "Vercel",
     icon: img14,
   },
   {
-    name :"Postman",
+    name: "Postman",
     icon: img13,
-  
+
   },
   {
-    name :"Swagger",
+    name: "Swagger",
     icon: img16,
-  
+
   },
   {
-    name : "Render",
+    name: "Render",
     icon: img15,
   }
 ]
@@ -159,7 +122,7 @@ export const techColors: Record<string, string> = {
   PostgreSQL: "from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800",
   Prisma: "from-slate-500 to-slate-700 hover:from-slate-600 hover:to-slate-800",
   Mongoose: "from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800",
-   "Redux Toolkit": "from-fuchsia-500 to-fuchsia-700 hover:from-fuchsia-600 hover:to-fuchsia-800",
+  "Redux Toolkit": "from-fuchsia-500 to-fuchsia-700 hover:from-fuchsia-600 hover:to-fuchsia-800",
   "Firebase Hosting": "from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700",
   "Firebase CloudStorage": "from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700",
   "Firebase Authentication": "from-orange-500 to-yellow-600 hover:from-orange-600 hover:to-yellow-700",
