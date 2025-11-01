@@ -6,6 +6,7 @@ import FullScreenScroller from "../implementation/FullScreenScroller";
 import ProjectCard from "../projects/ProjectCard";
 import Footer from "../shared/Footer";
 import WhyMe from "../whyMe/page";
+import MySelfSection from "../experience/MySelfSection";
 
 const Home = () => {
   return (
@@ -50,6 +51,7 @@ const Home = () => {
           ></ProjectCard>
         )).slice(1, 2)}
       </section>
+      <MySelfSection />
       <WhyMe />
       <Footer />
     </FullScreenScroller >

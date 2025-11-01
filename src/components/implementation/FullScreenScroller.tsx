@@ -10,7 +10,28 @@ interface FullScreenScrollerProps {
 
 const FullScreenScroller: React.FC<FullScreenScrollerProps> = ({ children }) => {
   const sections = React.Children.toArray(children);
-  const { activeIndex, isAnimating, setIsAnimating } = useFullScreenScroll(sections.length);
+
+  const [isDesktop, setIsDesktop] = React.useState(false);
+  React.useEffect(() => {
+    const mql = window.matchMedia('(min-width: 1024px)');
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    setIsDesktop(mql.matches);
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+
+  const { activeIndex, isAnimating, setIsAnimating } = useFullScreenScroll(
+    sections.length,
+    isDesktop
+  );
+
+  if (!isDesktop) {
+    return (
+      <div style={{ width: '100%', height: 'auto', overflow: 'visible', position: 'relative' }}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div style={{ height: '100vh', width: '100vw', overflow: 'hidden', position: 'relative' }}>

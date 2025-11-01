@@ -1,7 +1,14 @@
 html,
 body {
-  overflow: hidden;
   scroll-behavior: smooth;
+}
+
+/* Lock page scroll only on desktop for full-screen sections */
+@media (min-width: 1024px) {
+  html,
+  body {
+    overflow: hidden;
+  }
 }
 
 @tailwind base;

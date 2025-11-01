@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useFullScreenScroll = (sections: number) => {
+export const useFullScreenScroll = (sections: number, enabled: boolean = true) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
@@ -45,6 +45,8 @@ export const useFullScreenScroll = (sections: number) => {
   };
 
   useEffect(() => {
+    if (!enabled) return;
+
     window.addEventListener('wheel', handleWheel);
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchmove', handleTouchMove);
@@ -54,7 +56,7 @@ export const useFullScreenScroll = (sections: number) => {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [activeIndex, isAnimating, sections, touchStartY]);
+  }, [activeIndex, isAnimating, sections, touchStartY, enabled]);
 
   return { activeIndex, isAnimating, setIsAnimating };
 };

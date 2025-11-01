@@ -68,16 +68,16 @@ export default function HeroBanner() {
 
 
 
-        <div className=" w-full flex items-start justify-between py-12 relative">
+        <div className=" w-full px-4 md:px-0 flex lg:flex-row flex-col items-start justify-between py-12 relative">
           {/* Decorative gradient lines */}
           <div className="absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-[#3B82F6] to-transparent opacity-30" />
           <div className="absolute left-24 bottom-1/4 w-2 h-40 bg-gradient-to-b from-[#3B82F6] to-transparent opacity-25" />
           <div className="absolute right-24 bottom-1/2 w-2 h-40 bg-gradient-to-b from-[#3B82F6] to-transparent opacity-25" />
 
           {/* ---------------- LEFT SIDE ---------------- */}
-          <div className="max-w-2xl space-y-8 animate-fade-in relative z-20">
+          <div className="lg:max-w-2xl space-y-8 animate-fade-in relative z-20">
             <div className="space-y-4 relative">
-              <h1 className="text-7xl font-bold leading-tight">
+              <h1 className="text-3xl lg:text-7xl font-bold leading-tight">
                 <span className="text-white">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-[#9333EA] via-purple-300 to-[#3B82F6] bg-clip-text text-transparent animate-pulse ">
                   Zayed
@@ -85,7 +85,7 @@ export default function HeroBanner() {
               </h1>
 
 
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-base md:text-xl text-gray-300 leading-relaxed max-w-xl">
                 I try my best to build modern, responsive, and high-performance web applications using cutting-edge technologies.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function HeroBanner() {
                       <circle cx="15.5" cy="4.5" r="1.5" />
                     </svg>
                   </div>
-                  <p className=" text-lg  duration-300 ">
+                  <p className=" text-sm lg:text-lg  duration-300 ">
                     {feature}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function HeroBanner() {
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 href="https://drive.google.com/file/d/116jss61XQ34AiP9YXHhTSNWsTE8gmCOq/view?usp=sharing"
-                className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white md:text-lg rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 transform hover:scale-105 relative group overflow-hidden"
+                className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r flex justify-center items-center from-[#3B82F6] to-purple-600 text-white md:text-lg rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50  "
               >
                 See resume
               </motion.a>

@@ -7,7 +7,7 @@ import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function  ProjectCard({ project }: { project: Project }) {
   const textColor = "text-gray-300"
   const subtitleColor = "text-gray-500"
 
@@ -15,23 +15,14 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div className="relative w-full  h-full min-h-screen">
-      <Image
-        src={project.imageUrl}
-        alt={project.projectName}
-        height={1000}
-        width={1000}
-        quality={100}
-        className="absolute inset-0 w-full h-full object-fill"
-      />
-
-
 
       <div className="relative  max-w-7xl mx-auto  text-white">
-        <Card className="border-none bg-black/60 backdrop-blur-sm">
+        <Card className="border-none bg-black/40 backdrop-blur-sm">
           <div className="p-6">
             {/* Header */}
-            <div className="pb-6 mb-4 border-b border-cyan-800/30">
-              <h1 className={`mb-4 text-3xl font-bold`}>
+            <div className="pb-2 mb-4 border-b border-cyan-800/30 flex justify-between gap-2">
+              <div className="">
+                <h1 className={`mb-4 text-3xl font-bold`}>
                 {project.projectName}
               </h1>
               <p className={`mb-6 text-lg `}>{project.description}</p>
@@ -83,6 +74,15 @@ export default function ProjectCard({ project }: { project: Project }) {
                   </button>
                 )}
               </div>
+              </div>
+               <Image
+        src={project.imageUrl}
+        alt={project.projectName}
+        height={1000}
+        width={1000}
+        quality={100}
+        className=" w-full h-60 object-fill"
+      />
             </div>
 
             {/* Features */}
@@ -101,7 +101,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
 
             {/* Tech Stack */}
-            <div className="mb-12">
+            <div className="mb-8">
               <h2 className={`${header} text-2xl font-bold`}>Tech Stack</h2>
               <div className="my-4 flex flex-wrap gap-4">
                 {project.techStack.map((tech) => {
@@ -118,7 +118,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             {/* Learnings */}
             <div>
               <h2 className={`${header} mb-4 text-2xl font-bold`}>My Learnings</h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                 {project.myLearnings.map((item, index) => (
                   <div key={index} className="flex items-start">
                     <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 mt-1 mr-3 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
