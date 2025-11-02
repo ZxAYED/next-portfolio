@@ -16,26 +16,56 @@ body {
 @tailwind utilities;
 @font-face {
   font-family: 'Mosk';
-  src: url('/Mosk Extra-Bold 700.ttf') format('truetype');
-  font-weight: 700;
+  src: url('/fonts/Mosk Thin 100.ttf') format('truetype');
+  font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk-Normal-400.ttf') format('truetype');
+  src: url('/fonts/Mosk Extra-Light 200.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Light 300.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Normal 400.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk-Medium-500.ttf') format('truetype');
+  src: url('/fonts/Mosk Medium 500.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk-Semi-bold-600.ttf') format('truetype');
+  src: url('/fonts/Mosk Semi-Bold 600.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Bold 700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Extra-Bold 800.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Ultra-Bold 900.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
 }
 :root {

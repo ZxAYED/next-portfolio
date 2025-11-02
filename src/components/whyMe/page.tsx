@@ -1,22 +1,11 @@
 "use client";
+import { motion } from "framer-motion";
 import { Briefcase, CheckCircle, Lightbulb, Target } from "lucide-react";
-import Image from "next/image";
 import { FaHandshake, FaUserTie } from "react-icons/fa";
-
 import CustomSvg from "../shared/CustomSvg";
 import CustomSvg2 from "../shared/CustomSvg2";
-// import { useTheme } from "../theme/ThemeProvider";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 const WhyMe = () => {
-
-  // const { theme } = useTheme();
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   const qualities = [
     {
       icon: <CheckCircle size={32} className="text-green-500" />,
@@ -56,60 +45,58 @@ const WhyMe = () => {
     },
   ];
 
+
+
+
+
   return (
     <div
       id="whyme"
-      className="relative mx-auto my-32  mt-60 text-center rounded-md md:border max-w-7xl"
+      className="relative mx-auto     text-center rounded-md max-w-7xl"
     >
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747754855/next-portfolio/whyme.webp.webp'}
-          alt="Why Me Background"
-          width={1000}
-          height={1000}
-
-          className={`rounded-md object-cover w-full h-full  opacit-80 
-                }`}
-        />
-      </div>
-
       <div className="absolute hidden lg:block -right-60 -top-20">
         <CustomSvg2 />
       </div>
-      <div className="absolute hidden lg:block -left-140 top-40">
+      <div className="absolute hidden lg:block left-300 -top-40">
         <CustomSvg />
       </div>
 
-      <div className="relative z-10 px-6 py-16 rounded-md backdrop-blur">
-        <h2 className="mb-6 text-4xl font-bold">Why You Need Me</h2>
+      <div className="relative z-10 px-6 py-20 rounded-md backdrop-blur-xl">
+        <h2 className="mb-6 text-3xl md:text-5xl text-cyan-300 font-bold">Why You Need Me</h2>
         <p className="mb-12 text-lg">
           I`m a determined professional who believes in hard work, teamwork, and
           delivering results. Here`s why I`m the right fit for your team.
         </p>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+
+
+
+        >
           {qualities.map((quality, index) => (
-            <div
+            <motion.div
               key={index}
-
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
-              className={`flex flex-col items-center p-6 text-center transition-all shadow-lg rounded-xl hover:shadow-3xl  text-gray-300
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              whileHover={{ scale: 1.05 }}
+              className={`flex flex-col bg-gradient-to-br from-cyan-500/20 to-purple-500/10  items-center backdrop-blur-md p-6 text-center  shadow-lg rounded-xl hover:shadow-3xl  text-gray-300
                 }`}
-
-
             >
               <div className="mb-4">{quality.icon}</div>
-              <h3 className="mb-2 text-xl font-semibold">{quality.title}</h3>
+              <h3 className="mb-4 text-2xl font-medium">{quality.title}</h3>
               <p
-                className={` text-gray-300
+                className={` text-gray-300 text-lg
                   } `}
               >
                 {quality.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
