@@ -1,5 +1,5 @@
 'use client'
-import NavMenu from '@/components/shared/NavMenu';
+import MorphingNavigation from '@/components/implementation/MorphingNavbar';
 import Home from "../../components/home/page";
 
 export default function Provider() {
@@ -7,7 +7,7 @@ export default function Provider() {
   return (
     <div className="relative">
 
-      <NavMenu ></NavMenu>
+      <MorphingNavigation ></MorphingNavigation>
       <Home></Home>
 
     </div>

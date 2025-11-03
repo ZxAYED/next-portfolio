@@ -3,13 +3,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Lock page scroll only on desktop for full-screen sections */
-@media (min-width: 1024px) {
-  html,
-  body {
-    overflow: hidden;
-  }
-}
 
 @tailwind base;
 @tailwind components;
@@ -96,6 +89,7 @@ body {
   color: var(--foreground);
  font-family: 'Mosk', sans-serif;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;

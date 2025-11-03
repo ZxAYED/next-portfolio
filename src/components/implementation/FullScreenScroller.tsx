@@ -6,6 +6,7 @@ import { useFullScreenScroll } from '../../hooks/useFullScreenScroll';
 
 interface FullScreenScrollerProps {
   children: React.ReactNode;
+  excludeLast?: boolean
 }
 
 const FullScreenScroller: React.FC<FullScreenScrollerProps> = ({ children }) => {
@@ -34,7 +35,7 @@ const FullScreenScroller: React.FC<FullScreenScrollerProps> = ({ children }) => 
   }
 
   return (
-    <div style={{ height: '100vh', width: '100vw', overflow: 'hidden', position: 'relative' }}>
+    <div style={{ height: '100vh', width: '100vw', position: 'relative' }}>
       <motion.div
         animate={{ y: `-${activeIndex * 100}vh` }}
         transition={{ duration: 0.8, ease: [0.6, 0.01, -0.05, 0.9] }}

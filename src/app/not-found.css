@@ -1,8 +1,6 @@
 .notFoundContainer {
-  height: 100vh;
-  width: 100vw;
- 
-  color: white;
+
+
  
   position: relative;
 
@@ -14,9 +12,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+
 }
 
 .stars {

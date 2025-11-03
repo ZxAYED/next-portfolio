@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function MySelfSection() {
   return (
-    <section id="myself" className="relative w-full max-w-7xl mx-auto px-4 md:px-0 py-24">
+    <section id="myself" className="relative w-full max-w-7xl mx-auto px-4 md:px-0 my-40">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
         {/* Left: Photo */}
         <div className="lg:col-span-2">
@@ -54,9 +54,9 @@ export default function MySelfSection() {
             <div className="absolute w-[2px] left-3 top-0 bottom-0  bg-gradient-to-b from-[#9333EA] via-[#3B82F6] to-transparent" />
 
             {/* Item 1 */}
-            <div className="relative pb-10">
+            <div className="relative pb-4">
               <span className="absolute left-1 top-0 -translate-x-1/2 size-3 rounded-full bg-[#3B82F6] shadow-[0_0_0_6px_rgba(59,130,246,0.15)]" />
-              <div className="rounded-xl border border-white/10   backdrop-blur-xl backdrop-filter p-5  md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10  ">
+              <div className="rounded-xl border border-white/10   backdrop-blur p-5  md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10  ">
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="text-lg md:text-2xl text-cyan-300 font-medium">Full Stack Developer</h3>
                   <span className="text-xs md:text-lg text-[#3B82F6] font-medium">June 2025 — Present</span>
@@ -75,7 +75,7 @@ export default function MySelfSection() {
             {/* Item 2 */}
             <div className="relative pb-2">
               <span className="absolute left-1 top-0 -translate-x-1/2 size-3 rounded-full bg-[#9333EA] shadow-[0_0_0_6px_rgba(147,51,234,0.15)]" />
-              <div className="rounded-xl border border-white/10   backdrop-blur-md p-4 md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10 ">
+              <div className="rounded-xl border border-white/10   backdrop-blur p-4 md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10 ">
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="text-lg md:text-2xl text-cyan-300 font-medium">BSc (Hons) in Physics</h3>
                 </div>

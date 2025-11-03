@@ -27,7 +27,7 @@ const About = () => {
   }
 
   return (
-    <div className="relative w-full min-h-screen py-10 px-4 text-white overflow-hidden">
+    <div id="about" className="relative w-full min-h-screen py-10 px-4 text-white overflow-hidden">
       {/* soft glow */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />

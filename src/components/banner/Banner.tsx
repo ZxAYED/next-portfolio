@@ -10,7 +10,6 @@ import img5 from "../../../public/images/skills/postgres.png"
 import img1 from "../../../public/images/skills/ts.png"
 import CustomSvg from "../shared/CustomSvg"
 import CustomSvg2 from "../shared/CustomSvg2"
-import TransparentButton from "../shared/TransparentButton"
 import SocialIcons from "./SocialIcon"
 
 export default function HeroBanner() {
@@ -62,7 +61,7 @@ export default function HeroBanner() {
 
   return (
 
-    <div ref={containerRef} id='home' className=" relative  w-full max-w-7xl  mx-auto ">
+    <div ref={containerRef} id='home' className=" relative  w-full max-w-7xl mx-auto mt-20 ">
 
       <motion.div className="absolute hidden md:block -right-60 top-28">
         <CustomSvg />
@@ -149,7 +148,17 @@ export default function HeroBanner() {
               >
                 See resume
               </motion.a>
-              <TransparentButton title="Contact Me" />
+              <motion.a whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.03 }} className="px-6 w-full   md:text-lg  md:w-fit py-3 m-2 border-2 border-[#3B82F6]  rounded-lg hover:bg-[#3B82F6]/10 text-white backdrop-blur relative  overflow-hidden" onClick={() => {
+                  const footer = document.getElementById('contact');
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}>
+                <div className="absolute inset-0 bg-[#9333EA]/20 group-hover:opacity-100  duration-300 " />
+                Contact Me
+              </motion.a>
+
             </div>
           </div>
 
@@ -168,7 +177,7 @@ export default function HeroBanner() {
             />
 
             {/* Profile Image */}
-            <motion.div className="relative mt-12  lg:mt-0">
+            <motion.div className="md:relative mt-12  lg:mt-0">
               <div className="relative mx-auto w-[360px] h-84">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#9333EA] to-[#3B82F6] z-20 backdrop-blur rounded-[50%_30%_50%_70%]" />
@@ -184,7 +193,7 @@ export default function HeroBanner() {
                   />
                 </motion.div>
 
-                <div className="overflow-hidden">
+                <div className="hidden  md:block">
                   {techs.map((tech, i) => (
                     <motion.div
                       key={i}

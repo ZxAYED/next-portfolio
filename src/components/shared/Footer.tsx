@@ -2,7 +2,6 @@
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -10,15 +9,9 @@ import { FaFacebookSquare, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { MdPhoneAndroid } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
+import { VscGithubInverted } from "react-icons/vsc";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { VscGithubInverted } from "react-icons/vsc";
-
-
-
-
-
-
 import ZButton from "./ZButton";
 
 const Footer = () => {
@@ -55,6 +48,7 @@ const Footer = () => {
 
       const res = await sendMailResponse.json();
 
+
       if (res.success) {
         toast.success(res.message);
         reset();
@@ -69,7 +63,7 @@ const Footer = () => {
   };
 
   return (
-    <div id="contact" className="relative w-full   ">
+    <div id="contact" className="relative mt-60 z-50 opacity-100 w-full   ">
       <Image
         src="https://i.ibb.co/QcbsFHy/footer.jpg"
         alt="Footer Background"

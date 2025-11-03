@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="relative w-full mt-10  h-full min-h-screen">
 
       <div className="relative  max-w-7xl mx-auto  text-white">
-        <Card className="border-none bg-black/10 backdrop-blur-sm">
+        <Card className="border-none  backdrop-blur">
           <div className="px-4 lg:px-0">
             {/* Header */}
             <div className="pb-2 mb-4 border-b border-cyan-800/30 flex flex-col lg:flex-row justify-between gap-2">

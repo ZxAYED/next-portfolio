@@ -52,16 +52,16 @@ const WhyMe = () => {
   return (
     <div
       id="whyme"
-      className="relative mx-auto     text-center rounded-md max-w-7xl"
+      className="relative mx-auto  my-60   text-center rounded-md max-w-7xl"
     >
-      <div className="absolute hidden lg:block -right-60 -top-20">
+      <div className="absolute hidden lg:block -right-60 -top-10">
         <CustomSvg2 />
       </div>
-      <div className="absolute hidden lg:block left-300 -top-40">
+      <div className="absolute hidden lg:block left-300 -bottom-40">
         <CustomSvg />
       </div>
 
-      <div className="relative z-10 px-6 py-20 rounded-md backdrop-blur-xl">
+      <div className="relative z-10 px-6 py-20 rounded-md ">
         <h2 className="mb-6 text-3xl md:text-5xl text-cyan-300 font-bold">Why You Need Me</h2>
         <p className="mb-12 text-lg">
           I`m a determined professional who believes in hard work, teamwork, and
@@ -78,12 +78,9 @@ const WhyMe = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-              }}
+
               whileHover={{ scale: 1.05 }}
-              className={`flex flex-col bg-gradient-to-br from-cyan-500/20 to-purple-500/10  items-center backdrop-blur-md p-6 text-center  shadow-lg rounded-xl hover:shadow-3xl  text-gray-300
+              className={`flex flex-col bg-gradient-to-br from-cyan-500/20 to-purple-500/10  items-center backdrop-blur p-6 text-center  shadow-lg rounded-xl hover:shadow-3xl  text-gray-300
                 }`}
             >
               <div className="mb-4">{quality.icon}</div>
