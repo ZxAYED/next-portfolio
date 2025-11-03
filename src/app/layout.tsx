@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
 import AnimatedCursor from "react-animated-cursor";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./globals.css";
@@ -18,8 +17,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const theme = (cookieStore.get("theme")?.value as "light" | "dark") || "dark";
+
+  const theme = "dark";
 
   return (
     <html lang="en">

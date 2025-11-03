@@ -10,7 +10,6 @@ import img5 from "../../../public/images/skills/postgres.png"
 import img1 from "../../../public/images/skills/ts.png"
 import CustomSvg from "../shared/CustomSvg"
 import CustomSvg2 from "../shared/CustomSvg2"
-import TransparentButton from "../shared/TransparentButton"
 import SocialIcons from "./SocialIcon"
 
 export default function HeroBanner() {
@@ -32,16 +31,37 @@ export default function HeroBanner() {
   }, [])
 
   const techs = [
-    { src: img1, alt: "Typescript", position: { bottom: "-160px", left: "-50px" } },
-    { src: img4, alt: "Next.js", position: { bottom: "-160px", left: "50px" } },
-    { src: img3, alt: "Nest.js", position: { bottom: "-160px", left: "150px" } },
-    { src: img2, alt: "Mongodb", position: { bottom: "-160px", left: "250px" } },
-    { src: img5, alt: "Postgres", position: { bottom: "-160px", left: "350px" } },
-  ]
+    {
+      src: img1,
+      alt: "Typescript",
+      position: { bottom: "-200px", left: "-10px", mdBottom: "-160px", mdLeft: "-50px" },
+    },
+    {
+      src: img4,
+      alt: "Next.js",
+      position: { bottom: "-200px", left: "80px", mdBottom: "-160px", mdLeft: "50px" },
+    },
+    {
+      src: img3,
+      alt: "Nest.js",
+      position: { bottom: "-200px", left: "170px", mdBottom: "-160px", mdLeft: "150px" },
+    },
+    {
+      src: img2,
+      alt: "Mongodb",
+      position: { bottom: "-200px", left: "260px", mdBottom: "-160px", mdLeft: "250px" },
+    },
+    {
+      src: img5,
+      alt: "Postgres",
+      position: { bottom: "-200px", left: "350px", mdBottom: "-160px", mdLeft: "350px" },
+    },
+  ];
+
 
   return (
 
-    <div ref={containerRef} id='home' className="relative w-full max-w-7xl  mx-auto ">
+    <div ref={containerRef} id='home' className=" relative  w-full max-w-7xl mx-auto mt-20 ">
 
       <motion.div className="absolute hidden md:block -right-60 top-28">
         <CustomSvg />
@@ -76,7 +96,7 @@ export default function HeroBanner() {
 
           {/* ---------------- LEFT SIDE ---------------- */}
           <div className="lg:max-w-2xl space-y-8 animate-fade-in relative z-20">
-            <div className="space-y-4 relative">
+            <div className="space-y-4 text-left relative">
               <h1 className="text-3xl lg:text-7xl font-bold leading-tight">
                 <span className="text-white">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-[#9333EA] via-purple-300 to-[#3B82F6] bg-clip-text text-transparent animate-pulse ">
@@ -117,7 +137,8 @@ export default function HeroBanner() {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-4 pt-8 relative">
+            <div className="flex flex-col md:flex-row m
+            d:gap-4 md:pt-8 relative">
               <motion.a
                 whileTap={{ scale: 0.8 }}
                 whileHover={{ scale: 1.03 }}
@@ -127,7 +148,17 @@ export default function HeroBanner() {
               >
                 See resume
               </motion.a>
-              <TransparentButton title="Contact Me" />
+              <motion.a whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.03 }} className="px-6 w-full   md:text-lg  md:w-fit py-3 m-2 border-2 border-[#3B82F6]  rounded-lg hover:bg-[#3B82F6]/10 text-white backdrop-blur relative  overflow-hidden" onClick={() => {
+                  const footer = document.getElementById('contact');
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}>
+                <div className="absolute inset-0 bg-[#9333EA]/20 group-hover:opacity-100  duration-300 " />
+                Contact Me
+              </motion.a>
+
             </div>
           </div>
 
@@ -146,7 +177,7 @@ export default function HeroBanner() {
             />
 
             {/* Profile Image */}
-            <motion.div className="relative mt-12 lg:mt-0">
+            <motion.div className="md:relative mt-12  lg:mt-0">
               <div className="relative mx-auto w-[360px] h-84">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#9333EA] to-[#3B82F6] z-20 backdrop-blur rounded-[50%_30%_50%_70%]" />
@@ -162,38 +193,40 @@ export default function HeroBanner() {
                   />
                 </motion.div>
 
-                {techs.map((tech, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ y: 0, opacity: 1 }}
-                    animate={{
-                      y: [0, -5, 0],
-                      opacity: [0.85, 1, 0.85],
-                    }}
-                    transition={{
-                      duration: Math.floor(Math.random() * 6 + 1) + i * 0.5,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                      repeatDelay: 2,
-                      repeatType: "loop",
-                    }}
-                    className="absolute w-16 h-16 md:w-20 md:h-28 rounded-full"
-                    style={{
+                <div className="hidden  md:block">
+                  {techs.map((tech, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ y: 0, opacity: 1 }}
+                      animate={{
+                        y: [0, -5, 0],
+                        opacity: [0.85, 1, 0.85],
+                      }}
+                      transition={{
+                        duration: Math.floor(Math.random() * 6 + 1) + i * 0.5,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                        repeatDelay: 2,
+                        repeatType: "loop",
+                      }}
+                      className="absolute  w-16 h-10 md:w-20 md:h-28 rounded-full"
+                      style={{
 
-                      bottom: tech.position.bottom,
-                      left: tech.position.left,
-                    }}
-                  >
-                    <Image
-                      src={tech.src}
-                      alt={tech.alt}
-                      width={8000}
-                      height={8000}
-                      quality={100}
-                      className="drop-shadow-lg  rounded-[10%] w-full  object-cover"
-                    />
-                  </motion.div>
-                ))}
+                        bottom: tech.position.bottom,
+                        left: tech.position.left,
+                      }}
+                    >
+                      <Image
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={8000}
+                        height={8000}
+                        quality={100}
+                        className="drop-shadow-lg  rounded-[10%] w-full  object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -201,7 +234,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Bottom Social Icons */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute -bottom-10 md:bottom-0 left-1/2 transform -translate-x-1/2 z-20">
         <SocialIcons />
       </div>
     </div>
