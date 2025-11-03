@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             {/* Header */}
             <div className="pb-2 mb-4 border-b border-cyan-800/30 flex flex-col lg:flex-row justify-between gap-2">
               <div className="">
-                <h1 className={`mb-4 text-cyan-300 text-2xl md:text-4xl font-bold`}>
+                <h1 className={`mb-4 text-cyan-300 text-3xl md:text-4xl font-bold`}>
                   {project.projectName}
                 </h1>
                 <p className={`mb-6 md:text-lg `}>{project.description}</p>

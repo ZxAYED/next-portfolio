@@ -1,32 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import img12 from '../../public/images/skills/express.png';
-import img1 from '../../public/images/skills/js.png';
-import img5 from '../../public/images/skills/Material.png';
-import img8 from '../../public/images/skills/mongodb.png';
-import img7 from '../../public/images/skills/nextjs.png';
 
-import img19 from '../../public/images/skills/cloudinary.png';
-import img25 from '../../public/images/skills/firebase.png';
-import img21 from '../../public/images/skills/github.png';
-import img27 from '../../public/images/skills/lightswind.png';
-import img23 from '../../public/images/skills/mongoosejs.png';
-import img18 from '../../public/images/skills/nestjs.png';
-import img22 from '../../public/images/skills/netlify.png';
-import img10 from '../../public/images/skills/nodejs.png';
-import img17 from '../../public/images/skills/postgresdb.png';
-import img13 from '../../public/images/skills/postman.png';
-import img11 from '../../public/images/skills/prisma.png';
-import img26 from '../../public/images/skills/redis.png';
-import img6 from '../../public/images/skills/redux.png';
-import img15 from '../../public/images/skills/render.png';
-import img24 from '../../public/images/skills/s3.png';
-import img4 from '../../public/images/skills/shadcn.png';
-import img20 from '../../public/images/skills/supabase.png';
-import img16 from '../../public/images/skills/swagger.png';
-import img3 from '../../public/images/skills/tailwind.png';
-import img2 from '../../public/images/skills/typescript.png';
-import img14 from '../../public/images/skills/Vercel.png';
 
 
 export const skills = {
@@ -36,31 +10,31 @@ export const skills = {
     // { name: "CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753770/next-portfolio/icons8-css3-144.png.png' },
     // { name: "Bootstrap", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753732/next-portfolio/icons8-bootstrap-240.png.png' },
 
-    { name: "Tailwind CSS", icon: img3 },
-    { name: "Material UI", icon: img5 },
-    { name: "Shadcn UI", icon: img4 },
-    { name: "LightsWind", icon: img27 },
-    { name: "JavaScript", icon: img1 },
+    { name: "Tailwind CSS", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144676/tailwind_rk0uxm.png' },
+    { name: "Material UI", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144708/Material_dzjxfa.png' },
+    { name: "Shadcn UI", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144708/Material_dzjxfa.png' },
+    { name: "LightsWind", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144766/lightswind_b89cu9.png' },
+    { name: "JavaScript", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144790/js_fguukg.png' },
 
-    { name: "React.js", icon: img6 },
-    { name: "Next.js", icon: img7 },
+    { name: "React.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145923/react_y3jcyk.png' },
+    { name: "Next.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762144996/nextjs_hhhdhr.png' },
   ],
 
   backend: [
-    { name: "Node.js", icon: img10 },
-    { name: "Express.js", icon: img12 },
-    { name: "Nest.js", icon: img18 },
-    { name: "TypeScript", icon: img2 },
-    { name: "Firebase", icon: img25 },
+    { name: "Node.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145027/nodejs_coeuef.png' },
+    { name: "Express.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145050/express_pxbl13.png' },
+    { name: "Nest.js", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145071/nestjs_mmxdwy.png' },
+    { name: "TypeScript", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145105/typescript_z7zvwx.png' },
+    { name: "Firebase", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145145/firebase_c3khua.png' },
   ],
 
   database: [
-    { name: "MongoDB", icon: img8 },
-    { name: "Mongoose", icon: img23 },
-    { name: "Prisma", icon: img11 },
-    { name: "PostgreSQL", icon: img17 },
-    { name: "Redis", icon: img26 },
-    { name: "AWS S3", icon: img24 },
+    { name: "MongoDB", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145183/mongodb_p1swtr.png' },
+    { name: "Mongoose", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145255/mongoosejs_lu31vw.png' },
+    { name: "Prisma", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145274/prisma_a1zqci.png' },
+    { name: "PostgreSQL", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145301/postgresdb_qbqcqm.png' },
+    { name: "Redis", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145321/redis_ksmxx8.png' },
+    { name: "AWS S3", icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145343/s3_fcqgyo.png' },
 
   ],
 };
@@ -72,37 +46,37 @@ export const tools = [
   // },
   {
     name: "Cloudinary",
-    icon: img19,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145402/cloudinary_rxkl70.png',
   },
   {
     name: "Supabase",
-    icon: img20,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145419/supabase_o8gkne.png',
   },
 
   {
     name: "GitHub",
-    icon: img21,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145449/github_zqdgny.png',
   }, {
     name: "Netlify",
-    icon: img22,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145471/netlify_hcpszx.png',
   },
   {
     name: "Vercel",
-    icon: img14,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145524/Vercel_x6wlxw.png',
   },
   {
     name: "Postman",
-    icon: img13,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145782/postman_ao0iva.png',
 
   },
   {
     name: "Swagger",
-    icon: img16,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145788/swagger_ovfnlr.png',
 
   },
   {
     name: "Render",
-    icon: img15,
+    icon: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762145797/render_w5mvde.png',
   }
 ]
 export const techColors: Record<string, string> = {

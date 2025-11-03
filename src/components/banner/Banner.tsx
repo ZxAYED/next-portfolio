@@ -3,11 +3,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
-import img2 from "../../../public/images/skills/mongo.png"
-import img3 from "../../../public/images/skills/nest .png"
-import img4 from "../../../public/images/skills/next.png"
-import img5 from "../../../public/images/skills/postgres.png"
-import img1 from "../../../public/images/skills/ts.png"
 import CustomSvg from "../shared/CustomSvg"
 import CustomSvg2 from "../shared/CustomSvg2"
 import SocialIcons from "./SocialIcon"
@@ -32,27 +27,27 @@ export default function HeroBanner() {
 
   const techs = [
     {
-      src: img1,
+      src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146005/ts_hlqkvx.png',
       alt: "Typescript",
       position: { bottom: "-200px", left: "-10px", mdBottom: "-160px", mdLeft: "-50px" },
     },
     {
-      src: img4,
+      src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146027/next_pfupwt.png',
       alt: "Next.js",
       position: { bottom: "-200px", left: "80px", mdBottom: "-160px", mdLeft: "50px" },
     },
     {
-      src: img3,
+      src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146054/nest_cdwscp.png',
       alt: "Nest.js",
       position: { bottom: "-200px", left: "170px", mdBottom: "-160px", mdLeft: "150px" },
     },
     {
-      src: img2,
+      src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146081/mongo_xfporh.png',
       alt: "Mongodb",
       position: { bottom: "-200px", left: "260px", mdBottom: "-160px", mdLeft: "250px" },
     },
     {
-      src: img5,
+      src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146102/postgres_wylahx.png',
       alt: "Postgres",
       position: { bottom: "-200px", left: "350px", mdBottom: "-160px", mdLeft: "350px" },
     },
@@ -97,7 +92,7 @@ export default function HeroBanner() {
           {/* ---------------- LEFT SIDE ---------------- */}
           <div className="lg:max-w-2xl space-y-8 animate-fade-in relative z-20">
             <div className="space-y-4 text-left relative">
-              <h1 className="text-3xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="text-white">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-[#9333EA] via-purple-300 to-[#3B82F6] bg-clip-text text-transparent animate-pulse ">
                   Zayed
@@ -149,7 +144,7 @@ export default function HeroBanner() {
                 See resume
               </motion.a>
               <motion.a whileTap={{ scale: 0.8 }}
-                whileHover={{ scale: 1.03 }} className="px-6 w-full   md:text-lg  md:w-fit py-3 m-2 border-2 border-[#3B82F6]  rounded-lg hover:bg-[#3B82F6]/10 text-white backdrop-blur relative  overflow-hidden" onClick={() => {
+                whileHover={{ scale: 1.03 }} className="px-6 w-full   md:text-lg  md:w-fit py-3 m-2 border-2 border-[#3B82F6] text-center flex justify-center items-center rounded-lg hover:bg-[#3B82F6]/10 text-white backdrop-blur relative  overflow-hidden" onClick={() => {
                   const footer = document.getElementById('contact');
                   if (footer) {
                     footer.scrollIntoView({ behavior: 'smooth' });

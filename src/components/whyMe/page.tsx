@@ -62,7 +62,7 @@ const WhyMe = () => {
       </div>
 
       <div className="relative z-10 px-6 py-20 rounded-md ">
-        <h2 className="mb-6 text-3xl md:text-5xl text-cyan-300 font-bold">Why You Need Me</h2>
+        <h2 className="mb-6 text-4xl md:text-5xl text-cyan-300 font-bold">Why You Need Me</h2>
         <p className="mb-12 text-lg">
           I`m a determined professional who believes in hard work, teamwork, and
           delivering results. Here`s why I`m the right fit for your team.
