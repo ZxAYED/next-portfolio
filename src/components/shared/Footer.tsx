@@ -77,7 +77,7 @@ const Footer = () => {
           <Image src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753641/next-portfolio/getInTouchpng.png.png'} height={1000} width={1000} alt="get in touch" className="w-40 h-40 " />
         </div>
         <div className="max-w-7xl mx-auto  py-16 px-6 ">
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-center ">
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-cyan-300 text-center ">
             <div>
               <FaMapMarkerAlt className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
               <p className="text-xl mt-2">Dhaka, Bangladesh</p>
@@ -106,8 +106,8 @@ const Footer = () => {
 
           <section className="relative flex flex-col lg:flex-row justify-between lg:items-center mt-12 ">
             <div className="lg:w-2/4  ">
-              <h1 className="text-3xl font-bold ">Let`s Connect</h1>
-              <div className="flex flex-col md:flex-row lg:flex-col gap-6 mt-6 text-5xl">
+              <h1 className="text-3xl  text-cyan-300 font-bold ">Let`s Connect</h1>
+              <div className="flex flex-col md:flex-row lg:flex-col gap-6 mt-6  text-cyan-300 text-5xl">
                 <a
                   href="https://github.com/ZxAYED"
                   target="_blank"
@@ -141,7 +141,7 @@ const Footer = () => {
             <div
               className="max-w-3xl w-full border backdrop-blur-sm p-8 mt-12 rounded-md"
             >
-              <h1 className="text-3xl font-bold mb-6 text-center">
+              <h1 className="text-3xl  text-cyan-300 font-bold mb-6 text-center">
                 Leave a message
               </h1>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

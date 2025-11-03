@@ -18,7 +18,7 @@ export default function MySelfSection() {
           >
             <div className="pointer-events-none absolute inset-0 " />
             <Image
-              src="/images/fb.jpg"
+              src="https://res.cloudinary.com/dhl04adhz/image/upload/v1762144594/fb_xkf7o8.jpg"
               alt="Zayed"
               fill
               priority
@@ -38,8 +38,8 @@ export default function MySelfSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="lg:col-span-3"
         >
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-5xl font-bold tracking-tight">
+          <div className="mb-8 mt-10 md:mt-0">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-[#9333EA] via-purple-300 to-[#3B82F6] bg-clip-text text-transparent">
                 Experience & Journey
               </span>
@@ -58,10 +58,10 @@ export default function MySelfSection() {
               <span className="absolute left-1 top-0 -translate-x-1/2 size-3 rounded-full bg-[#3B82F6] shadow-[0_0_0_6px_rgba(59,130,246,0.15)]" />
               <div className="rounded-xl border border-white/10   backdrop-blur p-5  md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10  ">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg md:text-2xl text-cyan-300 font-medium">Full Stack Developer</h3>
+                  <h3 className="text-xl md:text-2xl text-cyan-300 font-medium">Full Stack Developer</h3>
                   <span className="text-xs md:text-lg text-[#3B82F6] font-medium">June 2025 — Present</span>
                 </div>
-                <p className="mt-1 text-sm md:text-lg text-[#9333EA] font-medium">Softvence Agency</p>
+                <p className="mt-1 text-base md:text-lg text-[#9333EA] font-medium">Softvence Agency</p>
                 <ul className="mt-3 space-y-2 text-sm md:text-[15px] text-gray-300/90 leading-relaxed">
                   <li>Working as a Full Stack Developer, handling both frontend and backend development as per project needs.</li>
                   <li>Developing and maintaining modern web apps — sometimes focused solely on backend for mobile apps, sometimes only frontend for websites, and often both.</li>
@@ -77,9 +77,9 @@ export default function MySelfSection() {
               <span className="absolute left-1 top-0 -translate-x-1/2 size-3 rounded-full bg-[#9333EA] shadow-[0_0_0_6px_rgba(147,51,234,0.15)]" />
               <div className="rounded-xl border border-white/10   backdrop-blur p-4 md:p-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/10 ">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg md:text-2xl text-cyan-300 font-medium">BSc (Hons) in Physics</h3>
+                  <h3 className="text-xl md:text-2xl text-cyan-300 font-medium">BSc (Hons) in Physics</h3>
                 </div>
-                <p className="mt-1 text-sm md:text-lg text-gray-400">2021 - Present</p>
+                <p className="mt-1 text-base md:text-lg text-gray-400">2021 - Present</p>
                 <p className="mt-3 text-sm md:text-[15px] text-gray-300/90">
                   Exploring problem‑solving, math, and scientific thinking that fuel my engineering mindset.
                 </p>

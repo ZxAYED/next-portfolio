@@ -1,21 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-     experimental: {
-    serverActions: {
-      bodySizeLimit: "20mb",
-    },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
   },
-    images: {
-        qualities: [75, 100],
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: '**',
-
-            },
-        ],
-    },
 };
 
 export default nextConfig;

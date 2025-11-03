@@ -1,12 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 
 interface SkillCardProps {
   skill: {
     name: string
-    icon: StaticImageData
+    icon: string
   }
   index?: number
 }
