@@ -105,6 +105,7 @@ const MorphingNavigation: React.FC = () => {
 
           {/* Full navbar (desktop, not sticky) */}
           <AnimatePresence>
+            {/* <AuroraBackground> */}
             {!isMobile && !isSticky && (
               <motion.div
                 className="flex justify-between items-center gap-8 z-50 px-8 w-full"
@@ -147,6 +148,7 @@ const MorphingNavigation: React.FC = () => {
                 </div>
               </motion.div>
             )}
+            {/* </AuroraBackground> */}
           </AnimatePresence>
 
           {/* Hamburger for mobile or sticky state */}
@@ -173,6 +175,7 @@ const MorphingNavigation: React.FC = () => {
         {isMenuOpen && (
           <Dialog open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DialogContent asChild>
+
               <div className="fixed inset-0 flex items-center justify-center z-50 p-0 bg-black/40 backdrop-blur-md">
                 <div className="absolute  top-0 w-full left-0 right-0 rounded-full">
                   <Aurora
