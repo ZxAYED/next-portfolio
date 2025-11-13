@@ -1,7 +1,7 @@
 "use client"
 
 import { skills, tools } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { cubicBezier, motion } from "framer-motion"
 import { Database, Laptop, Server, Sparkles, Wrench } from "lucide-react"
 import SkillCard from "./SkillCard"
 
@@ -22,9 +22,9 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: cubicBezier(0.33, 1, 0.68, 1) },
     },
-  }
+  };
 
   return (
     <div id="about" className="relative w-full min-h-screen py-10 px-4 text-white overflow-hidden">
