@@ -29,27 +29,27 @@ export default function HeroBanner() {
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146005/ts_hlqkvx.png',
       alt: "Typescript",
-      position: { bottom: "-200px", left: "-10px", mdBottom: "-160px", mdLeft: "-50px" },
+      position: { bottom: "-200px", left: "-30px", mdBottom: "-160px", mdLeft: "-50px" },
     },
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146027/next_pfupwt.png',
       alt: "Next.js",
-      position: { bottom: "-200px", left: "80px", mdBottom: "-160px", mdLeft: "50px" },
+      position: { bottom: "-200px", left: "55px", mdBottom: "-160px", mdLeft: "50px" },
     },
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146054/nest_cdwscp.png',
       alt: "Nest.js",
-      position: { bottom: "-200px", left: "170px", mdBottom: "-160px", mdLeft: "150px" },
+      position: { bottom: "-200px", left: "140px", mdBottom: "-160px", mdLeft: "150px" },
     },
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146081/mongo_xfporh.png',
       alt: "Mongodb",
-      position: { bottom: "-200px", left: "260px", mdBottom: "-160px", mdLeft: "250px" },
+      position: { bottom: "-200px", left: "225px", mdBottom: "-160px", mdLeft: "250px" },
     },
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146102/postgres_wylahx.png',
       alt: "Postgres",
-      position: { bottom: "-200px", left: "350px", mdBottom: "-160px", mdLeft: "350px" },
+      position: { bottom: "-200px", left: "310px", mdBottom: "-160px", mdLeft: "350px" },
     },
   ];
 
@@ -83,7 +83,7 @@ export default function HeroBanner() {
 
 
 
-        <div className=" w-full px-4 md:px-0 flex lg:flex-row flex-col items-start justify-between py-12 relative">
+        <div className=" w-full px-4 lg:px-0 flex lg:flex-row flex-col items-center lg:items-start justify-between py-12 relative">
           {/* Decorative gradient lines */}
           <div className="absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-[#3B82F6] to-transparent opacity-30" />
           <div className="absolute left-24 bottom-1/4 w-2 h-40 bg-gradient-to-b from-[#3B82F6] to-transparent opacity-25" />
@@ -188,7 +188,7 @@ export default function HeroBanner() {
                   />
                 </motion.div>
 
-                <div className="hidden  md:block">
+                <div className=" flex flex-wrap ">
                   {techs.map((tech, i) => (
                     <motion.div
                       key={i}
@@ -204,7 +204,7 @@ export default function HeroBanner() {
                         repeatDelay: 2,
                         repeatType: "loop",
                       }}
-                      className="absolute  w-16 h-10 md:w-20 md:h-28 rounded-full"
+                      className={`absolute  w-20 h-10 md:h-32 rounded-full`}
                       style={{
 
                         bottom: tech.position.bottom,

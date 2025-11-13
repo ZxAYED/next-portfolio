@@ -3,21 +3,21 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import type { Project } from "@/lib/projects"
 import { techColors } from "@/lib/utils"
+import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
-
 export default function ProjectCard({ project }: { project: Project }) {
+
   const textColor = "text-gray-300 md:text-lg"
-  const subtitleColor = "text-gray-500"
+
 
   const header = "text-cyan-300"
 
   return (
-    <div className="relative w-full mt-10  h-full min-h-screen">
+    <div className="relative w-full mt-10">
 
       <div className="relative  max-w-7xl mx-auto  text-white">
-        <Card className="border-none  backdrop-blur">
+        <Card className="border-none  ">
           <div className="px-4 lg:px-0">
             {/* Header */}
             <div className="pb-2 mb-4 border-b border-cyan-800/30 flex flex-col lg:flex-row justify-between gap-2">
@@ -27,62 +27,64 @@ export default function ProjectCard({ project }: { project: Project }) {
                 </h1>
                 <p className={`mb-6 md:text-lg `}>{project.description}</p>
 
-                <div className="flex flex-wrap gap-4">
-                  <button
-                    className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-cyan-500 hover:bg-cyan-950/50`}
+                <div className="flex flex-wrap gap-4 relative z-10">
+                  <motion.a
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.03 }}
+
+
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-cyan-500 hover:bg-cyan-950/50 flex gap-2 justify-center items-center cursor-pointer`}
                   >
-                    <Link
-                      className="flex gap-2 justify-center items-center"
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Link>
-                  </button>
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </motion.a>
 
                   {project.githubClientCode && (
-                    <button
-                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-[#3b82f6] hover:bg-purple-950/50`}
+                    <motion.a
+                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.03 }}
+
+
+                      href={project.githubClientCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-[#3b82f6] hover:bg-purple-950/50 flex gap-2 justify-center items-center cursor-pointer`}
                     >
-                      <Link
-                        className="flex gap-2 justify-center items-center"
-                        href={project.githubClientCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Client Code
-                      </Link>
-                    </button>
+                      <Github className="w-4 h-4 mr-2" />
+                      Client Code
+                    </motion.a>
                   )}
 
                   {project.githubServerCode && (
-                    <button
-                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border justify-between border-[#3b82f6] hover:bg-purple-950/50`}
+                    <motion.a
+                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.03 }}
+
+
+                      href={project.githubServerCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-[#3b82f6] hover:bg-purple-950/50 flex gap-2 justify-center items-center cursor-pointer`}
                     >
-                      <Link
-                        className="flex gap-2 justify-center items-center"
-                        href={project.githubServerCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Server Code
-                      </Link>
-                    </button>
+                      <Github className="w-4 h-4 mr-2" />
+                      Server Code
+                    </motion.a>
                   )}
                 </div>
               </div>
-              <Image
-                src={project.imageUrl}
-                alt={project.projectName}
-                height={1000}
-                width={1000}
-                quality={100}
-                className=" w-full mt-6 md:mt-0 h-60 object-fill"
-              />
+              <div className="w-full mt-6 md:mt-0 h-60 rounded-lg p-1 bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.projectName}
+                  height={1000}
+                  width={1000}
+                  quality={100}
+                  className="w-full h-full object-fill rounded-md"
+                />
+              </div>
             </div>
 
             {/* Features */}
