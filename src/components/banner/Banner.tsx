@@ -138,7 +138,7 @@ export default function HeroBanner() {
                 whileTap={{ scale: 0.8 }}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                href="https://drive.google.com/file/d/116jss61XQ34AiP9YXHhTSNWsTE8gmCOq/view?usp=sharing"
+                href="https://drive.google.com/file/d/12283il_bd_l65VfUOEWS12c2DSIVm-4v/view?usp=sharing"
                 className="px-6 m-2 w-full md:w-fit py-3 bg-gradient-to-r flex justify-center items-center from-[#3B82F6] to-purple-600 text-white md:text-lg rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50  "
               >
                 See resume
