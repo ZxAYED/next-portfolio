@@ -23,8 +23,8 @@ export default function HeroBanner() {
 
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
+  }, []) 
+// asdasdasdsa
   const techs = [
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146005/ts_hlqkvx.png',
