@@ -24,7 +24,8 @@ export default function HeroBanner() {
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, []) 
-// afim khele matha dhore ,.
+// afim khele matha dhore ,. 
+// cocane a buk dhorfor kore 
   const techs = [
     {
       src: 'https://res.cloudinary.com/dhl04adhz/image/upload/v1762146005/ts_hlqkvx.png',
