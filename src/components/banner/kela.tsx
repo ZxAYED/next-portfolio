@@ -1,6 +1,8 @@
-import React from 'react';
 
 const kela = () => {
+  const kela = 'kela';
+  console.log(kela);
+ 
   return (
     <div>
       kela component
