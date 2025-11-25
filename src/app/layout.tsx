@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
+`import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
 import AnimatedCursor from "react-animated-cursor";
 import { Bounce, ToastContainer } from "react-toastify";
