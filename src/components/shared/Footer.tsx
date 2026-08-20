@@ -106,7 +106,7 @@ export default function Footer() {
       {/* Background Image: Brightened by 40% with balanced ambient contrast */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <Image
-          src="/images/footer.jpg"
+          src="https://res.cloudinary.com/dhl04adhz/image/upload/v1787228448/footer_myexvj.jpg"
           alt="Footer Background"
           fill
           priority
@@ -137,7 +137,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-slate-950/60 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl sm:p-9 md:p-10">
+            <div className="relative overflow-hidden rounded-md border border-white/15 bg-white/[0.03] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 md:p-9">
               <div className="pointer-events-none absolute -top-24 -right-24 h-60 w-60 rounded-full bg-[#3B82F6]/15 blur-3xl" />
 
               <form onSubmit={handleSubmit} className="relative space-y-5">
@@ -152,7 +152,7 @@ export default function Footer() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Sarah Connor"
-                    className="w-full rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                    className="w-full rounded-md border border-white/15 bg-black/25 px-4 py-3 text-sm text-white shadow-inner backdrop-blur-md outline-none transition-all placeholder:text-gray-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-black/40 focus:ring-1 focus:ring-cyan-400"
                   />
                 </div>
 
@@ -167,7 +167,7 @@ export default function Footer() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. sarah@enterprise.com"
-                    className="w-full rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                    className="w-full rounded-md border border-white/15 bg-black/25 px-4 py-3 text-sm text-white shadow-inner backdrop-blur-md outline-none transition-all placeholder:text-gray-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-black/40 focus:ring-1 focus:ring-cyan-400"
                   />
                 </div>
 
@@ -182,7 +182,7 @@ export default function Footer() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell me about your product requirements, tech stack, and timeline..."
-                    className="w-full resize-none rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                    className="w-full resize-none rounded-md border border-white/15 bg-black/25 px-4 py-3 text-sm text-white shadow-inner backdrop-blur-md outline-none transition-all placeholder:text-gray-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-black/40 focus:ring-1 focus:ring-cyan-400"
                   />
                 </div>
 
@@ -197,7 +197,7 @@ export default function Footer() {
                       <Send className="h-4 w-4" />
                     )
                   }
-                  className="mt-2 w-full py-2 text-sm font-medium"
+                  className="mt-2 w-full !rounded-md py-2.5 text-sm font-medium"
                 />
               </form>
             </div>
@@ -205,8 +205,8 @@ export default function Footer() {
 
           <div className="lg:col-span-5 lg:flex lg:justify-end lg:pt-60 xl:pt-72">
             <div className="grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 lg:max-w-[490px]">
-              <div className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60">
-                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+              <div className="flex min-h-[72px] items-center gap-3 rounded-md border border-white/15 bg-white/[0.03] px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-white/[0.06]">
+                <div className="rounded-md border border-white/10 bg-white/[0.05] p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <MapPin className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
@@ -221,16 +221,16 @@ export default function Footer() {
 
               <a
                 href="mailto:zzayediqbalofficial@gmail.com"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                className="flex min-h-[72px] items-center gap-3 rounded-md border border-white/15 bg-white/[0.03] px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-white/[0.06]"
               >
-                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                <div className="rounded-md border border-white/10 bg-white/[0.05] p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Mail className="h-4 w-4" />
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1 overflow-hidden">
                   <p className="text-xs font-mono uppercase tracking-wider text-gray-300">
                     Email
                   </p>
-                  <p className="truncate text-sm font-medium text-white">
+                  <p className="truncate text-xs sm:text-sm font-medium text-white" title="zzayediqbalofficial@gmail.com">
                     zzayediqbalofficial@gmail.com
                   </p>
                 </div>
@@ -238,9 +238,9 @@ export default function Footer() {
 
               <a
                 href="tel:+8801902320296"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                className="flex min-h-[72px] items-center gap-3 rounded-md border border-white/15 bg-white/[0.03] px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-white/[0.06]"
               >
-                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                <div className="rounded-md border border-white/10 bg-white/[0.05] p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Phone className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
@@ -257,9 +257,9 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/zayed-iqbal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                className="flex min-h-[72px] items-center gap-3 rounded-md border border-white/15 bg-white/[0.03] px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-white/[0.06]"
               >
-                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                <div className="rounded-md border border-white/10 bg-white/[0.05] p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Linkedin className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
