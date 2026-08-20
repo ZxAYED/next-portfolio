@@ -24,7 +24,9 @@ export default async function Provider({
           <div className="twinkling"></div>
           <div className="clouds"></div>
 
-          {children}
+          <div className="relative z-[3]">
+            {children}
+          </div>
         </div>
       </div>
     </div>

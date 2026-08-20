@@ -1,139 +1,80 @@
 "use client"
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
+
+import PrimaryButton from "@/components/shared/PrimaryButton"
 import type { Project } from "@/lib/projects"
-import { techColors } from "@/lib/utils"
-import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+
 export default function ProjectCard({ project }: { project: Project }) {
-
-  const textColor = "text-gray-300 md:text-lg"
-
-
-  const header = "text-cyan-300"
+  // Display exactly 3 tech stack badges on the card preview
+  const previewTech = project.techStack.slice(0, 3)
 
   return (
-    <div className="relative w-full mt-10">
+    <Link
+      href={`/projects/${project.slug}`}
+      onClick={(event) => event.stopPropagation()}
+      className="group relative rounded-xl border border-white/10 bg-[#0f172a]/85 backdrop-blur-2xl overflow-hidden flex flex-col w-full h-full select-none shadow-2xl transition-all duration-300 hover:border-purple-500/50 cursor-pointer  pointer-events-auto"
+    >
+      {/* Top Half: 50% Height Image with Gradient Blend */}
+      <div className="relative w-full h-1/2 min-h-[190px] overflow-hidden pointer-events-none">
+        <Image
+          src={project.imageUrl}
+          alt={project.projectName}
+          fill
+          quality={90}
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        {/* Bottom vignette to blend into card content */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/30 to-transparent pointer-events-none" />
 
-      <div className="relative  max-w-7xl mx-auto  text-white">
-        <Card className="border-none  ">
-          <div className="px-4 lg:px-0">
-            {/* Header */}
-            <div className="pb-2 mb-4 border-b border-cyan-800/30 flex flex-col lg:flex-row justify-between gap-2">
-              <div className="">
-                <h1 className={`mb-4 text-cyan-300 text-3xl md:text-4xl font-bold`}>
-                  {project.projectName}
-                </h1>
-                <p className={`mb-6 md:text-lg `}>{project.description}</p>
-
-                <div className="flex flex-wrap gap-4 relative z-10">
-                  <motion.a
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ scale: 1.03 }}
-
-
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-cyan-500 hover:bg-cyan-950/50 flex gap-2 justify-center items-center cursor-pointer`}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </motion.a>
-
-                  {project.githubClientCode && (
-                    <motion.a
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{ scale: 1.03 }}
-
-
-                      href={project.githubClientCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-[#3b82f6] hover:bg-purple-950/50 flex gap-2 justify-center items-center cursor-pointer`}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Client Code
-                    </motion.a>
-                  )}
-
-                  {project.githubServerCode && (
-                    <motion.a
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{ scale: 1.03 }}
-
-
-                      href={project.githubServerCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${textColor} !px-6 !py-3 font-medium rounded-lg border border-[#3b82f6] hover:bg-purple-950/50 flex gap-2 justify-center items-center cursor-pointer`}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Server Code
-                    </motion.a>
-                  )}
-                </div>
-              </div>
-              <div className="w-full mt-6 md:mt-0 h-60 rounded-lg p-1 bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.projectName}
-                  height={1000}
-                  width={1000}
-                  quality={100}
-                  className="w-full h-full object-fill rounded-md"
-                />
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="mb-8">
-              <h2 className={`${header} mb-4 text-2xl font-bold`}>Key Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.features.map((feature, index) => (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
-                      <span className="text-xs font-bold">{index + 1}</span>
-                    </div>
-                    <p className={`${textColor}`}>{feature}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="mb-8">
-              <h2 className={`${header} text-2xl font-bold`}>Tech Stack</h2>
-              <div className="my-4 flex flex-wrap gap-4">
-                {project.techStack.map((tech) => {
-                  const gradient = techColors[tech] || "from-gray-400 to-gray-600"
-                  return (
-                    <Badge key={tech} className={`bg-gradient-to-r px-6 py-2 ${gradient} capitalize md:text-lg`}>
-                      {tech}
-                    </Badge>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* Learnings */}
-            <div>
-              <h2 className={`${header} mb-4 text-2xl font-bold`}>My Learnings</h2>
-              <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                {project.myLearnings.map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 mt-1 mr-3 rounded-full bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
-                      <span className="text-xs font-bold">{index + 1}</span>
-                    </div>
-                    <p className={`${textColor}`}>{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Card>
+        {/* Top-Right Floating Arrow Icon on Hover */}
+        <div className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 pointer-events-none">
+          <ArrowUpRight className="w-4 h-4 text-cyan-300" />
+        </div>
       </div>
-    </div>
+
+      {/* Bottom Half: Content Section */}
+      <div className="p-5 md:p-6 flex flex-col justify-between flex-1 relative z-20 pointer-events-none">
+        <div>
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-purple-300 transition-colors">
+            {project.projectName}
+          </h3>
+          <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-2 mb-4 font-light">
+            {project.description}
+          </p>
+
+          {/* Exactly 3 Tech Stack Badges */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {previewTech.map((tech) => (
+              <span
+                key={tech}
+                className="bg-white/5 border border-white/10 text-cyan-300 text-[11px] px-2.5 py-0.5 rounded-full font-mono shadow-sm"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.techStack.length > 3 && (
+              <span className="bg-white/5 border border-white/10 text-gray-400 text-[11px] px-2 py-0.5 rounded-full font-mono">
+                +{project.techStack.length - 3}
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Action Button Indicator */}
+        <div className="pt-2 mt-auto">
+          <PrimaryButton
+            as="div"
+            title="VIEW CASE STUDY"
+            icon={
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            }
+            className="w-full text-xs font-semibold uppercase tracking-wider shadow-md group-hover:shadow-lg group-hover:shadow-[#3B82F6]/40 md:text-sm"
+          />
+        </div>
+      </div>
+    </Link>
   )
 }

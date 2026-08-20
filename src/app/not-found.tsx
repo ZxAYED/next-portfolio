@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import TransparentButton from '@/components/shared/TransparentButton';
 import Link from 'next/link';
 import './not-found.css';
@@ -23,7 +23,7 @@ const NotFoundPage = () => {
         <div className="content">
           <h1 className="title">404</h1>
           <p className="subtitle">Lost in Space</p>
-          <p className="message">You've ventured into uncharted territory.</p>
+          <p className="message">You&apos;ve ventured into uncharted territory.</p>
           <Link href="/" >
             <TransparentButton title="Back To Safety"></TransparentButton>
           </Link>

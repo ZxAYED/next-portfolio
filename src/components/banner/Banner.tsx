@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -110,7 +110,7 @@ export default function HeroBanner() {
             {/* Features */}
             <div className="space-y-3 pt-4">
               {[
-                "Full Stack Developer at Softvence Agency",
+                "Full Stack Developer ",
                 "Self-taught learner, passionate about backend optimization",
                 "Focused on building lightweight, performed , scaled & optimized applications",
                 "Direct client communication and handling clients end-to-end ",

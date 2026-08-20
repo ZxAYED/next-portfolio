@@ -1,4 +1,4 @@
-`import { ThemeProvider } from "@/components/theme/ThemeProvider";
+﻿import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
 import AnimatedCursor from "react-animated-cursor";
 import { Bounce, ToastContainer } from "react-toastify";
@@ -7,17 +7,17 @@ import "./globals.css";
 const MoskFont = {
   fontFamily: "Mosk, sans-serif",
 };
+
 export const metadata: Metadata = {
   title: "Zayed's Portfolio",
   description: "Zayed's portfolio app",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   const theme = "dark";
 
   return (
@@ -27,7 +27,7 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.png" sizes="any" />
       </head>
-      <body className={`${MoskFont} antialiased`}>
+      <body style={MoskFont} className="antialiased">
         <ThemeProvider initialTheme={theme}>
           <AnimatedCursor
             innerSize={10}

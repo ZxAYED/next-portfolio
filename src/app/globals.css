@@ -1,66 +1,67 @@
-html,
+﻿html,
 body {
   scroll-behavior: smooth;
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Thin 100.ttf') format('truetype');
+  src: url('/fonts/Mosk-Thin-100.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Extra-Light 200.ttf') format('truetype');
+  src: url('/fonts/Mosk-Extra-Light-200.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Light 300.ttf') format('truetype');
+  src: url('/fonts/Mosk-Light-300.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Normal 400.ttf') format('truetype');
+  src: url('/fonts/Mosk-Normal-400.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Medium 500.ttf') format('truetype');
+  src: url('/fonts/Mosk-Medium-500.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Semi-Bold 600.ttf') format('truetype');
+  src: url('/fonts/Mosk-Semi-Bold-600.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Bold 700.ttf') format('truetype');
+  src: url('/fonts/Mosk-Bold-700.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Extra-Bold 800.ttf') format('truetype');
+  src: url('/fonts/Mosk-Extra-Bold-800.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mosk';
-  src: url('/fonts/Mosk Ultra-Bold 900.ttf') format('truetype');
+  src: url('/fonts/Mosk-Ultra-Bold-900.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
+
 :root {
   --primary: #3b82f6;
   --secondary: #9333ea;
@@ -76,24 +77,26 @@ body {
   --background: #0f172a;
   --foreground: #e2e8f0;
   --card: #1e293b;
-   color: var(--foreground);
-
+  color: var(--foreground);
 }
-@theme  {
- --color-primary-color :#9333EA
- --color-secondary-color :#3B82F6
 
+:root {
+  --color-primary-color: #9333EA;
+  --color-secondary-color: #3B82F6;
 }
+
 body {
   background-color: var(--background);
   color: var(--foreground);
- font-family: 'Mosk', sans-serif;
+  font-family: 'Mosk', sans-serif;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   overflow-x: hidden;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .Zbutton {
   position: relative;
   width: 120px;
@@ -146,8 +149,9 @@ html {
 }
 
 .Zbutton:active::before {
-   transform: scale(0.7);
+  transform: scale(0.7);
 }
+
 .underline-animation {
   position: relative;
 }
@@ -203,7 +207,6 @@ html {
 
 .zayed:hover {
   background-color: transparent;
-
   box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
 }
 
@@ -212,57 +215,48 @@ html {
     clip-path: var(--move1);
     transform: translate(0px, -10px);
   }
-
   10% {
     clip-path: var(--move2);
     transform: translate(-10px, 10px);
   }
-
   20% {
     clip-path: var(--move3);
     transform: translate(10px, 0px);
   }
-
   30% {
     clip-path: var(--move4);
     transform: translate(-10px, 10px);
   }
-
   40% {
     clip-path: var(--move5);
     transform: translate(10px, -10px);
   }
-
   50% {
     clip-path: var(--move6);
     transform: translate(-10px, 10px);
   }
-
   60% {
     clip-path: var(--move1);
     transform: translate(10px, -10px);
   }
-
   70% {
     clip-path: var(--move3);
     transform: translate(-10px, 10px);
   }
-
   80% {
     clip-path: var(--move2);
     transform: translate(10px, -10px);
   }
-
   90% {
     clip-path: var(--move4);
     transform: translate(-10px, 10px);
   }
-
   100% {
     clip-path: var(--move1);
     transform: translate(0);
   }
 }
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -279,8 +273,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
-
-
 
 @layer base {
   :root {
@@ -304,12 +296,3 @@ html {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
-
-
-
-
-
-
-
-

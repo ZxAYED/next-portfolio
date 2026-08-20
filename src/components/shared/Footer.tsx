@@ -1,203 +1,303 @@
-'use client';
+"use client";
 
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Loader2,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { FaFacebookSquare, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
-import { GrInstagram } from "react-icons/gr";
-import { MdPhoneAndroid } from "react-icons/md";
-import { SiGmail } from "react-icons/si";
-import { VscGithubInverted } from "react-icons/vsc";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import ZButton from "./ZButton";
+import PrimaryButton from "./PrimaryButton";
 
-const Footer = () => {
-  type FormData = {
-    name: string;
-    email: string;
-    message: string;
+type ContactFormState = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+const initialFormData: ContactFormState = {
+  name: "",
+  email: "",
+  message: "",
+};
+
+const socialLinks = [
+  {
+    href: "https://github.com/ZxAYED",
+    label: "GitHub",
+    icon: Github,
+  },
+  {
+    href: "https://www.linkedin.com/in/zayed-iqbal",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+  {
+    href: "https://www.facebook.com/ZxAYED/",
+    label: "Facebook",
+    icon: Facebook,
+  },
+  {
+    href: "https://www.instagram.com/zzayed0",
+    label: "Instagram",
+    icon: Instagram,
+  },
+] as const;
+
+export default function Footer() {
+  const [formData, setFormData] = useState<ContactFormState>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
   };
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
 
-  useEffect(() => {
-
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
-
-
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      const sendMailResponse = await fetch('/api/send-mail', {
-        method: 'POST',
+      const response = await fetch("/api/send-mail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
-      const res = await sendMailResponse.json();
+      const payload = await response.json();
 
-
-      if (res.success) {
-        toast.success(res.message);
-        reset();
+      if (response.ok && payload.success === true) {
+        toast.success(
+          "Message transmitted successfully! I will reach out shortly.",
+        );
+        setFormData(initialFormData);
       } else {
-        toast.error(res.message);
+        toast.error(
+          "Transmission failed. Please reach out directly via email.",
+        );
       }
-
     } catch (error) {
-      toast.error("An error occurred. Please try again later.");
-      console.error("Error sending email:", error);
+      console.error("Footer form submission failed:", error);
+      toast.error("Transmission failed. Please reach out directly via email.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div id="contact" className="relative mt-60 z-50 opacity-100 w-full   ">
-      <Image
-        src="https://i.ibb.co/QcbsFHy/footer.jpg"
-        alt="Footer Background"
-        height={1000}
-        width={1000}
-        quality={100}
-        className="absolute mix-blend-overlay w-full h-full object-cover inset-0 z-0 opacity-30 pointer-events-none"
-      />
-      <div className="relative z-10">
-        <div className="flex justify-center items-center ">
-          <Image src={'https://res.cloudinary.com/dhl04adhz/image/upload/v1747753641/next-portfolio/getInTouchpng.png.png'} height={1000} width={1000} alt="get in touch" className="w-40 h-40 " />
+    <footer
+      id="contact"
+      className="relative z-10 w-full overflow-hidden pt-36 pb-16 md:pt-40 lg:min-h-[900px]"
+    >
+      {/* Background Image: Brightened by 40% with balanced ambient contrast */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <Image
+          src="/images/footer.jpg"
+          alt="Footer Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-90"
+        />
+        {/* Softened darkening overlays (40% brighter) */}
+        <div className="absolute inset-0 bg-[#070b14]/35 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070b14]/70 via-transparent to-[#070b14]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070b14]/50 via-transparent to-[#070b14]/50" />
+        <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#070b14] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#070b14] to-transparent" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Let&apos;s Build Something{" "}
+            <span className="bg-gradient-to-r from-[#9333EA] via-purple-300 to-[#3B82F6] bg-clip-text text-transparent">
+              Extraordinary
+            </span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-sm font-light leading-relaxed text-gray-200 sm:text-base md:text-lg">
+            Share the product, the constraints, and the timeline. I&apos;ll
+            reply with a practical path forward.
+          </p>
         </div>
-        <div className="max-w-7xl mx-auto  py-16 px-6 ">
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10 text-cyan-300 text-center ">
-            <div>
-              <FaMapMarkerAlt className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
-              <p className="text-xl mt-2">Dhaka, Bangladesh</p>
-            </div>
-            <div>
-              <MdPhoneAndroid className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
-              <p className="text-xl mt-2">01902320296</p>
-            </div>
-            <div>
-              <a rel="noopener" href="mailto:zzayediqbalofficial@gmail.com">
-                <SiGmail className="text-5xl mx-auto p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />
-              </a>
-              <p className="text-xl  mt-2">Email Me</p>
-            </div>
-            <div>
-              <a
-                rel="noopener"
-                href="https://www.linkedin.com/in/zayed-iqbal"
-                target="_blank"
-              >
-                <FaLinkedin className="text-5xl  p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA] mx-auto" />
-              </a>
-              <p className="text-xl mt-2">LinkedIn</p>
-            </div>
-          </div>
 
-          <section className="relative flex flex-col lg:flex-row justify-between lg:items-center mt-12 ">
-            <div className="lg:w-2/4  ">
-              <h1 className="text-3xl  text-cyan-300 font-bold ">Let`s Connect</h1>
-              <div className="flex flex-col md:flex-row lg:flex-col gap-6 mt-6  text-cyan-300 text-5xl">
-                <a
-                  href="https://github.com/ZxAYED"
-                  target="_blank"
-                  className="flex items-center gap-2"
-                  rel="noopener"
-                >
-                  <VscGithubInverted className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
-                  <p className="text-xl">GitHub</p>
-                </a>
-                <a
-                  rel="noopener"
-                  href="https://www.facebook.com/ZxAYED"
-                  target="_blank"
-                  className="flex items-center gap-2"
-                >
-                  <FaFacebookSquare className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
-                  <p className="text-xl">Facebook</p>
-                </a>
-                <a
-                  rel="noopener"
-                  href="https://www.instagram.com/zzayed0"
-                  target="_blank"
-                  className="flex items-center gap-2"
-                >
-                  <GrInstagram className=" p-2 rounded  bg-gradient-to-r from-[#3B82F6] to-[#9333EA]" />{" "}
-                  <p className="text-xl ">Instagram</p>
-                </a>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-slate-950/60 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl sm:p-9 md:p-10">
+              <div className="pointer-events-none absolute -top-24 -right-24 h-60 w-60 rounded-full bg-[#3B82F6]/15 blur-3xl" />
 
-            <div
-              className="max-w-3xl w-full border backdrop-blur-sm p-8 mt-12 rounded-md"
-            >
-              <h1 className="text-3xl  text-cyan-300 font-bold mb-6 text-center">
-                Leave a message
-              </h1>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <Input
-                  {...register("name", { required: "Name is required" })}
-                  type="text"
-                  placeholder="Your Name"
-                  className="border-gray-600"
-                />
-                {errors.name && (
-                  <p className="text-red-500 text-sm">
-                    {String(errors.name.message)}
-                  </p>
-                )}
-
-                <Input
-                  {...register("email", {
-                    required: "Email is required",
-                  })}
-                  type="email"
-                  placeholder="Your Email"
-                  className="border-gray-500"
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm">
-                    {String(errors.email.message)}
-                  </p>
-                )}
-
-                <Textarea
-                  {...register("message", { required: "Message is required" })}
-                  placeholder="Your Message"
-                  className="border-gray-500 min-h-[120px]"
-                />
-                {errors.message && (
-                  <p className="text-red-500 text-sm">
-                    {String(errors.message.message)}
-                  </p>
-                )}
-
-                <div className="flex justify-center items-center">
-                  <ZButton name="Send Message" />
+              <form onSubmit={handleSubmit} className="relative space-y-5">
+                <div>
+                  <label className="mb-2 block text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="e.g. Sarah Connor"
+                    className="w-full rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                  />
                 </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="e.g. sarah@enterprise.com"
+                    className="w-full rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Project Details / Inquiry
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your product requirements, tech stack, and timeline..."
+                    className="w-full resize-none rounded-xl border border-white/15 bg-[#07101d]/90 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] outline-none transition-all placeholder:text-slate-400 autofill:shadow-[inset_0_0_0_1000px_#07101d] autofill:[-webkit-text-fill-color:#fff] focus:border-cyan-400 focus:bg-[#091524] focus:ring-1 focus:ring-cyan-400"
+                  />
+                </div>
+
+                <PrimaryButton
+                  type="submit"
+                  disabled={isSubmitting}
+                  title={isSubmitting ? "Transmitting..." : "Send Message"}
+                  icon={
+                    isSubmitting ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="h-4 w-4" />
+                    )
+                  }
+                  className="mt-2 w-full py-2 text-sm font-medium"
+                />
               </form>
             </div>
-          </section>
-
-          <div className="relative mt-16 text-center text-gray-500 ">
-            <p>&copy; {currentYear} Zayed Iqbal | All Rights Reserved</p>
           </div>
 
+          <div className="lg:col-span-5 lg:flex lg:justify-end lg:pt-60 xl:pt-72">
+            <div className="grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 lg:max-w-[490px]">
+              <div className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60">
+                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                  <MapPin className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Location
+                  </p>
+                  <p className="text-sm font-medium text-white">
+                    Dhaka, Bangladesh
+                  </p>
+                </div>
+              </div>
 
+              <a
+                href="mailto:zzayedghost@gmail.com"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+              >
+                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                  <Mail className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Email
+                  </p>
+                  <p className="truncate text-sm font-medium text-white">
+                    zzayedghost@gmail.com
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+8801902320296"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+              >
+                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                  <Phone className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-mono uppercase tracking-wider text-gray-300">
+                    Phone
+                  </p>
+                  <p className="text-sm font-medium text-white">
+                    +880 1902-320296
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/zayed-iqbal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+              >
+                <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
+                  <Linkedin className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-mono uppercase tracking-wider text-gray-300">
+                    LinkedIn
+                  </p>
+                  <p className="truncate text-sm font-medium text-white">
+                    in/zayed-iqbal
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-xs font-mono text-gray-300 sm:flex-row">
+          <p>&copy; 2026 Zayed. All rights reserved.</p>
+
+          <div className="flex items-center gap-2">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="rounded-lg p-2 transition-all hover:bg-white/10 hover:text-cyan-300"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
