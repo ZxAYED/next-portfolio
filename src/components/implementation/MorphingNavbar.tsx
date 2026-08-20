@@ -1,7 +1,7 @@
-﻿"use client";
+"use client";
 
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent } from "@radix-ui/react-dialog";
+import { Dialog, DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -85,23 +85,22 @@ const MorphingNavigation: React.FC = () => {
       </AnimatePresence>
 
       <motion.header
-        className="fixed top-4 z-50 w-full"
-        animate={{ top: 20 }}
+        className="fixed top-4 z-50 w-full left-0 right-0 flex justify-center pointer-events-none"
+        animate={{ top: isMobile ? 12 : 20 }}
         transition={{ duration: 0.35 }}
       >
         <motion.nav
           ref={navRef}
           className={cn(
-            "flex justify-center items-center mx-auto backdrop-blur-md border border-white/10 text-white fixed",
-            isSticky || isMobile ? "left-0 right-0 px-4" : "left-1/2 -translate-x-1/2"
+            "pointer-events-auto flex justify-center items-center backdrop-blur-md border border-white/10 text-white max-w-[calc(100vw-24px)]",
+            isSticky || isMobile ? "px-2" : "px-6"
           )}
           animate={{
-            height: isMobile || isSticky ? 80 : 90,
-            width: isMobile || isSticky ? 320 : 1280,
+            height: isMobile || isSticky ? 70 : 90,
+            width: isMobile || isSticky ? 280 : 1280,
             borderRadius: 9999,
           }}
           transition={{ duration: 0.28 }}
-          style={{ top: isMobile ? 0 : 20 }}
         >
           <AnimatePresence>
             {!isMobile && !isSticky && (
@@ -126,7 +125,7 @@ const MorphingNavigation: React.FC = () => {
                       key={link.id}
                       href={link.href}
                       onClick={(e) => handleLinkClick(e, link.href)}
-                      className="font-semibold uppercase tracking-[4px] text-gray-200 hover:text-[#9333EA] hover:scale-[102%] transition-all underline-animation"
+                      className="font-semibold uppercase tracking-[4px] text-gray-200 hover:text-[#9333EA] hover:scale-[102%] transition-all underline-animation cursor-pointer"
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.06 }}
@@ -145,7 +144,7 @@ const MorphingNavigation: React.FC = () => {
             <motion.button
               onClick={toggleMenu}
               aria-label="Open menu"
-              className="absolute z-50 w-[60px] h-[60px] rounded-full border border-white/20 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition"
+              className="z-50 w-[54px] h-[54px] rounded-full border border-white/20 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -161,7 +160,7 @@ const MorphingNavigation: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <Dialog open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <DialogContent asChild>
+            <DialogContent asChild aria-describedby={undefined}>
               <div className="fixed inset-0 flex items-center justify-center z-50 p-0 bg-black/40 backdrop-blur-md">
                 <div className="absolute top-0 w-full left-0 right-0 rounded-full">
                   <Aurora blend={1} amplitude={0.5} speed={2} />
@@ -172,9 +171,10 @@ const MorphingNavigation: React.FC = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.95, opacity: 0 }}
                 >
+                  <DialogTitle className="sr-only">Navigation Menu</DialogTitle>
                   <button
                     onClick={() => setIsMenuOpen(false)}
-                    className="absolute top-4 right-4 text-gray-300 hover:text-[#9333EA] p-2"
+                    className="absolute top-4 right-4 text-gray-300 hover:text-[#9333EA] p-2 cursor-pointer"
                     aria-label="Close menu"
                   >
                     &#x2715;
@@ -194,7 +194,7 @@ const MorphingNavigation: React.FC = () => {
                         key={link.id}
                         href={link.href}
                         onClick={(e) => handleLinkClick(e, link.href)}
-                        className="font-semibold uppercase tracking-[4px] w-fit mx-auto text-gray-200 hover:text-[#9333EA] hover:scale-[102%] transition-all underline-animation"
+                        className="font-semibold uppercase tracking-[4px] w-fit mx-auto text-gray-200 hover:text-[#9333EA] hover:scale-[102%] transition-all underline-animation cursor-pointer"
                         initial={{ opacity: 0, y: -6 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.06 }}

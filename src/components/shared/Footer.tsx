@@ -205,7 +205,7 @@ export default function Footer() {
 
           <div className="lg:col-span-5 lg:flex lg:justify-end lg:pt-60 xl:pt-72">
             <div className="grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 lg:max-w-[490px]">
-              <div className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60">
+              <div className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60">
                 <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <MapPin className="h-4 w-4" />
                 </div>
@@ -220,8 +220,8 @@ export default function Footer() {
               </div>
 
               <a
-                href="mailto:zzayedghost@gmail.com"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                href="mailto:zzayediqbalofficial@gmail.com"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
               >
                 <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Mail className="h-4 w-4" />
@@ -231,14 +231,14 @@ export default function Footer() {
                     Email
                   </p>
                   <p className="truncate text-sm font-medium text-white">
-                    zzayedghost@gmail.com
+                    zzayediqbalofficial@gmail.com
                   </p>
                 </div>
               </a>
 
               <a
                 href="tel:+8801902320296"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
               >
                 <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Phone className="h-4 w-4" />
@@ -257,7 +257,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/zayed-iqbal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
+                className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/50 px-3.5 py-2 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-300 group hover:border-cyan-400/40 hover:bg-slate-950/60"
               >
                 <div className="rounded-xl border border-white/10 bg-slate-950/50 p-2.5 text-cyan-300 backdrop-blur-sm transition-colors group-hover:bg-cyan-500/20 group-hover:text-white">
                   <Linkedin className="h-4 w-4" />

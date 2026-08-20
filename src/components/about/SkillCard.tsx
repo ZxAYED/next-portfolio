@@ -26,7 +26,7 @@ const SkillCard = ({ skill, index = 0 }: SkillCardProps) => {
       className="flex flex-col items-center justify-center "
     >
       <div className="relative w-full h-20  ">
-        <Image src={skill.icon} fill priority alt={skill.name} className="object-contain saturate-[90%]" />
+        <Image src={skill.icon} fill sizes="(max-width: 768px) 80px, 120px" priority alt={skill.name} className="object-contain saturate-[90%]" />
       </div>
 
     </motion.div>

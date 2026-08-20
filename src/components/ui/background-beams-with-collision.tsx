@@ -12,13 +12,10 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [docHeight, setDocHeight] = useState<number>(
-    typeof window !== 'undefined' ? document.documentElement.scrollHeight : 0
-  );
+  const [docHeight, setDocHeight] = useState<number>(0);
 
   // update document height on resize / load / orientation change
   useEffect(() => {
-    if (typeof window === 'undefined') return;
     const update = () => {
       setDocHeight(document.documentElement.scrollHeight || window.innerHeight);
     };
@@ -49,7 +46,7 @@ export const BackgroundBeamsWithCollision = ({
   const beams = beamsBase.map((b) => ({
     ...b,
     // + 200 px buffer so the beam goes slightly past the bottom
-    translateY: `${docHeight + 200}px`,
+    translateY: `${(docHeight || 2000) + 200}px`,
     // start slightly above viewport
     initialY: '-200px',
   }));
@@ -66,7 +63,7 @@ export const BackgroundBeamsWithCollision = ({
         <div
           ref={containerRef}
           // ensure this container's height matches the full document so collisions are measured correctly
-          style={{ height: typeof window !== 'undefined' ? `${docHeight}px` : '100vh' }}
+          style={{ height: docHeight ? `${docHeight}px` : '100vh' }}
           className="absolute top-0 left-0 w-full"
         />
         {/* Render beams as absolute elements inside the fixed layer */}

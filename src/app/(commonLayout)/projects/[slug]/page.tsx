@@ -137,7 +137,8 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           alt={project.projectName}
           fill
           priority
-          quality={95}
+          quality={90}
+          sizes="(max-width: 1280px) 100vw, 1280px"
           className="object-cover"
         />
 

@@ -1,6 +1,6 @@
-﻿import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import ClientCursor from "@/components/shared/ClientCursor";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata } from "next";
-import AnimatedCursor from "react-animated-cursor";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./globals.css";
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   const theme = "dark";
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,14 +29,7 @@ export default function RootLayout({
       </head>
       <body style={MoskFont} className="antialiased">
         <ThemeProvider initialTheme={theme}>
-          <AnimatedCursor
-            innerSize={10}
-            outerSize={35}
-            color="147, 51, 234"
-            outerAlpha={0.4}
-            innerScale={0.9}
-            outerScale={1.5}
-          />
+          <ClientCursor />
           {children}
           <ToastContainer
             position="top-right"

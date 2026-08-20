@@ -95,6 +95,7 @@ export default function NotFound({
           src={imageLight}
           alt="404 Light"
           fill
+          sizes="100vw"
           className="object-contain dark:hidden"
           priority
         />
@@ -102,6 +103,7 @@ export default function NotFound({
           src={imageDark}
           alt="404 Dark"
           fill
+          sizes="100vw"
           className="object-contain hidden dark:block"
           priority
         />

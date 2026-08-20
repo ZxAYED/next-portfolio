@@ -27,7 +27,7 @@ const experiences = [
 
 export default function MySelfSection() {
   return (
-    <section id="myself" className="relative w-full max-w-7xl mx-auto px-4 md:px-0 my-32">
+    <section id="myself" className="relative max-w-7xl mx-auto px-4 md:px-0 flex w-full justify-center items-center  lg:min-h-screen my-32">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-stretch">
         {/* Left: Photo */}
         <div className="lg:col-span-2 flex flex-col">
@@ -44,9 +44,10 @@ export default function MySelfSection() {
               fill
               priority
               quality={90}
+              sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover w-full h-full rounded-3xl"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent" />
+            {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent" /> */}
           </motion.div>
         </div>
 
