@@ -77,9 +77,9 @@ export const projectData: Project[] = [
     "Production Security Architecture: Implemented JWT authentication, HttpOnly refresh-token cookies, role guards, ownership validation, layered endpoint throttling, secure CORS, Helmet, and request validation."
   ],
 
-  "githubClientCode": "ADD_FRONTEND_GITHUB_URL",
+  "githubClientCode": "https://github.com/ZxAYED/elite-vaccum-frontend",
   "githubServerCode": "https://github.com/ZxAYED/elite-vaccum-backend",
-  "liveLink": "https://elite-vaccum-frontend.vercel.app/",
+  "liveLink": "https://elite-vaccum-frontend.vercel.app",
 
   "techStack": [
     "Next.js 16",
