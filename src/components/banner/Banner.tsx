@@ -124,12 +124,12 @@ export default function HeroBanner() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 relative">
               <a
-                href="https://drive.google.com/file/d/12283il_bd_l65VfUOEWS12c2DSIVm-4v/view?usp=sharing"
+                href="https://drive.google.com/file/d/1RoSWj90_iye1iZO52aA9zZfRCAOTGH0a/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-gradient-to-r from-[#3B82F6] to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-[#3B82F6]/50 transition-all duration-300 font-medium text-center"
               >
-                Download Resume
+                See Resume
               </a>
               <a
                 href="#contact"
