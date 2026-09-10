@@ -9,7 +9,7 @@ export interface IUser {
   password: string
 }
 
- const baseUrl =process.env.NEXT_PUBLIC_BACKEND_URL;
+ const baseUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL;
 export const Login =async (payload:{email:string, password:string})=>{
 
 
@@ -27,7 +27,13 @@ export const Login =async (payload:{email:string, password:string})=>{
     const data = await res.json();
      
     if (data.success) {
-      (await cookies()).set("accessToken", data.data.accessToken);
+      (await cookies()).set("accessToken", data.data.accessToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+      });
     }
   
     return data;

@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 
 
- const baseUrl =process.env.NEXT_PUBLIC_BACKEND_URL;
+ const baseUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL;
 
  export const CreateBlog = async (payload: FormData) => {
    const cookieStore = await cookies();
@@ -18,7 +18,6 @@ import { cookies } from "next/headers";
    try {
      const res = await fetch(`${baseUrl}/blogs`, {
        method: "POST",
-       credentials: "include",
        headers: {
          Authorization: token,
        },
@@ -37,18 +36,15 @@ import { cookies } from "next/headers";
 export const getBlogs = async () => {
 
  try{
-       const res = await fetch(`${baseUrl}/blogs`, {
-    method: "GET", 
-    headers: {
-      "Content-Type": "application/json",
-      
-    } ,
-    cache: "no-cache",
-  }
-); 
-  const data =await res.json();0
-  
-    return data.data
+    const res = await fetch(`${baseUrl}/blogs`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-cache",
+    });
+    const data = await res.json();
+    return data.data;
     
  }
  catch(error){
@@ -78,11 +74,19 @@ export const getSingleblog = async (id:string) => {
   }
  }
 export const deleteBlog = async (id:string) => {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('accessToken')?.value;
+
+  if (!token) {
+    throw new Error("You are not authorized to perform this action");
+  }
+
   try{
         const res = await fetch(`${baseUrl}/blogs/${id}`, {
       method: "DELETE", 
       headers: {
         "Content-Type": "application/json",
+        Authorization: token,
       } ,
      
     }

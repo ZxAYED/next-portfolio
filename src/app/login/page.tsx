@@ -111,7 +111,7 @@ export default function LoginPage() {
               </div>
             </div>
             <CardTitle className="text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#3B82F6]">
-              Unauthorized Accessa
+              Unauthorized Access
             </CardTitle>
             <CardDescription className="text-center text-white/70">
               You are not authorized to log in or access the dashboard. Its only for the author to login to see the dashboard
