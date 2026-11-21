@@ -1,11 +1,9 @@
-import { MetadataRoute } from 'next';
-
+export const dynamic = "force-static";
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site-url";
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://zayed.me/sitemap.xml',
+    rules: { userAgent: "*", allow: "/", disallow: ["/login", "/api/"] },
+    sitemap: siteUrl + "/sitemap.xml",
   };
 }

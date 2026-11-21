@@ -1,0 +1,125 @@
+[
+  {
+    "id": "frontend",
+    "title": "Frontend & offline experiences",
+    "description": "Responsive interfaces, purposeful motion, and offline-aware workflows shaped around the way people use a product.",
+    "items": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Redux Toolkit",
+      "RTK Query",
+      "TanStack Query",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Material UI",
+      "Framer Motion",
+      "GSAP",
+      "PWA",
+      "IndexedDB",
+      "Service workers",
+      "React Hook Form",
+      "Zod"
+    ],
+    "application": {
+      "title": "Make the workflow feel clear.",
+      "flow": [
+        "User journey",
+        "Responsive interface",
+        "API & local state"
+      ],
+      "detail": "I connect forms, interaction states, and data flows so the interface supports the client\u2019s actual workflow.",
+      "example": "Explore the Elite interface",
+      "href": "/projects/elite-central-vacuum"
+    }
+  },
+  {
+    "id": "backend",
+    "title": "Backend & APIs",
+    "description": "Typed APIs, business rules, authentication, background jobs, and real-time communication.",
+    "items": [
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "REST APIs",
+      "WebSockets",
+      "Socket.IO",
+      "BullMQ",
+      "node-cron",
+      "JWT & RBAC",
+      "Stripe",
+      "SSLCommerz",
+      "SSE",
+      "Google Gemini API"
+    ],
+    "application": {
+      "title": "Turn requirements into logic.",
+      "flow": [
+        "Validated request",
+        "Business rules & jobs",
+        "Reliable response"
+      ],
+      "detail": "I translate client requirements into role-based workflows, payment handling, background processing, and connected services.",
+      "example": "See the Elite system design",
+      "href": "/projects/elite-central-vacuum"
+    }
+  },
+  {
+    "id": "data",
+    "title": "Data & persistence",
+    "description": "Data models, transactions, and caching that keep the application\u2019s workflows consistent.",
+    "items": [
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Mongoose",
+      "Redis",
+      "Supabase"
+    ],
+    "application": {
+      "title": "Give the product a solid model.",
+      "flow": [
+        "Business & tenant context",
+        "Schemas & transactions",
+        "Queries & caching"
+      ],
+      "detail": "I structure data around the product\u2019s rules, from tenant and branch boundaries to inventory and connected business records.",
+      "example": "Explore SunTech POS",
+      "href": "/projects/suntech-pos"
+    }
+  },
+  {
+    "id": "cloud",
+    "title": "Cloud & delivery",
+    "description": "Deployment, release workflows, environment configuration, API documentation, and ongoing software support.",
+    "items": [
+      "Docker",
+      "GitHub Actions",
+      "AWS EC2",
+      "AWS S3",
+      "AWS SES",
+      "AWS SQS",
+      "Hostinger",
+      "Vercel",
+      "Netlify",
+      "Render",
+      "Firebase",
+      "Cloudinary",
+      "Postman",
+      "Swagger"
+    ],
+    "application": {
+      "title": "Carry the work into production.",
+      "flow": [
+        "Build & configuration",
+        "Deployment & checks",
+        "Support & improvements"
+      ],
+      "detail": "I help move software beyond local development, document the handover, and stay involved when the client needs fixes or changes.",
+      "example": "See the delivery process",
+      "href": "/#process"
+    }
+  }
+]

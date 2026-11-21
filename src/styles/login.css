@@ -1,0 +1,82 @@
+.owner-access {
+  display: grid;
+  min-height: 100dvh;
+  place-content: center;
+  padding-block: clamp(8rem, 16vw, 12rem) 6rem;
+  background: var(--canvas);
+}
+.owner-access__content {
+  width: min(100%, 42rem);
+  margin-inline: auto;
+}
+.owner-access__brand {
+  display: inline-flex;
+  color: var(--fg);
+  transition: color 450ms;
+}
+.owner-access__brand:hover {
+  color: var(--brand-primary);
+}
+.owner-access__symbol {
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  aspect-ratio: 1;
+  margin-top: 4rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--brand-primary);
+  background: color-mix(in srgb, var(--brand-primary) 6%, transparent);
+}
+.owner-access h1 {
+  margin: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--brand-primary);
+}
+.owner-access__description {
+  max-width: 34rem;
+  color: var(--fg-muted);
+  line-height: 1.8;
+}
+.owner-access__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.owner-access__contact {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-muted);
+  transition:
+    color 450ms,
+    border-color 450ms;
+}
+.owner-access__contact:hover,
+.owner-access__contact:focus-visible {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.owner-access__note {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+@media (max-width: 540px) {
+  .owner-access__links {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .owner-access__contact {
+    align-self: start;
+  }
+}

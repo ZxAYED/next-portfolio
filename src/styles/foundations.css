@@ -1,0 +1,316 @@
+:root {
+  --font-body: "Manrope Variable", sans-serif;
+  --font-display: "Big Shoulders Display Variable", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --brand-primary: #c3a3ef;
+  --brand-hover: #d7c1f4;
+  --brand-ink: #101014;
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  --max-width: 1540px;
+  --section-space: clamp(5rem, 10vw, 10rem);
+  --radius: 14px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--canvas, #101014);
+  color: var(--fg, #f0edf4);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  color: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img,
+svg,
+video {
+  display: block;
+}
+img {
+  max-width: 100%;
+}
+svg {
+  flex-shrink: 0;
+}
+ul,
+ol {
+  padding: 0;
+}
+button {
+  border-radius: 0;
+}
+::selection {
+  background: var(--brand-primary);
+  color: var(--brand-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--accent, var(--brand-primary));
+  outline-offset: 6px;
+}
+[inert] {
+  pointer-events: none;
+}
+.container {
+  width: calc(100% - var(--gutter) * 2);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+}
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: clamp(2rem, 6vw, 7rem);
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+}
+.section-heading > p {
+  color: var(--fg-muted);
+  max-width: 30rem;
+  padding-bottom: 0.4rem;
+  font-size: clamp(0.94rem, 1.2vw, 1.1rem);
+}
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+h2 {
+  font-size: clamp(3.5rem, 6.8vw, 7rem);
+}
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.accent {
+  color: var(--accent);
+}
+.muted {
+  color: var(--fg-muted);
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  color: var(--fg);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+.text-link svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.6s var(--ease-out);
+}
+.text-link:is(:hover, :focus-visible) {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.text-link:is(:hover, :focus-visible) svg {
+  transform: rotate(45deg);
+}
+.highlight {
+  color: var(--brand-ink);
+  background: var(--brand-primary);
+  padding-inline: 0.08em;
+  padding-block: 0.06em 0.03em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+/* Give the highlighted second line its own breathing room instead of
+   letting the lavender rectangle touch the previous line. */
+.title-highlight {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.075em 0.08em 0.04em;
+  line-height: 1.08;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: var(--gutter);
+  z-index: 9999;
+  padding: 0.8rem 1.25rem;
+  background: var(--brand-primary);
+  color: var(--brand-ink);
+  border-radius: 100px;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 16px;
+}
+.site-footer {
+  padding-top: 2.5rem;
+  overflow: clip;
+}
+.footer-top {
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-top p {
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: clamp(6rem, 22.5vw, 24rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  padding-block: 3rem 2rem;
+}
+.footer-wordmark span {
+  color: var(--accent);
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.5rem 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+}
+.error-page {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  padding: 8rem var(--gutter);
+  gap: 2rem;
+}
+.error-page h1 {
+  font-size: clamp(4rem, 10vw, 10rem);
+  max-width: 12ch;
+}
+.error-page p {
+  max-width: 36rem;
+  color: var(--fg-muted);
+}
+.error-page .button {
+  justify-self: start;
+}
+.route-loading {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 30%;
+  background: var(--brand-primary);
+  animation: route-progress 1.2s ease-in-out infinite;
+}
+@keyframes route-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+@media (max-width: 767px) {
+  .section-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+  .section-heading > p {
+    max-width: 34rem;
+  }
+  h2 {
+    font-size: clamp(3.4rem, 12vw, 5.5rem);
+  }
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .footer-links {
+    gap: 1.25rem;
+  }
+  .footer-wordmark {
+    font-size: 22vw;
+    padding-top: 2.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

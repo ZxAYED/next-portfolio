@@ -1,137 +1,171 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { readPayload } from "@/lib/read-contact-payload";
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import {
+  buildContactEmail,
+  CONTACT_LIMITS,
+  contactFieldErrors,
+  contactSchema,
+} from "@/lib/contact";
 
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+export const runtime = "nodejs";
+
+const requests = new Map<string, { count: number; resetAt: number }>();
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_REQUESTS = 5;
+
+function rateLimit(key: string) {
+  const now = Date.now();
+  for (const [address, entry] of requests) {
+    if (entry.resetAt <= now) requests.delete(address);
+  }
+  const entry = requests.get(key);
+  if (entry && entry.count >= MAX_REQUESTS) return false;
+  // This bounded, per-instance safeguard complements the host's global limits.
+  if (!entry && requests.size >= 1000)
+    requests.delete(requests.keys().next().value!);
+  requests.set(key, {
+    count: (entry?.count ?? 0) + 1,
+    resetAt: entry?.resetAt ?? now + WINDOW_MS,
+  });
+  return true;
 }
 
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json().catch(() => null);
+function failure(
+  message: string,
+  status: number,
+  fields?: Record<string, string>,
+) {
+  return NextResponse.json({ success: false, message, fields }, { status });
+}
 
-    if (!body || typeof body !== 'object') {
-      return NextResponse.json(
-        { success: false, message: 'Invalid payload structure' },
-        { status: 400 }
-      );
-    }
+const sitesOrigin = "https://zayed-iqbal-techquell-portfolio.flowy-bun-1694.chatgpt.site";
 
-    const { name, email, message } = body;
+export function GET(request: NextRequest) {
+  if (request.headers.get("origin") !== sitesOrigin)
+    return failure("Please submit the contact form.", 405);
+  return NextResponse.json({ receipt: true }, {
+    headers: { "Access-Control-Allow-Origin": sitesOrigin, Vary: "Origin", "Cache-Control": "no-store" },
+  });
+}
 
-    if (!name || typeof name !== 'string' || name.trim().length === 0 || name.length > 100) {
-      return NextResponse.json(
-        { success: false, message: 'Please provide a valid name (1-100 characters)' },
-        { status: 400 }
-      );
-    }
+export async function POST(request: NextRequest) {
+  const fromHostedPortfolio = request.headers.get("origin") === sitesOrigin;
+  const response = await sendMessage(request, fromHostedPortfolio);
+  if (fromHostedPortfolio) {
+    response.headers.set("Access-Control-Allow-Origin", sitesOrigin);
+    response.headers.append("Vary", "Origin");
+  }
+  return response;
+}
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || typeof email !== 'string' || !emailRegex.test(email.trim()) || email.length > 150) {
-      return NextResponse.json(
-        { success: false, message: 'Please provide a valid email address' },
-        { status: 400 }
-      );
-    }
-
-    if (!message || typeof message !== 'string' || message.trim().length === 0 || message.length > 5000) {
-      return NextResponse.json(
-        { success: false, message: 'Please provide a message (1-5000 characters)' },
-        { status: 400 }
-      );
-    }
-
-    const emailUser = process.env.EMAIL_USER;
-    const emailPass = process.env.EMAIL_PASS;
-    const emailTo = process.env.EMAIL_TO || emailUser;
-
-    if (!emailUser || !emailPass) {
-      console.warn('Mail transmission skipped: EMAIL_USER or EMAIL_PASS not configured in environment.');
-      return NextResponse.json(
-        { success: true, message: 'Message received (Demo mode — email configuration pending)' },
-        { status: 200 }
-      );
-    }
-
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: emailUser,
-        pass: emailPass,
-      },
-    });
-
-    const safeName = escapeHtml(name.trim());
-    const safeEmail = escapeHtml(email.trim());
-    const safeMessage = escapeHtml(message.trim()).replace(/\n/g, '<br/>');
-
-    const mailOptions = {
-      from: `"${safeName}" <${emailUser}>`,
-      replyTo: safeEmail,
-      to: emailTo,
-      subject: `💌 New Portfolio Message from ${safeName}`,
-      html: `
-        <div style="
-          background: linear-gradient(135deg, #1E1B2E, #0F172A);
-          color: #F3F4F6;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          padding: 30px;
-          border-radius: 12px;
-          border: 1px solid #9333EA33;
-          max-width: 600px;
-          margin: 20px auto;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        ">
-          <h2 style="
-            text-align: center;
-            background: linear-gradient(90deg, #9333EA, #3B82F6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 24px;
-            margin-bottom: 20px;
-          ">
-            ✨ New Message from Portfolio
-          </h2>
-
-          <div style="margin-bottom: 20px;">
-            <p style="font-size: 15px; line-height: 1.6; margin: 6px 0;">
-              <strong style="color: #A855F7;">Sender:</strong> ${safeName}
-            </p>
-            <p style="font-size: 15px; line-height: 1.6; margin: 6px 0;">
-              <strong style="color: #A855F7;">Email:</strong> <a href="mailto:${safeEmail}" style="color:#60A5FA;text-decoration:none;">${safeEmail}</a>
-            </p>
-          </div>
-
-          <div style="
-            background: #111827;
-            border-radius: 8px;
-            padding: 16px;
-            border-left: 4px solid #9333EA;
-            margin-bottom: 20px;
-          ">
-            <p style="font-size: 15px; line-height: 1.8; color: #E5E7EB; margin: 0;">
-              ${safeMessage}
-            </p>
-          </div>
-
-          <p style="text-align:center; font-size:12px; color:#9CA3AF; margin-top: 24px;">
-            Transmitted securely via Zayed's Portfolio Contact Form.
-          </p>
-        </div>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
-    return NextResponse.json({ success: true, message: 'Message transmitted successfully' });
-  } catch (error) {
-    console.error('Contact API error:', error);
-    return NextResponse.json(
-      { success: false, message: 'Transmission failed. Please reach out directly via email.' },
-      { status: 500 }
+async function sendMessage(request: NextRequest, fromHostedPortfolio: boolean) {
+  if (request.headers.get("sec-fetch-site") === "cross-site" && !fromHostedPortfolio) {
+    return failure(
+      "Please send your message from the portfolio contact form.",
+      403,
     );
+  }
+  const type = request.headers.get("content-type")?.split(";")[0].trim().toLowerCase();
+  if (type !== "application/json" && !(fromHostedPortfolio && type === "text/plain")) {
+    return failure("Please send a JSON contact request.", 415);
+  }
+
+  let payload: unknown;
+  try {
+    payload = await readPayload(request, CONTACT_LIMITS.payloadBytes);
+  } catch (error) {
+    return failure(
+      error instanceof RangeError
+        ? "Your message is too large."
+        : "Please check your message and try again.",
+      error instanceof RangeError ? 413 : 400,
+    );
+  }
+
+  const parsed = contactSchema.safeParse(payload);
+  if (!parsed.success) {
+    return failure(
+      "Please check the highlighted fields.",
+      400,
+      contactFieldErrors(parsed.error),
+    );
+  }
+
+  const user = process.env.EMAIL_USER;
+  const password = process.env.EMAIL_PASS;
+  const recipient = process.env.EMAIL_TO || user;
+  if (!user || !password) {
+    return failure(
+      "The contact form is temporarily unavailable. Please email me directly.",
+      503,
+    );
+  }
+
+  const requestKey =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unavailable";
+  if (!rateLimit(requestKey)) {
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          "Please wait a few minutes before sending another message, or email me directly.",
+      },
+      { status: 429, headers: { "Retry-After": "600" } },
+    );
+  }
+
+  const host = process.env.SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT || "587");
+  if (host && (!Number.isInteger(port) || port < 1 || port > 65535)) {
+    return failure(
+      "The contact form is temporarily unavailable. Please email me directly.",
+      503,
+    );
+  }
+
+  const transporter = nodemailer.createTransport({
+    ...(host
+      ? {
+          host,
+          port,
+          secure: process.env.SMTP_SECURE
+            ? process.env.SMTP_SECURE === "true"
+            : port === 465,
+        }
+      : { service: "gmail" }),
+    auth: { user, pass: password },
+    connectionTimeout: 8000,
+    greetingTimeout: 8000,
+    socketTimeout: 15000,
+  });
+
+  try {
+    const result = await transporter.sendMail({
+      from: { name: parsed.data.name, address: user },
+      to: recipient,
+      ...buildContactEmail(parsed.data),
+    });
+    if (!result.accepted?.length) throw new Error("Message not accepted");
+    return NextResponse.json({
+      success: true,
+      message: "Your message is on its way. Thank you for reaching out.",
+    });
+  } catch (error) {
+    // Never expose SMTP credentials, server responses, or visitor messages.
+    console.error("Portfolio mail delivery failed", {
+      type: error instanceof Error ? error.name : "UnknownError",
+      ...(process.env.NODE_ENV === "development" && error instanceof Error
+        ? { message: error.message }
+        : {}),
+    });
+    return failure(
+      "Your message could not be sent. Please try again or email me directly.",
+      502,
+    );
+  } finally {
+    transporter.close();
   }
 }

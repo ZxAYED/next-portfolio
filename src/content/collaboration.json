@@ -1,0 +1,43 @@
+{
+  "title": "Experience beyond the code.",
+  "emphasis": "Built in my previous role.",
+  "description": "At SoftVence, I developed the communication and delivery skills to work with both clients and teammates. These are skills I bring into my next developer role.",
+  "stages": [
+    {
+      "id": "understand",
+      "title": "Clarify the brief.",
+      "description": "Working directly with clients taught me to ask useful questions, understand requirements, and contribute to a clear proposal and development plan.",
+      "items": [
+        "Client discussions & requirement notes",
+        "Proposal, scope & milestones",
+        "Technical choices explained clearly"
+      ],
+      "result": "A shared understanding before development.",
+      "phase": "Before development"
+    },
+    {
+      "id": "communicate",
+      "title": "Keep the team aligned.",
+      "description": "I learned to explain technical decisions, share progress with clients and teammates, discuss feedback, and make blockers visible while developing and testing.",
+      "items": [
+        "Progress updates & working demos",
+        "Feedback, blockers & scope decisions",
+        "Testing against agreed requirements"
+      ],
+      "result": "Visible progress and fewer assumptions.",
+      "phase": "During development"
+    },
+    {
+      "id": "support",
+      "title": "Follow through on delivery.",
+      "description": "My experience includes explaining the product to the client, supporting handover and deployment, and helping with software fixes and improvements after delivery.",
+      "items": [
+        "Client walkthrough & product handover",
+        "Deployment & supporting documentation",
+        "Bug fixes, maintenance & next steps"
+      ],
+      "result": "A product the client can use and maintain.",
+      "phase": "After delivery"
+    }
+  ]
+}

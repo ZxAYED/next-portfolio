@@ -1,0 +1,100 @@
+[
+  {
+    "id": "discussion",
+    "number": "01",
+    "label": "Client discussion",
+    "title": "Understand the goal.",
+    "description": "I ask the client to walk me through a busy day. We pick one problem to solve and identify who needs the change.",
+    "clientTouchpoint": "Ask clear questions, listen closely, and confirm the goal before moving forward.",
+    "deliverables": [
+      "Shared business context",
+      "User and workflow notes",
+      "Constraints and open questions"
+    ],
+    "outcome": "A shared understanding of the problem."
+  },
+  {
+    "id": "requirements",
+    "number": "02",
+    "label": "Requirements",
+    "title": "Define what matters.",
+    "description": "With the team, I map who can do what. We turn a user journey into acceptance criteria the client can review.",
+    "clientTouchpoint": "Review the requirements together and close gaps before development starts.",
+    "deliverables": [
+      "Prioritized requirements",
+      "Roles and user journeys",
+      "Acceptance criteria"
+    ],
+    "outcome": "A brief everyone can build against."
+  },
+  {
+    "id": "proposal",
+    "number": "03",
+    "label": "Proposal",
+    "title": "Present a practical plan.",
+    "description": "I show the client what we can deliver first, which decisions can wait, and how those choices affect the timeline.",
+    "clientTouchpoint": "Align on priorities, timing, and how changes should be handled.",
+    "deliverables": [
+      "Solution proposal",
+      "Scope and milestone plan",
+      "Documented assumptions"
+    ],
+    "outcome": "Aligned expectations and scope."
+  },
+  {
+    "id": "architecture",
+    "number": "04",
+    "label": "Architecture",
+    "title": "Design the foundation.",
+    "description": "I trace one user action from the screen through the API to the database. That helps the team agree on responsibilities and access rules.",
+    "clientTouchpoint": "Discuss the decisions that affect maintainability, cost, timeline, and future growth.",
+    "deliverables": [
+      "Application and data structure",
+      "API and integration plan",
+      "Technical decision notes"
+    ],
+    "outcome": "A maintainable technical direction."
+  },
+  {
+    "id": "development",
+    "number": "05",
+    "label": "Build & test",
+    "title": "Build, review, test.",
+    "description": "I build a small slice of the workflow, review it with the team, and test what happens when something goes wrong.",
+    "clientTouchpoint": "Share progress, demonstrate working features, and flag blockers early.",
+    "deliverables": [
+      "Working product increments",
+      "Reviewed and tested workflows",
+      "Progress and feedback updates"
+    ],
+    "outcome": "Working features, verified regularly."
+  },
+  {
+    "id": "delivery",
+    "number": "06",
+    "label": "Delivery & deploy",
+    "title": "Launch with confidence.",
+    "description": "We check the release together. I walk the client through the live workflow and document what the team needs for handover.",
+    "clientTouchpoint": "Walk through the release, confirm scope, and explain the important handover details.",
+    "deliverables": [
+      "Deployment and launch checks",
+      "Client walkthrough and review",
+      "Handover documentation"
+    ],
+    "outcome": "A reviewed release and clear handover."
+  },
+  {
+    "id": "support",
+    "number": "07",
+    "label": "Ongoing support",
+    "title": "Support what ships.",
+    "description": "When a user reports an issue, I reproduce it, trace the cause, and check the fix against their original workflow.",
+    "clientTouchpoint": "Keep communication open around new requests, issues, and support priorities.",
+    "deliverables": [
+      "Bug fixes and maintenance",
+      "Feedback and issue follow-up",
+      "Agreed improvement priorities"
+    ],
+    "outcome": "Software that stays useful after release."
+  }
+]

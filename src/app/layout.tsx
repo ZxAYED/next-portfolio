@@ -1,118 +1,58 @@
-import ClientCursor from "@/components/shared/ClientCursor";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
-import { Bounce, ToastContainer } from "react-toastify";
+import "@fontsource-variable/big-shoulders-display";
+import "@fontsource-variable/manrope";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
 import "./globals.css";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
+import "@/styles/motion.css";
+import "@/styles/navigation.css";
+import "@/styles/brand.css";
+import "@/styles/process.css";
+import "@/styles/personal.css";
+import "@/styles/projects.css";
+import "@/styles/resume.css";
+import "@/styles/contact.css";
+import "@/styles/login.css";
+import { BrandIntro } from "@/components/experience/BrandIntro";
+import { siteUrl } from "@/lib/site-url";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#070a12",
+  themeColor: "#101014",
 };
-
 export const metadata: Metadata = {
-  title: "Zayed | Full Stack Engineer & UI Architect",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Zayed Iqbal — Full Stack Developer",
+    template: "%s · Zayed Iqbal",
+  },
   description:
-    "Portfolio of Zayed — Full Stack Software Engineer specializing in high-performance Next.js web applications, TypeScript, Node.js, Nest.js, and distributed backend systems.",
-  keywords: [
-    "Zayed",
-    "Full Stack Developer",
-    "Software Engineer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Nest.js",
-    "PostgreSQL",
-    "Prisma",
-    "Redis",
-    "Portfolio",
-  ],
+    "Zayed Iqbal is a full-stack developer in Dhaka, Bangladesh, working with Next.js, TypeScript, Node.js, and NestJS. Explore his projects, experience, and developer skills.",
   authors: [{ name: "Zayed Iqbal" }],
-  creator: "Zayed Iqbal",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://zayed.me",
-    title: "Zayed | Full Stack Engineer & UI Architect",
+    siteName: "Zayed Iqbal",
+    title: "Zayed Iqbal — Full Stack Developer",
     description:
-      "Engineering digital products with speed, scalability, and craftsmanship. Explore case studies and technical architecture.",
-    siteName: "Zayed's Portfolio",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dhl04adhz/image/upload/v1747754112/next-portfolio/portfolio.png.png",
-        width: 1200,
-        height: 630,
-        alt: "Zayed Portfolio Preview",
-      },
-    ],
+      "Full-stack developer open to new opportunities. Explore real projects, technical skills, and experience across the software development lifecycle.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Zayed | Full Stack Engineer & UI Architect",
-    description:
-      "Engineering digital products with speed, scalability, and craftsmanship.",
-    images: [
-      "https://res.cloudinary.com/dhl04adhz/image/upload/v1747754112/next-portfolio/portfolio.png.png",
-    ],
-  },
-  icons: {
-    icon: "/images/favicon.png",
-  },
+  twitter: { card: "summary_large_image" },
+  icons: { icon: "/icon.svg" },
 };
-
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
-  const theme = "dark";
-
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
-      data-scroll-behavior="smooth"
-      suppressHydrationWarning
-    >
-      <body className="font-sans antialiased bg-[#070a12] text-slate-100 selection:bg-purple-500/30 selection:text-cyan-200">
-        <ThemeProvider initialTheme={theme}>
-          <ClientCursor />
-          {children}
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-            transition={Bounce}
-            toastStyle={{
-              backgroundColor: "#0f172a",
-              color: "#e2e8f0",
-              border: "1px solid #334155",
-            }}
-          />
-        </ThemeProvider>
+    <html lang="en" data-active-theme="dark" suppressHydrationWarning>
+      <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <BrandIntro />
+        {children}
       </body>
     </html>
   );

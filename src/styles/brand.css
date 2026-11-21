@@ -1,0 +1,45 @@
+/* The shared ZI mark inherits the section's accessible accent color. */
+.brand-wordmark {
+  gap: 0.65rem;
+  letter-spacing: -0.055em;
+  font-weight: 650;
+}
+.brand-wordmark > .brand-mark {
+  width: 2.6rem;
+  height: 2.45rem;
+  color: var(--accent, var(--brand-primary));
+}
+.brand-wordmark__name {
+  display: inline-block;
+}
+.brand-wordmark__surname {
+  font-weight: 450;
+}
+.brand-mark__i {
+  transform-origin: 82% 50%;
+  transition:
+    transform 0.55s var(--ease-out),
+    opacity 0.55s ease;
+}
+.site-brand:hover .brand-mark__i,
+.site-brand:focus-visible .brand-mark__i {
+  transform: scaleY(0.74);
+  opacity: 0.7;
+}
+.site-header .brand-wordmark > .brand-mark {
+  width: 2.4rem;
+  height: 2.25rem;
+}
+.brand-intro .brand-wordmark > .brand-mark {
+  width: 3.75rem;
+  height: 3.5rem;
+}
+@media (max-width: 580px) {
+  .site-header .brand-wordmark {
+    gap: 0.45rem;
+  }
+  .site-header .brand-wordmark > .brand-mark {
+    width: 2rem;
+    height: 1.875rem;
+  }
+}

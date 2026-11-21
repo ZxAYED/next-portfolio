@@ -1,44 +1,32 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-repomix-output.xml
-# testing
-/coverage
-
-# next.js
+# Installed dependencies and build artifacts
+/node_modules/
 /.next/
 /out/
+/build/
+/dist/
+/coverage/
+/playwright-report/
+/test-results/
+*.tsbuildinfo
+next-env.d.ts
 
-.env
-
-# misc
-.DS_Store
+# Keep local credentials out of source archives and commits.
+.env*
+!.env.example
 *.pem
 
-# debug
+# Hosting state and local tooling
+/.vercel/
+/.netlify/
+/.cache/
+/graphify-out/
+/.openai/
+.DS_Store
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+repomix-output.xml
 temp_auto_push.bat
 temp_interactive_push.bat
-
 branch_structure.json

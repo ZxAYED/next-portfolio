@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "smoothScroll": true,
+  "anchorDuration": 1.25,
+  "themeDuration": 0.9,
+  "wheelLerp": 0.16,
+  "sound": {
+    "enabled": true,
+    "defaultOn": true,
+    "volume": 0.16,
+    "ambient": false
+  }
+}

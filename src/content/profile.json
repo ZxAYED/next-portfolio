@@ -1,0 +1,108 @@
+{
+  "name": "Zayed",
+  "fullName": "Zayed Iqbal",
+  "role": "Full Stack Developer",
+  "location": "Dhaka, Bangladesh",
+  "email": "zzayediqbalofficial@gmail.com",
+  "phone": "+880 1902-320296",
+  "hero": {
+    "eyebrow": "Full stack developer · Bangladesh",
+    "title": "Full-stack developer.",
+    "description": "I build full-stack web applications with Next.js, TypeScript, and NestJS. I’m looking to bring my development experience, problem-solving, and teamwork to a product team.",
+    "availability": "Open to full-stack developer opportunities",
+    "headline": {
+      "first": "Full-stack",
+      "second": "developer."
+    },
+    "signature": "From brief to build."
+  },
+  "about": {
+    "title": "A developer who sees the whole picture.",
+    "paragraphs": [
+      "I’m Zayed, a full-stack developer based in Dhaka, Bangladesh. I work across MERN and PERN stacks, bringing user interfaces, APIs, and data models together.",
+      "In my previous role at SoftVence, I worked with clients and teammates to understand requirements, discuss solutions, share progress, and support delivery. That experience taught me to connect technical work with real business needs.",
+      "I’m now looking for a developer role where I can contribute that experience, take responsibility for my work, and keep growing with a team."
+    ]
+  },
+  "portrait": {
+    "src": "/images/portfolio.webp",
+    "alt": "Portrait of Zayed Iqbal"
+  },
+  "resume": {
+    "url": "https://drive.google.com/file/d/1bEXAXtgnZEVilVaPirP2-XD2PuprHE7Q/view?usp=sharing",
+    "label": "View résumé PDF"
+  },
+  "socials": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/ZxAYED"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/zayed-iqbal"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/ZxAYED/"
+    }
+  ],
+  "experience": [
+    {
+      "id": "softvence",
+      "title": "Jr Full Stack Developer",
+      "company": "SoftVence Agency",
+      "period": "June 2025 – July 2026",
+      "location": "Dhaka, Bangladesh (Hybrid)",
+      "highlights": [
+        "Developed full-stack applications with React, Next.js, Redux, NestJS, and Node.js.",
+        "Worked directly with clients to clarify requirements, discuss proposals and technical decisions, communicate progress, and support product delivery.",
+        "Implemented real-time WebSocket communication and scheduled background workflows.",
+        "Designed database schemas and caching layers with PostgreSQL, Prisma, MongoDB, and Redis.",
+        "Integrated Stripe and SSLCommerz payment workflows with webhook handling."
+      ],
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Docker"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "BSc Honours in Physics",
+      "institution": "Govt Titumir College",
+      "period": "2021 – 2025",
+      "description": "An analytical foundation in mathematical modeling, systematic reasoning, and breaking complex problems into smaller parts."
+    }
+  ],
+  "principles": [
+    {
+      "id": "ownership",
+      "title": "Extreme ownership",
+      "description": "I take responsibility for the client’s brief, the quality of my work, and following through on what we agree—from planning to post-launch support."
+    },
+    {
+      "id": "execution",
+      "title": "Disciplined execution",
+      "description": "I rely on consistent effort and focused execution: breaking complex work into clear milestones, investigating problems methodically, and following agreed priorities."
+    },
+    {
+      "id": "teamwork",
+      "title": "Clear communication & teamwork",
+      "description": "I listen to clients, explain technical choices in plain language, and keep teammates aligned on decisions, progress, and blockers."
+    },
+    {
+      "id": "integrity",
+      "title": "Professionalism & integrity",
+      "description": "I communicate honestly about scope and trade-offs, handle data responsibly, and leave software understandable for the next developer."
+    }
+  ]
+}

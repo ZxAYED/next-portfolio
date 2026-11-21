@@ -1,25 +1,44 @@
-"use client";
-
-import MorphingNavigation from "@/components/implementation/MorphingNavbar";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import ResumeIde from "@/components/resume/ResumeIde";
-import { motion } from "framer-motion";
+import { profile, skills } from "@/lib/portfolio";
+import { ExperienceRuntime } from "@/components/experience/ExperienceRuntime";
+import "@/styles/resume.css";
+
+export const metadata: Metadata = {
+  title: "Résumé — Experience & skills",
+  description:
+    "Explore Zayed Iqbal’s experience, development skills, working principles, and education in an interactive résumé.",
+  alternates: { canonical: "/resume" },
+};
 
 export default function ResumePage() {
   return (
-    <div className="relative min-h-screen w-full overflow-x-clip">
-      <MorphingNavigation />
-
-      {/* Ambient background glow (constrained to prevent horizontal overflow) */}
-      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 w-[90vw] max-w-[600px] h-[350px] bg-purple-600/10 rounded-full blur-[120px] -z-10" />
-
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="w-full pt-28 pb-16 sm:pt-32 sm:pb-24 px-3 sm:px-6 lg:px-8 flex items-start justify-center"
-      >
-        <ResumeIde />
-      </motion.main>
-    </div>
+    <main id="main-content" className="resume-page" data-theme="dark">
+      <div className="container">
+        <Link href="/" className="resume-page__back">
+          <ArrowLeft size={17} aria-hidden="true" /> Back to portfolio
+        </Link>
+        <header className="resume-page__heading" data-reveal>
+          <div>
+            <p className="eyebrow">
+              {profile.fullName} · {profile.role}
+            </p>
+            <h1>
+              A little more
+              <br />
+              <span className="serif">under the hood.</span>
+            </h1>
+          </div>
+          <p className="muted">
+            The experience, tools, and principles behind my work. Explore it as
+            a résumé—or read the source.
+          </p>
+        </header>
+        <ResumeIde profile={profile} skills={skills} />
+      </div>
+      <ExperienceRuntime />
+    </main>
   );
 }

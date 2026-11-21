@@ -1,0 +1,274 @@
+[
+  {
+    "id": "elite-central-vacuum",
+    "slug": "elite-central-vacuum",
+    "order": 1,
+    "title": "Elite Central Vacuum",
+    "category": "Commerce & service platform",
+    "tagline": "Full-Stack Commerce, Field Service & Real-Time Operations Platform",
+    "summary": "Commerce, field services, and the systems connecting them.",
+    "description": "A production-grade full-stack platform combining e-commerce, professional field-service operations, technician dispatch, quotations, invoicing, real-time communication, and AI-assisted diagnostics. Built around three dedicated customer, technician, and admin experiences with a Next.js frontend and a modular NestJS backend powered by PostgreSQL, Prisma, Redis, BullMQ, Socket.IO, Stripe, and Google Gemini.",
+    "role": "Full Stack Developer",
+    "timeline": "2026",
+    "cover": {
+      "src": "/images/projects/elite-central-vacuum.webp",
+      "alt": "Elite Central Vacuum website interface",
+      "position": "center top"
+    },
+    "metrics": [
+      {
+        "label": "User Roles",
+        "value": "3 Portals"
+      },
+      {
+        "label": "API Domains",
+        "value": "20+"
+      },
+      {
+        "label": "Realtime",
+        "value": "Socket.IO + Redis"
+      },
+      {
+        "label": "Payments",
+        "value": "Stripe"
+      }
+    ],
+    "features": [
+      {
+        "title": "Multi-Role Platform Architecture",
+        "description": "Built dedicated Customer, Technician, and Admin portals on top of a unified authentication and role-based authorization system."
+      },
+      {
+        "title": "End-to-End Commerce Engine",
+        "description": "Implemented product discovery, persistent cart synchronization, inventory-aware checkout, Stripe Checkout, webhook-based payment confirmation, order tracking, returns, and automated refunds."
+      },
+      {
+        "title": "Field Service & Dispatch Workflow",
+        "description": "Engineered the complete service lifecycle from customer intake and quotation approval to technician assignment, scheduling, live ETA updates, job execution, completion reports, and invoicing."
+      },
+      {
+        "title": "Distributed Concurrency Control",
+        "description": "Used Redis-backed locking and Prisma transactions to protect critical workflows including inventory updates, appointment booking, quotation acceptance, and payment settlement from race conditions."
+      },
+      {
+        "title": "Real-Time Communication Infrastructure",
+        "description": "Built Socket.IO notification and live-support gateways with Redis Pub/Sub synchronization, presence tracking, typing indicators, read receipts, and cross-role event delivery."
+      },
+      {
+        "title": "Asynchronous Background Processing",
+        "description": "Integrated BullMQ workers for notification delivery and delayed offline-message handling with retries, rate limiting, and exponential backoff."
+      },
+      {
+        "title": "AI Diagnostic Assistant",
+        "description": "Integrated Google Gemini with streaming SSE responses, structured symptom extraction, urgency analysis, and live database tool access for products, services, and customer equipment."
+      },
+      {
+        "title": "Unified Billing & Quotation System",
+        "description": "Implemented itemized quotations, revision history, customer approval workflows, automated invoice generation, Stripe payments, multi-tender payment records, and refund tracking."
+      },
+      {
+        "title": "High-Performance Client Data Layer",
+        "description": "Built 20+ typed RTK Query API domains with cache tagging, automatic invalidation, local-first cart synchronization, debounced search, and optimized loading states."
+      },
+      {
+        "title": "Production Security Architecture",
+        "description": "Implemented JWT authentication, HttpOnly refresh-token cookies, role guards, ownership validation, layered endpoint throttling, secure CORS, Helmet, and request validation."
+      }
+    ],
+    "techStack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Radix UI",
+      "Redux Toolkit",
+      "RTK Query",
+      "React Hook Form",
+      "Zod",
+      "Framer Motion",
+      "Recharts",
+      "NestJS 11",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Upstash Redis",
+      "BullMQ",
+      "Socket.IO",
+      "Stripe",
+      "Cloudinary",
+      "Google Gemini",
+      "JWT",
+      "Swagger / OpenAPI",
+      "Vercel",
+      "Render"
+    ],
+    "learnings": [
+      "Designed a large modular full-stack architecture spanning commerce, service operations, dispatch, billing, CRM, notifications, and AI-assisted workflows.",
+      "Implemented distributed locking and transactional workflows to prevent race conditions across inventory, scheduling, payments, and quotation processing.",
+      "Built scalable real-time systems using Socket.IO, Redis Pub/Sub, Redis-backed presence tracking, and multi-channel event delivery.",
+      "Engineered resilient asynchronous workflows with BullMQ workers, delayed jobs, retry strategies, concurrency controls, and rate limiting.",
+      "Developed secure Stripe payment flows covering Checkout Sessions, PaymentIntents, webhook verification, failed payments, quotation payments, and refunds.",
+      "Built a unified authentication architecture supporting Customer, Admin, and Technician roles with JWT access tokens, HttpOnly refresh cookies, and granular role guards.",
+      "Integrated generative AI into an application workflow using Gemini streaming responses, structured outputs, and database-backed tool calling.",
+      "Designed a scalable frontend data architecture using Redux Toolkit and RTK Query with typed API contracts, cache invalidation, optimistic user experiences, and local-first state synchronization.",
+      "Implemented a complete field-service lifecycle including service intake, slot availability, quotation approval, dispatch, technician execution, ETA broadcasting, and automated invoicing.",
+      "Strengthened production engineering practices around API security, validation, rate limiting, concurrency, background processing, real-time communication, and deployment."
+    ],
+    "links": {
+      "live": "https://elite-vaccum-frontend.vercel.app",
+      "client": "https://github.com/ZxAYED/elite-vaccum-frontend",
+      "server": "https://github.com/ZxAYED/elite-vaccum-backend"
+    }
+  },
+  {
+    "id": "suntech-pos",
+    "slug": "suntech-pos",
+    "order": 2,
+    "title": "SunTech POS",
+    "category": "Multi-tenant POS platform",
+    "tagline": "Sales, inventory, and branch operations in one connected workspace.",
+    "summary": "A point-of-sale platform built around multiple businesses and branches.",
+    "description": "A multi-tenant point-of-sale system connecting sales, product catalogs, inventory, and branch operations. Built with a Next.js frontend and a NestJS API backed by Prisma and PostgreSQL, the platform brings everyday business workflows into a consistent digital workspace.",
+    "role": "Full Stack Developer",
+    "timeline": null,
+    "cover": {
+      "src": "/images/projects/suntech-pos.webp",
+      "alt": "SunTech POS website showing its point-of-sale and inventory product",
+      "position": "center top"
+    },
+    "metrics": [
+      {
+        "label": "Architecture",
+        "value": "Multi-tenant"
+      },
+      {
+        "label": "Operations",
+        "value": "Multiple branches"
+      },
+      {
+        "label": "Frontend",
+        "value": "Next.js"
+      },
+      {
+        "label": "Data",
+        "value": "PostgreSQL"
+      }
+    ],
+    "features": [
+      {
+        "title": "Tenant & business structure",
+        "description": "Organize the product around separate businesses and their branch operations."
+      },
+      {
+        "title": "Sales workflows",
+        "description": "Bring point-of-sale interactions and day-to-day sales operations into a focused interface."
+      },
+      {
+        "title": "Product catalog & inventory",
+        "description": "Connect product information with stock management so catalog and sales workflows share the same business context."
+      },
+      {
+        "title": "Connected frontend & API",
+        "description": "A Next.js application supported by a NestJS backend, Prisma data models, and PostgreSQL."
+      }
+    ],
+    "techStack": ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
+    "learnings": [
+      "Structuring a product around tenant, business, and branch contexts.",
+      "Keeping sales, product, and inventory workflows connected across the interface and API.",
+      "Building a consistent full-stack application with Next.js, NestJS, Prisma, and PostgreSQL."
+    ],
+    "links": {
+      "live": "https://suntech-pos.vercel.app",
+      "client": null,
+      "server": null
+    }
+  },
+  {
+    "id": "scene-ads",
+    "slug": "scene-ads",
+    "order": 3,
+    "title": "Scene Ads",
+    "category": "Outdoor advertising platform",
+    "tagline": "Collaborative Outdoor Advertising Campaign Management Platform",
+    "summary": "Connecting outdoor advertising opportunities with campaign workflows.",
+    "description": "A modern advertising campaign management platform where brands can collaborate, create, and monitor outdoor ad campaigns with live chat, analytics, and integrated payment support. Designed with seamless interactivity, dynamic URL state management, and real-time synchronization.",
+    "role": "Full Stack Developer",
+    "timeline": "2024 / 6 Weeks",
+    "cover": {
+      "src": "/images/projects/scene-ads.webp",
+      "alt": "Scene Ads website interface",
+      "position": "center top"
+    },
+    "metrics": [
+      {
+        "label": "Stack",
+        "value": "Next.js + Prisma"
+      },
+      {
+        "label": "Realtime",
+        "value": "WebSocket"
+      },
+      {
+        "label": "Payments",
+        "value": "Stripe Webhooks"
+      }
+    ],
+    "features": [
+      {
+        "title": "Real-Time Chat & Collaboration",
+        "description": "Built using WebSockets (ws) for multi-user team coordination."
+      },
+      {
+        "title": "Stripe Payment Gateway",
+        "description": "Secure checkout workflow with asynchronous Stripe webhook confirmation handling."
+      },
+      {
+        "title": "Google Maps Geolocation",
+        "description": "Interactive map-based billboard and outdoor screen campaign placement."
+      },
+      {
+        "title": "Dynamic Query State with Nuqs",
+        "description": "Synchronized, bookmarkable URL search parameters for seamless dashboard filtering."
+      },
+      {
+        "title": "Scalable API Architecture",
+        "description": "High-throughput REST endpoints orchestrated via Node.js, Express, and Prisma ORM on PostgreSQL."
+      },
+      {
+        "title": "Production-Grade Auth",
+        "description": "Stateless JSON Web Token (JWT) session lifecycle management with role-based access control."
+      }
+    ],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Nuqs",
+      "Framer Motion",
+      "Stripe",
+      "Node.js",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase",
+      "JWT Authentication",
+      "WebSocket (ws)",
+      "node-cron",
+      "Google Maps API"
+    ],
+    "learnings": [
+      "Architected bidirectional WebSocket communication channels between client and server nodes.",
+      "Engineered resilient Stripe webhook handlers ensuring idempotent transaction processing.",
+      "Mastered URL state synchronization using Nuqs for ultra-responsive search and pagination.",
+      "Integrated Google Maps JavaScript SDK with custom clustered map markers for ad assets.",
+      "Designed clean relational schemas and indexing strategies with PostgreSQL & Prisma."
+    ],
+    "links": {
+      "live": "https://scene-ads.netlify.app",
+      "client": "https://github.com/ZxAYED/sceneAds-frontend",
+      "server": "https://github.com/ZxAYED/sceneAds-backend"
+    }
+  }
+]

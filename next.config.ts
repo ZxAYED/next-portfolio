@@ -1,18 +1,30 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  turbopack: { root: process.cwd() },
   images: {
-    qualities: [75, 90, 95, 100],
-    remotePatterns: [
+    // Editable portfolio imagery is kept in public/images.
+    localPatterns: [{ pathname: "/images/**", search: "" }],
+    remotePatterns: [],
+    qualities: [75, 90],
+    formats: ["image/avif", "image/webp"],
+  },
+  async headers() {
+    return [
       {
-        protocol: "https",
-        hostname: "i.ibb.co",
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
       },
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
+    ];
   },
 };
 
