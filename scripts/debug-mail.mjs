@@ -33,7 +33,7 @@ const secure = process.env.SMTP_SECURE === "true" || port === 465;
 
 console.log("Current Configuration:");
 console.log(`  • EMAIL_USER : ${user || "(not set)"}`);
-console.log(`  • EMAIL_PASS : ${pass ? (pass.includes("placeholder") || pass === "your_16_character_app_password_here" ? "⚠️  (placeholder - not yet your real password)" : "******** (" + pass.length + " chars)") : "(not set)"}`);
+console.log(`  • EMAIL_PASS : ${pass ? (pass.includes("placeholder") || pass.includes("app_password") ? "⚠️  (placeholder - not yet your real password)" : "******** (" + pass.length + " chars)") : "(not set)"}`);
 console.log(`  • EMAIL_TO   : ${to || "(not set)"}`);
 console.log(`  • SMTP_HOST  : ${host || "Gmail (built-in service)"}`);
 if (host) {
@@ -42,7 +42,7 @@ if (host) {
 }
 console.log("");
 
-if (!user || !pass || pass.includes("placeholder") || pass === "your_16_character_app_password_here") {
+if (!user || !pass || pass.includes("placeholder") || pass.includes("app_password")) {
   console.error("❌ ERROR: Missing or placeholder SMTP credentials in .env.local!");
   console.error("\nWhy sending contactinfo emails fails right now:");
   console.error("  In 'src/app/api/send-mail/route.ts', the route checks:");
